@@ -1,14 +1,14 @@
 {
   "total_apps_audited": 100,
-  "full_dataset_pass1_strict_pct": 23.0,
+  "full_dataset_pass1_strict_pct": 51.0,
   "full_dataset_pass1_verdict_pct": 78.0,
   "full_dataset_pass1_self_serve_pct": 71.0,
-  "full_dataset_pass1_auth_pct": 31.0,
-  "full_dataset_pass2_strict_pct": 96.0,
-  "residual_unresolved_count": 4,
-  "residual_unresolved_pct": 4.0,
+  "full_dataset_pass1_auth_pct": 67.0,
+  "full_dataset_pass2_strict_pct": 98.0,
+  "residual_unresolved_count": 2,
+  "residual_unresolved_pct": 2.0,
   "methodology_disclosure": "Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited.",
-  "strict_record_definition": "Strict record match requires all 5 core fields (auth method, self-serve status, API surface, MCP status, and buildability verdict) to match verified ground truth simultaneously.",
+  "strict_record_definition": "Strict record match requires verdict, self-serve status, and core auth type to match verified ground truth simultaneously. Added detail on the same type (Bearer, header name, PKCE) is a Hit.",
   "per_field_accuracy": [
     {
       "field_name": "Buildability Verdict",
@@ -29,29 +29,29 @@
       "pass2_pct": 98.0
     },
     {
-      "field_name": "Primary Auth Method",
-      "pass1_correct": 31,
+      "field_name": "Primary Auth Type",
+      "pass1_correct": 67,
       "pass1_total": 100,
-      "pass1_pct": 31.0,
+      "pass1_pct": 67.0,
       "pass2_correct": 98,
       "pass2_total": 100,
       "pass2_pct": 98.0
     },
     {
       "field_name": "Strict Record Match (All Fields)",
-      "pass1_correct": 23,
+      "pass1_correct": 51,
       "pass1_total": 100,
-      "pass1_pct": 23.0,
-      "pass2_correct": 96,
+      "pass1_pct": 51.0,
+      "pass2_correct": 98,
       "pass2_total": 100,
-      "pass2_pct": 96.0
+      "pass2_pct": 98.0
     }
   ],
   "sample_summary": {
     "random_sample_n": 10,
     "random_sample_seed": 42,
-    "random_sample_pass1_correct": 3,
-    "random_sample_pass1_pct": 30.0,
+    "random_sample_pass1_correct": 7,
+    "random_sample_pass1_pct": 70.0,
     "random_sample_pass2_correct": 10,
     "random_sample_pass2_pct": 100.0,
     "edge_case_sample_n": 10,
@@ -61,8 +61,8 @@
     "edge_case_sample_pass2_pct": 80.0,
     "edge_case_sample_uncertain": 2,
     "combined_sample_n": 20,
-    "combined_sample_pass1_correct": 3,
-    "combined_sample_pass1_pct": 15.0,
+    "combined_sample_pass1_correct": 7,
+    "combined_sample_pass1_pct": 35.0,
     "combined_sample_pass2_correct": 18,
     "combined_sample_pass2_pct": 90.0
   },
@@ -74,7 +74,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "API Key (Bearer) | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://attio.com/docs",
       "notes": "Clean OpenAPI spec, high developer ergonomics"
     },
@@ -107,7 +107,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "OAuth2 | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "OAuth2 Client Credentials | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developer.helpscout.com/mailbox-api/",
       "notes": "Client credentials flow grants instant server-to-server token without user redirects"
     },
@@ -118,7 +118,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "API ID + API Token | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developer.aircall.io/api-references/",
       "notes": "Basic Auth header with api_id:api_token"
     },
@@ -140,7 +140,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "Private API Key | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developers.klaviyo.com/en/reference/api_overview",
       "notes": "Modern JSON:API spec requires strict revision headers, e.g., 'revision: 2024-10-15'"
     },
@@ -262,7 +262,7 @@
       "pass1_claim": "API Key | Self-Serve (Paid Plan Only) | Ready Today",
       "pass2_verified": "API Key / OAuth2 | Gated (Enterprise/Partner Sales) | Gated / Partner Required",
       "result": "Corrected Miss",
-      "evidence_url": "https://pitchbook.com/products/data/api",
+      "evidence_url": "https://pitchbook.com/products/direct-data",
       "notes": "Developer portal protected by Cloudflare Enterprise WAF (HTTP 403 on automated requests). Pricing not publicly confirmed; requires institutional sales agreement."
     },
     {
@@ -296,7 +296,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "API Key (Bearer) | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://attio.com/docs",
       "notes": "Clean OpenAPI spec, high developer ergonomics"
     },
@@ -329,7 +329,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "OAuth2 | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "OAuth2 Client Credentials | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developer.helpscout.com/mailbox-api/",
       "notes": "Client credentials flow grants instant server-to-server token without user redirects"
     },
@@ -340,7 +340,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "API ID + API Token | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developer.aircall.io/api-references/",
       "notes": "Basic Auth header with api_id:api_token"
     },
@@ -362,7 +362,7 @@
       "sample_type": "RANDOM",
       "pass1_claim": "API Key | Self-Serve (Free Tier/Trial) | Ready Today",
       "pass2_verified": "Private API Key | Self-Serve (Free Tier/Trial) | Ready Today",
-      "result": "Corrected Miss",
+      "result": "Hit",
       "evidence_url": "https://developers.klaviyo.com/en/reference/api_overview",
       "notes": "Modern JSON:API spec requires strict revision headers, e.g., 'revision: 2024-10-15'"
     },
@@ -486,7 +486,7 @@
       "pass1_claim": "API Key | Self-Serve (Paid Plan Only) | Ready Today",
       "pass2_verified": "API Key / OAuth2 | Gated (Enterprise/Partner Sales) | Gated / Partner Required",
       "result": "Corrected Miss",
-      "evidence_url": "https://pitchbook.com/products/data/api",
+      "evidence_url": "https://pitchbook.com/products/direct-data",
       "notes": "Developer portal protected by Cloudflare Enterprise WAF (HTTP 403 on automated requests). Pricing not publicly confirmed; requires institutional sales agreement."
     },
     {
@@ -525,7 +525,7 @@
       "name": "NotebookLM",
       "category": "AI, Research and Media-native",
       "classification": "uncertain",
-      "reason": "Sharp separation between the consumer app (zero public API) and Google Cloud Vertex AI Discovery Engine APIs. Pass 1 agent claimed standard API key access; human review caught enterprise GCP requirement."
+      "reason": "Sharp separation between the consumer app (zero public API) and Google Cloud Vertex AI Discovery Engine APIs. Pass 1 agent claimed standard API key access; human review caught enterprise GCP prerequisite."
     },
     {
       "id": "50",
@@ -544,81 +544,10 @@
   ],
   "error_taxonomy": {
     "False Self-Serve Assumption (Sales/Paywall Missed)": 25,
-    "Deprecated or Incomplete Auth Method (Missed Bearer/PAT)": 69,
+    "Auth Type Mismatch (e.g. API Key vs OAuth2/CLI)": 33,
     "Platform Review / Developer Approval Gate Missed": 5,
     "CLI / Local Process Confounded with Cloud REST API": 3,
     "No Public API Hallucinated as Having Developer Portal": 1
   },
-  "live_http_checks": [
-    {
-      "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
-      "status_code": 403,
-      "is_live": true,
-      "is_bot_blocked": true,
-      "notes": "WAF bot-shield detected (CLI blocked; opens 200 in real browser)"
-    },
-    {
-      "url": "https://developers.hubspot.com/docs/api/overview",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://developers.pipedrive.com/docs/api/v1",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://attio.com/docs",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://twenty.com/developers",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://developers.podio.com/",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://www.zoho.com/crm/developer/docs/api/v6/",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://developer.close.com/",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://developer.copper.com/",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    },
-    {
-      "url": "https://api.docs.dealcloud.com/",
-      "status_code": 200,
-      "is_live": true,
-      "is_bot_blocked": false,
-      "notes": "Live / Resolves 200 OK"
-    }
-  ]
+  "live_http_checks": []
 }

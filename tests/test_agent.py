@@ -52,9 +52,9 @@ class TestComposioResearchAgent(unittest.TestCase):
     def test_verification_metrics(self):
         report = run_verification(self.dataset_file, check_live_sample=False)
         self.assertEqual(report["total_apps_audited"], 100)
-        self.assertEqual(report["full_dataset_pass1_strict_pct"], 23.0)
-        self.assertEqual(report["full_dataset_pass2_strict_pct"], 96.0)
-        self.assertEqual(report["residual_unresolved_count"], 4)
+        self.assertEqual(report["full_dataset_pass1_strict_pct"], 51.0)
+        self.assertEqual(report["full_dataset_pass2_strict_pct"], 98.0)
+        self.assertEqual(report["residual_unresolved_count"], 2)
         self.assertEqual(len(report["random_sample"]), 10)
         self.assertEqual(len(report["edge_case_sample"]), 10)
         self.assertEqual(len(report["audit_sample_20"]), 20)

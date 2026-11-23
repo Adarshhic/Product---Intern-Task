@@ -45,14 +45,14 @@ def main():
         print("\n[+] Running Stage 2: Automated Verification Loops & Live Link Checks...")
         rep = run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
         print(f"[OK] Full Dataset (100 apps) Strict Accuracy:")
-        print(f"     Pass 1 Strict Record Match:   {rep['full_dataset_pass1_strict_pct']}% (23/100)")
-        print(f"     Pass 2 Verified Answer:       {rep['full_dataset_pass2_strict_pct']}% (96/100)")
-        print(f"     Hard Cases / Residual:        {rep['residual_unresolved_count']} apps ({rep['residual_unresolved_pct']}%)")
+        print(f"     Pass 1 Strict Record Match:   {rep['full_dataset_pass1_strict_pct']}% ({int(rep['full_dataset_pass1_strict_pct'])}/100)")
+        print(f"     Pass 2 Verified Answer:       {rep['full_dataset_pass2_strict_pct']}% ({int(rep['full_dataset_pass2_strict_pct'])}/100)")
+        print(f"     Residual Uncertainty:         {rep['residual_unresolved_count']} apps ({rep['residual_unresolved_pct']}%)")
         print(f"[OK] Validation Samples (20 apps total):")
         sm = rep['sample_summary']
-        print(f"     Random Sample (N=10, Seed=42): Pass 1 {sm['random_sample_pass1_correct']}/10 -> Pass 2 {sm['random_sample_pass2_correct']}/10 ({sm['random_sample_pass2_pct']}%)")
-        print(f"     Edge-Case Sample (N=10):       Pass 1 {sm['edge_case_sample_pass1_correct']}/10 -> Pass 2 {sm['edge_case_sample_pass2_correct']}/10 ({sm['edge_case_sample_pass2_pct']}%, {sm['edge_case_sample_uncertain']} uncertain)")
-        print(f"     Combined Sample (N=20):        Pass 1 {sm['combined_sample_pass1_correct']}/20 -> Pass 2 {sm['combined_sample_pass2_correct']}/20 ({sm['combined_sample_pass2_pct']}%)")
+        print(f"     Random Sample (N=10, Seed=42): Pass 1 {sm['random_sample_pass1_correct']}/10 ({sm['random_sample_pass1_pct']}%) -> Pass 2 {sm['random_sample_pass2_correct']}/10 ({sm['random_sample_pass2_pct']}%)")
+        print(f"     Edge-Case Sample (N=10):       Pass 1 {sm['edge_case_sample_pass1_correct']}/10 ({sm['edge_case_sample_pass1_pct']}%) -> Pass 2 {sm['edge_case_sample_pass2_correct']}/10 ({sm['edge_case_sample_pass2_pct']}%, {sm['edge_case_sample_uncertain']} uncertain)")
+        print(f"     Combined Sample (N=20):        Pass 1 {sm['combined_sample_pass1_correct']}/20 ({sm['combined_sample_pass1_pct']}%) -> Pass 2 {sm['combined_sample_pass2_correct']}/20 ({sm['combined_sample_pass2_pct']}%)")
 
     if args.analyze or args.all:
         print("\n[+] Running Stage 3: Statistical Pattern Clustering...")
@@ -64,6 +64,12 @@ def main():
         print(f"[OK] Total Self-Serve:  {m['total_self_serve_count']}/100 ({m['total_self_serve_pct']}%)")
         print(f"[OK] Total Gated/Walls: {m['total_gated_non_self_serve_count']}/100 ({m['total_gated_non_self_serve_pct']}%)")
         print(f"[OK] MCP Greenfield:    {m['composio_greenfield_count']}/100 ({m['composio_greenfield_pct']}%)")
+
+    if args.all:
+        from src.build_html import generate_html
+        print("\n[+] Running Stage 4: Compiling Production HTML Case Study...")
+        generate_html()
+        print("[OK] HTML updated at index.html and web/index.html")
 
 if __name__ == "__main__":
     main()

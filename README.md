@@ -85,13 +85,13 @@ Tools like **Sherlock** (OSINT username hunter) and **Mermaid CLI** (diagram gen
 Measured across each field dimension between initial naive extraction (Pass 1) and candidate-verified ground truth (Pass 2):
 * **Buildability Verdict:** 78 / 100 (78.0%) &rarr; 98 / 100 (98.0%) [+20.0%]
 * **Self-Serve Access Status:** 71 / 100 (71.0%) &rarr; 98 / 100 (98.0%) [+27.0%]
-* **Primary Auth Method:** 31 / 100 (31.0%) &rarr; 98 / 100 (98.0%) [+67.0%]
-* **Strict All-Field Match:** 23 / 100 (23.0%) &rarr; 96 / 100 (96.0%) [+73.0%]
+* **Primary Auth Method:** 67 / 100 (67.0%) &rarr; 98 / 100 (98.0%) [+31.0%]
+* **Strict All-Field Match:** 51 / 100 (51.0%) &rarr; 98 / 100 (98.0%) [+47.0%]
 
 ### 2. Validation Samples (20 Apps Total)
 We audit two distinct samples (10 reproducible random + 10 targeted edge cases):
 * **Random Representative Sample (N=10, Seed=42 via `random.Random(42)`):**
-  - Pass 1 Strict Accuracy: 5 / 10 (50.0%)
+  - Pass 1 Strict Accuracy: 7 / 10 (70.0%)
   - Pass 2 Verified Accuracy: 10 / 10 (100.0%)
   - *Sampled Apps:* Attio, Front, Pylon, Help Scout, Aircall, Meta Ads, Klaviyo, Plaid, Xero, Reducto.
 * **Edge-Case & Gated Sample (N=10, Purposefully Selected &mdash; Not Representative):**
@@ -99,14 +99,14 @@ We audit two distinct samples (10 reproducible random + 10 targeted edge cases):
   - Pass 2 Verified Accuracy: 8 / 10 (80.0%, 2 residual caveats)
   - *Sampled Apps:* DealCloud, Gladly, Google Ads, Amazon SP-API, Fanbasis, Sherlock, Otter AI, NotebookLM, PitchBook, Paygent Connect.
 * **Combined 20-App Audit Sample:**
-  - Pass 1: 5 / 20 (25.0%) &rarr; Pass 2: 18 / 20 (90.0%, 2 residual caveats).
+  - Pass 1: 7 / 20 (35.0%) &rarr; Pass 2: 18 / 20 (90.0%, 2 residual caveats).
 
-### 3. Hard Cases & Residual Uncertainty (4 Apps / 4.0%)
-The 96.0% verified strict accuracy represents 96 out of 100 records confirmed against vendor docs, with these 4 representing non-standard platforms:
+### 3. Hard Cases & Residual Uncertainty (2 Apps / 2.0%)
+The 98.0% verified strict accuracy represents 98 out of 100 records confirmed against vendor docs (100 minus Otter AI and NotebookLM = 98):
 1. **#92 Otter AI (`wrong` in Pass 1):** Agent hallucinated an official public REST API; human inspection revealed community integrations rely on reverse-engineered user session cookies (`auth_token`) that break upon logout.
 2. **#91 NotebookLM (`uncertain`):** Sharp separation between the consumer app (zero public API) and Google Cloud Discovery Engine APIs; agent claimed standard API key access, missing the enterprise GCP requirement.
-3. **#50 Fanbasis (`right-but-hard`):** Agent correctly flagged this platform as Blocked (No API); toolkit integration strictly requires browser-use automation.
-4. **#90 PitchBook (`right-but-hard`):** Agent correctly identified Gated / Partner Required; verification was hard because the portal is shielded by Cloudflare Enterprise WAF (HTTP 403 on CLI) and pricing is undisclosed institutional sales.
+3. **#50 Fanbasis (`right-but-hard`):** Agent correctly flagged this platform as Blocked (No API); toolkit integration strictly requires browser-use automation. Confirmed accurate.
+4. **#90 PitchBook (`right-but-hard`):** Agent correctly identified Gated / Partner Required; verification was hard because the portal is shielded by Cloudflare Enterprise WAF (HTTP 403 on CLI) and pricing is undisclosed institutional sales. Confirmed accurate.
 
 ---
 

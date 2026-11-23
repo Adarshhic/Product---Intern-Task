@@ -2570,7 +2570,7 @@
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Gated / Partner Required",
     "main_blocker": "Enterprise data licensing paywall (pricing not publicly confirmed; requires annual institutional contract)",
-    "evidence_url": "https://pitchbook.com/products/data/api",
+    "evidence_url": "https://pitchbook.com/products/direct-data",
     "url_status_note": "HTTP 403 on automated curl due to Akamai bot shield; opens 200 in browser",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Self-Serve (Paid Plan Only)",

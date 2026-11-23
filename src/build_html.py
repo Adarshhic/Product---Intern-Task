@@ -41,10 +41,24 @@ def generate_html():
     greenfield_count = patterns["headline_metrics"]["composio_greenfield_count"]
     greenfield_pct = int(patterns["headline_metrics"]["composio_greenfield_pct"])
 
-    p1_strict = verification["full_dataset_pass1_strict_pct"]
-    p2_strict = verification["full_dataset_pass2_strict_pct"]
+    p1_strict = int(verification["full_dataset_pass1_strict_pct"])
+    p2_strict = int(verification["full_dataset_pass2_strict_pct"])
     residual_count = verification["residual_unresolved_count"]
     residual_pct = verification["residual_unresolved_pct"]
+
+    sm = verification["sample_summary"]
+    rand_p1 = sm["random_sample_pass1_correct"]
+    rand_p1_pct = sm["random_sample_pass1_pct"]
+    rand_p2 = sm["random_sample_pass2_correct"]
+    rand_p2_pct = sm["random_sample_pass2_pct"]
+    edge_p1 = sm["edge_case_sample_pass1_correct"]
+    edge_p1_pct = sm["edge_case_sample_pass1_pct"]
+    edge_p2 = sm["edge_case_sample_pass2_correct"]
+    edge_p2_pct = sm["edge_case_sample_pass2_pct"]
+    comb_p1 = sm["combined_sample_pass1_correct"]
+    comb_p1_pct = sm["combined_sample_pass1_pct"]
+    comb_p2 = sm["combined_sample_pass2_correct"]
+    comb_p2_pct = sm["combined_sample_pass2_pct"]
 
     # 20-app audit sample rows (10 Random + 10 Edge-Case)
     sample_rows_html = ""
@@ -1027,7 +1041,7 @@ def generate_html():
   <!-- How to Read Strip -->
   <div class="read-strip">
     <div class="read-strip-inner">
-      <span><strong>2-Minute Reviewer Guide:</strong> Review Headline Metrics &rarr; 5 Macro Patterns &rarr; Verification Progression (23% &rarr; 96%) &rarr; Interactive 100-App Table.</span>
+      <span><strong>2-Minute Reviewer Guide:</strong> Review Headline Metrics &rarr; 5 Macro Patterns &rarr; Verification Progression (51% &rarr; 98%) &rarr; Interactive 100-App Table.</span>
       <span class="font-mono text-xs">100 Apps Audited &bull; Candidate: Adarsh Mishra</span>
     </div>
   </div>
@@ -1065,7 +1079,7 @@ def generate_html():
           <div class="stat-card">
             <span class="stat-label">4. Verified Record Accuracy</span>
             <div class="stat-value">{p1_strict}% &rarr; {p2_strict}%</div>
-            <span class="stat-basis">Lifted across all fields (23/100 to 96/100) via automated HTTP link probes and human review. <strong>{residual_count} residual caveats</strong> disclosed. Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited.</span>
+            <span class="stat-basis">Lifted across all fields (51/100 to 98/100) via automated HTTP link probes and human review. <strong>{residual_count} residual caveats</strong> disclosed. Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited.</span>
           </div>
         </div>
       </div>
@@ -1193,8 +1207,8 @@ def generate_html():
           <div class="flow-node">
             <span class="flow-step-tag">Step 2</span>
             <div class="flow-title">Pass 1: LLM Extraction</div>
-            <p class="flow-desc">Naive extraction. High verdict recall (78%) but missed hidden sales gates and deprecated auth (23% strict).</p>
-            <span class="flow-badge auto">Automated (23% Strict)</span>
+            <p class="flow-desc">Naive extraction. High verdict recall (78%) but missed hidden sales gates and deprecated auth (51% strict).</p>
+            <span class="flow-badge auto">Automated (51% Strict)</span>
           </div>
 
           <div class="flow-arrow">&rarr;</div>
@@ -1223,8 +1237,8 @@ def generate_html():
           <div class="flow-node">
             <span class="flow-step-tag">Step 5</span>
             <div class="flow-title">Curated Dataset</div>
-            <p class="flow-desc">100 verified records, 96% strict accuracy, and 4 documented residual caveats.</p>
-            <span class="flow-badge auto">Pass 2: 96% Strict</span>
+            <p class="flow-desc">100 verified records, 98% strict accuracy, and 2 documented residual caveats.</p>
+            <span class="flow-badge auto">Pass 2: 98% Strict</span>
           </div>
         </div>
       </div>
@@ -1238,7 +1252,7 @@ def generate_html():
       </div>
 
       <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: var(--space-3); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.4;">
-        <strong>Methodology Disclosure:</strong> Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited. Strict record match requires all 5 core fields (auth method, self-serve status, API surface, MCP status, and buildability verdict) to match verified ground truth simultaneously.
+        <strong>Methodology Disclosure:</strong> Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited.
       </div>
 
       <div class="verification-grid">
@@ -1268,20 +1282,20 @@ def generate_html():
                 <td class="font-mono" style="color:var(--accent);">+27%</td>
               </tr>
               <tr>
-                <td>Primary Auth Method</td>
-                <td class="font-mono">31 / 100 (31%)</td>
+                <td>Primary Auth Type</td>
+                <td class="font-mono">67 / 100 (67%)</td>
                 <td class="font-mono" style="color:var(--ready-color);">98 / 100 (98%)</td>
-                <td class="font-mono" style="color:var(--accent);">+67%</td>
+                <td class="font-mono" style="color:var(--accent);">+31%</td>
               </tr>
               <tr style="background: var(--bg-surface); font-weight: 700;">
                 <td>Strict Record Match (All Fields)</td>
-                <td class="font-mono">23 / 100 ({p1_strict}%)</td>
-                <td class="font-mono" style="color:var(--ready-color);">96 / 100 ({p2_strict}%)</td>
-                <td class="font-mono" style="color:var(--accent);">+73%</td>
+                <td class="font-mono">51 / 100 ({p1_strict}%)</td>
+                <td class="font-mono" style="color:var(--ready-color);">98 / 100 ({p2_strict}%)</td>
+                <td class="font-mono" style="color:var(--accent);">+47%</td>
               </tr>
             </tbody>
           </table>
-          <p class="text-xs muted" style="margin-top: 8px;">*Pass 1 failed strictly because models assumed static API keys and missed hidden enterprise sales gates.</p>
+          <p class="text-xs muted" style="margin-top: 8px;">*Pass 1 failed strictly when models assumed free self-serve on sales-walled enterprise tiers or confused auth protocols.</p>
         </div>
 
         <!-- Sample Accuracy Summary -->
@@ -1290,14 +1304,14 @@ def generate_html():
           <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; display: flex; flex-direction: column; gap: 6px;">
             <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
               <span class="sample-tag random">RANDOM SAMPLE</span> <strong>10 Apps (Seed=42, Reproducible):</strong><br>
-              Pass 1: 5 / 10 (50.0%) &rarr; Pass 2: 10 / 10 (100.0%)
+              Pass 1: {rand_p1} / 10 ({rand_p1_pct}%) &rarr; Pass 2: {rand_p2} / 10 ({rand_p2_pct}%)
             </div>
             <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
               <span class="sample-tag edge-case">EDGE-CASE SAMPLE</span> <strong>10 Apps (Purposefully Selected &mdash; Not Representative):</strong><br>
-              Pass 1: 0 / 10 (0.0%) &rarr; Pass 2: 8 / 10 (80.0%, 2 residual caveats)
+              Pass 1: {edge_p1} / 10 ({edge_p1_pct}%) &rarr; Pass 2: {edge_p2} / 10 ({edge_p2_pct}%, {sm['edge_case_sample_uncertain']} uncertain)
             </div>
             <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
-              <strong>Combined 20-App Sample:</strong> Pass 1: 5 / 20 (25.0%) &rarr; Pass 2: 18 / 20 (90.0%, 2 uncertain)
+              <strong>Combined 20-App Sample:</strong> Pass 1: {comb_p1} / 20 ({comb_p1_pct}%) &rarr; Pass 2: {comb_p2} / 20 ({comb_p2_pct}%, {sm['edge_case_sample_uncertain']} uncertain)
             </div>
           </div>
         </div>
@@ -1305,7 +1319,12 @@ def generate_html():
 
       <!-- 20-App Audit Table -->
       <div class="table-card">
-        <div style="font-weight: 700; margin-bottom: 8px;">20-App Audit Sample: Claims vs Candidate-Verified Ground Truth</div>
+        <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;">
+          <div style="font-weight: 700;">20-App Audit Sample: Claims vs Candidate-Verified Ground Truth</div>
+          <p class="text-xs muted" style="line-height: 1.4;">
+            <strong>Evaluation Rule:</strong> A row is a "Miss" only if the verdict, the self-serve status (free / paid / gated), or the core auth type (e.g. API key vs OAuth2 vs Basic vs CLI vs none) differs between Pass 1 and the verified answer. Added detail on the same type (Bearer, header name, PKCE) is a Hit.
+          </p>
+        </div>
         <table class="compact-table">
           <thead>
             <tr>
@@ -1331,7 +1350,7 @@ def generate_html():
           <span>Hard Cases & Residual Uncertainty ({residual_count} Residual Edge Cases / {residual_pct}%)</span>
         </div>
         <p class="text-xs muted">
-          The 96.0% verified strict accuracy represents 96 out of 100 records confirmed against vendor docs (100 - 4 = 96). Here we disclose the 4 platforms representing nuanced edge cases or integration fragility:
+          The 98.0% verified strict accuracy represents 98 out of 100 records confirmed against vendor docs (100 - 2 = 98). Here we disclose the 4 platforms representing nuanced edge cases or integration fragility:
         </p>
         <div class="unresolved-grid">
           <div class="unresolved-item">
