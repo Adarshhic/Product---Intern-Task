@@ -34,6 +34,8 @@ def generate_html():
     free_ss_pct = int(patterns["headline_metrics"]["free_self_serve_pct"])
     paid_ss_count = patterns["headline_metrics"]["paid_self_serve_count"]
     paid_ss_pct = int(patterns["headline_metrics"]["paid_self_serve_pct"])
+    total_ss_count = patterns["headline_metrics"]["total_self_serve_count"]
+    total_ss_pct = int(patterns["headline_metrics"]["total_self_serve_pct"])
     total_gated_count = patterns["headline_metrics"]["total_gated_non_self_serve_count"]
     total_gated_pct = int(patterns["headline_metrics"]["total_gated_non_self_serve_pct"])
     greenfield_count = patterns["headline_metrics"]["composio_greenfield_count"]
@@ -44,67 +46,30 @@ def generate_html():
     residual_count = verification["residual_unresolved_count"]
     residual_pct = verification["residual_unresolved_pct"]
 
-    # Hits and misses samples for the verification section
-    sample_hits_misses = [
-        {
-            "app": "Stripe",
-            "cat": "Finance and Fintech",
-            "p1": "API Key | Self-Serve | Ready Today",
-            "p2": "API Key (Bearer) | Self-Serve | Ready Today",
-            "status": "Hit",
-            "why": "Standard developer platform correctly identified in Pass 1 and verified in Pass 2."
-        },
-        {
-            "app": "Slack",
-            "cat": "Communication",
-            "p1": "OAuth2 | Self-Serve | Ready Today",
-            "p2": "OAuth2 / Bot Token | Self-Serve | Ready Today",
-            "status": "Hit",
-            "why": "Well-documented Bot Token and OAuth 2.0 flow verified against official docs."
-        },
-        {
-            "app": "DealCloud",
-            "cat": "CRM and Sales",
-            "p1": "API Key | Self-Serve | Ready Today",
-            "p2": "API Key / OAuth2 | Gated (Sales Wall) | Gated / Partner Required",
-            "status": "Corrected Miss",
-            "why": "Pass 1 hallucinated self-serve access; human review caught mandatory enterprise sales contract."
-        },
-        {
-            "app": "Gladly",
-            "cat": "Customer Support",
-            "p1": "API Key | Self-Serve | Ready Today",
-            "p2": "API Token | Gated (Sales Wall) | Gated / Partner Required",
-            "status": "Corrected Miss",
-            "why": "Pass 1 missed enterprise customer onboarding requirement; corrected in Pass 2."
-        },
-        {
-            "app": "Sherlock",
-            "cat": "Developer Tools",
-            "p1": "REST API | Self-Serve | Ready Today",
-            "p2": "Local CLI / Python Script | Self-Serve | Feasible with Caveats",
-            "status": "Corrected Miss",
-            "why": "Pass 1 assumed remote SaaS cloud endpoints; Pass 2 verified it runs as a local CLI subprocess."
-        },
-        {
-            "app": "Attio",
-            "cat": "CRM and Sales",
-            "p1": "Generic API Key | Self-Serve | Ready Today",
-            "p2": "API Key (Bearer) + OpenAPI | Self-Serve | Ready Today",
-            "status": "Hit",
-            "why": "Bearer token specification and OpenAPI v3 definition verified on live docs."
-        }
-    ]
-
+    # 20-app audit sample rows (10 Random + 10 Edge-Case)
     sample_rows_html = ""
-    for s in sample_hits_misses:
-        badge = '<span class="status-badge hit">Hit</span>' if s['status'] == 'Hit' else '<span class="status-badge corrected">Corrected Miss</span>'
+    for s in verification.get("audit_sample_20", []):
+        type_badge = f'<span class="sample-tag {s["sample_type"].lower()}">{s["sample_type"]}</span>'
+        
+        if s["result"] == "Hit":
+            res_badge = '<span class="status-badge hit">Hit</span>'
+        elif s["result"] == "Corrected Miss":
+            res_badge = '<span class="status-badge corrected">Corrected Miss</span>'
+        elif s["result"] == "Still Uncertain":
+            res_badge = '<span class="status-badge uncertain">Still Uncertain</span>'
+        else:
+            res_badge = '<span class="status-badge unverified">UNVERIFIED</span>'
+
         sample_rows_html += f"""<tr>
-          <td><strong>{s['app']}</strong><br><span class="muted text-xs">{s['cat']}</span></td>
-          <td class="font-mono text-xs">{s['p1']}</td>
-          <td class="font-mono text-xs">{s['p2']}</td>
-          <td>{badge}</td>
-          <td class="text-xs">{s['why']}</td>
+          <td>{type_badge}</td>
+          <td><strong>{s['name']}</strong><br><span class="muted text-xs">{s['category']}</span></td>
+          <td class="font-mono text-xs">{s['pass1_claim']}</td>
+          <td class="font-mono text-xs">{s['pass2_verified']}</td>
+          <td>{res_badge}</td>
+          <td class="text-xs font-mono">
+            <a href="{s['evidence_url']}" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none;" title="{s['evidence_url']}">Docs &rarr;</a>
+          </td>
+          <td class="text-xs muted">{s['notes']}</td>
         </tr>"""
 
     html_content = f"""<!DOCTYPE html>
@@ -665,11 +630,31 @@ def generate_html():
       font-family: var(--font-mono);
       font-size: 0.75rem;
       text-transform: uppercase;
+      white-space: nowrap;
     }}
     table.compact-table td {{
       padding: var(--space-2) var(--space-3);
       border-bottom: 1px solid var(--border);
       color: var(--text);
+      vertical-align: top;
+    }}
+    .sample-tag {{
+      display: inline-block;
+      padding: 1px 5px;
+      border-radius: var(--radius-sm);
+      font-size: 0.625rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }}
+    .sample-tag.random {{
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }}
+    .sample-tag.edge-case {{
+      background: rgba(244, 63, 94, 0.15);
+      color: #f43f5e;
+      border: 1px solid rgba(244, 63, 94, 0.3);
     }}
     .status-badge {{
       display: inline-block;
@@ -677,6 +662,7 @@ def generate_html():
       border-radius: var(--radius-sm);
       font-size: 0.6875rem;
       font-weight: 700;
+      white-space: nowrap;
     }}
     .status-badge.hit {{
       background: var(--ready-bg);
@@ -686,8 +672,18 @@ def generate_html():
       background: var(--caveat-bg);
       color: var(--caveat-color);
     }}
+    .status-badge.uncertain {{
+      background: rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }}
+    .status-badge.unverified {{
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }}
 
-    /* Defeated / Unresolved Box */
+    /* Hard Cases & Residual Uncertainty Box */
     .unresolved-box {{
       background: var(--bg-card);
       border: 1px solid var(--gated-color);
@@ -724,8 +720,22 @@ def generate_html():
     .unresolved-app {{
       font-size: 0.8125rem;
       font-weight: 700;
-      color: var(--gated-color);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }}
+    .class-badge {{
+      font-size: 0.625rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }}
+    .class-badge.wrong {{ background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid #f43f5e; }}
+    .class-badge.uncertain {{ background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }}
+    .class-badge.right-but-hard {{ background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8; }}
     .unresolved-desc {{
       font-size: 0.75rem;
       color: var(--text-muted);
@@ -1037,7 +1047,7 @@ def generate_html():
           <div class="stat-card">
             <span class="stat-label">1. Ready for Toolkit Today</span>
             <div class="stat-value">{ready_pct}%</div>
-            <span class="stat-basis"><strong>{ready_count} of {total} apps</strong> have documented public APIs and self-serve access ({free_ss_count} free tier/trial, {paid_ss_count} paid plan).</span>
+            <span class="stat-basis"><strong>{ready_count} apps ({ready_pct}%) are Ready Today.</strong> {total_ss_count} ({total_ss_pct}%) have a self-serve path ({free_ss_count} free/trial, {paid_ss_count} paid plan only); {total_gated_count} ({total_gated_pct}%) are gated; 1 has no public API.</span>
           </div>
 
           <div class="stat-card">
@@ -1055,7 +1065,7 @@ def generate_html():
           <div class="stat-card">
             <span class="stat-label">4. Verified Record Accuracy</span>
             <div class="stat-value">{p1_strict}% &rarr; {p2_strict}%</div>
-            <span class="stat-basis">Lifted across all fields (23/100 to 96/100) via automated HTTP link probes and human review. <strong>{residual_count} residual caveats</strong> disclosed.</span>
+            <span class="stat-basis">Lifted across all fields (23/100 to 96/100) via automated HTTP link probes and human review. <strong>{residual_count} residual caveats</strong> disclosed. Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited.</span>
           </div>
         </div>
       </div>
@@ -1073,7 +1083,7 @@ def generate_html():
         <div class="pattern-card">
           <div class="pattern-header">PATTERN 01</div>
           <h3 class="pattern-title">Dual-Track Auth Dominance</h3>
-          <p class="pattern-evidence"><strong>OAuth2 for Multi-Tenant Enterprise vs Bearer Keys for Dev/Infra:</strong> 58% of apps use Bearer API keys, while 25% mandate OAuth2 with granular scopes.</p>
+          <p class="pattern-evidence"><strong>Primary Auth Distribution:</strong> 60% Bearer/API Key, 25% OAuth 2.0, 5% Basic Auth, 3% Local CLI, 6% Other Custom (HMAC/SigV4/Hash/Session), 1% None (No API) &mdash; totaling 100% based on primary production auth method.</p>
           <div class="pattern-so-what">
             <strong>So what for Composio:</strong> Managed auth handles OAuth refresh tokens, eliminating user authentication friction across CRM and Marketing stacks.
           </div>
@@ -1227,6 +1237,10 @@ def generate_html():
         <p class="section-takeaway">Measurable accuracy progression from naive Pass 1 extraction to verified Pass 2 ground truth across full dataset and targeted samples.</p>
       </div>
 
+      <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: var(--space-3); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.4;">
+        <strong>Methodology Disclosure:</strong> Pass 2 was checked against vendor docs by the candidate with AI assistance; accuracy is self-assessed against that ground truth, not independently audited. Strict record match requires all 5 core fields (auth method, self-serve status, API surface, MCP status, and buildability verdict) to match verified ground truth simultaneously.
+      </div>
+
       <div class="verification-grid">
         <!-- Pass 1 vs Pass 2 Table -->
         <div class="table-card">
@@ -1236,7 +1250,7 @@ def generate_html():
               <tr>
                 <th>Field Dimension</th>
                 <th>Pass 1</th>
-                <th>Pass 2</th>
+                <th>Pass 2 verified answer (candidate-checked)</th>
                 <th>Delta</th>
               </tr>
             </thead>
@@ -1270,51 +1284,83 @@ def generate_html():
           <p class="text-xs muted" style="margin-top: 8px;">*Pass 1 failed strictly because models assumed static API keys and missed hidden enterprise sales gates.</p>
         </div>
 
-        <!-- Hits & Misses Table -->
+        <!-- Sample Accuracy Summary -->
         <div class="table-card">
-          <div style="font-weight: 700; margin-bottom: 8px;">Audit Sample: Hits & Corrected Misses</div>
-          <table class="compact-table">
-            <thead>
-              <tr>
-                <th>App</th>
-                <th>Pass 1 Claim</th>
-                <th>Pass 2 Ground Truth</th>
-                <th>Result</th>
-                <th>Reason</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sample_rows_html}
-            </tbody>
-          </table>
+          <div style="font-weight: 700; margin-bottom: 8px;">Audit Sample Performance (N=20)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; display: flex; flex-direction: column; gap: 6px;">
+            <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
+              <span class="sample-tag random">RANDOM SAMPLE</span> <strong>10 Apps (Seed=42, Reproducible):</strong><br>
+              Pass 1: 5 / 10 (50.0%) &rarr; Pass 2: 10 / 10 (100.0%)
+            </div>
+            <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
+              <span class="sample-tag edge-case">EDGE-CASE SAMPLE</span> <strong>10 Apps (Purposefully Selected &mdash; Not Representative):</strong><br>
+              Pass 1: 0 / 10 (0.0%) &rarr; Pass 2: 8 / 10 (80.0%, 2 residual caveats)
+            </div>
+            <div style="padding: 6px; background: var(--bg-surface); border-radius: var(--radius-sm);">
+              <strong>Combined 20-App Sample:</strong> Pass 1: 5 / 20 (25.0%) &rarr; Pass 2: 18 / 20 (90.0%, 2 uncertain)
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- WHERE THE AGENT WAS STILL WRONG OR DEFEATED -->
+      <!-- 20-App Audit Table -->
+      <div class="table-card">
+        <div style="font-weight: 700; margin-bottom: 8px;">20-App Audit Sample: Claims vs Candidate-Verified Ground Truth</div>
+        <table class="compact-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>App</th>
+              <th>Pass 1 Claim</th>
+              <th>Pass 2 verified answer (candidate-checked)</th>
+              <th>Result</th>
+              <th>Docs</th>
+              <th>Audit Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sample_rows_html}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- HARD CASES & RESIDUAL UNCERTAINTY -->
       <div class="unresolved-box">
         <div class="unresolved-title">
           <span>&#9888;</span>
-          <span>Where the Agent Was Still Wrong or Defeated ({residual_count} Residual Caveats / {residual_pct}%)</span>
+          <span>Hard Cases & Residual Uncertainty ({residual_count} Residual Edge Cases / {residual_pct}%)</span>
         </div>
         <p class="text-xs muted">
-          In strict compliance with assignment evaluation rules, we disclose the 4 platforms that defeated automated extraction or carry unresolved integration fragility:
+          The 96.0% verified strict accuracy represents 96 out of 100 records confirmed against vendor docs (100 - 4 = 96). Here we disclose the 4 platforms representing nuanced edge cases or integration fragility:
         </p>
         <div class="unresolved-grid">
           <div class="unresolved-item">
-            <span class="unresolved-app">#92 Otter AI &bull; AI Media</span>
-            <p class="unresolved-desc"><strong>Unofficial Session Token Fragility:</strong> Has no documented public developer REST API. Community MCP implementations reverse-engineer user session cookies (<code>auth_token</code>), which break on UI logout or CSRF token refresh.</p>
+            <div class="unresolved-app">
+              <span>#92 Otter AI &bull; AI Media</span>
+              <span class="class-badge wrong">wrong in pass 1</span>
+            </div>
+            <p class="unresolved-desc">Pass 1 agent hallucinated an official public REST API. Human review confirmed no public developer program exists; community MCP tools reverse-engineer user session cookies (<code>auth_token</code>), which break on UI logout.</p>
           </div>
           <div class="unresolved-item">
-            <span class="unresolved-app">#91 NotebookLM &bull; AI Media</span>
-            <p class="unresolved-desc"><strong>Consumer vs Enterprise Separation:</strong> The consumer application has no public API. Programmatic integration requires an enterprise Google Cloud Discovery Engine license with GCP IAM credentials.</p>
+            <div class="unresolved-app">
+              <span>#91 NotebookLM &bull; AI Media</span>
+              <span class="class-badge uncertain">uncertain</span>
+            </div>
+            <p class="unresolved-desc">Sharp separation between the consumer app (zero public API) and Google Cloud Vertex AI Discovery Engine APIs. Pass 1 agent claimed standard API key access; human review caught enterprise GCP prerequisite.</p>
           </div>
           <div class="unresolved-item">
-            <span class="unresolved-app">#50 Fanbasis &bull; Ecommerce</span>
-            <p class="unresolved-desc"><strong>Zero Public Endpoints:</strong> The only platform among 100 with no developer portal, documentation, or public API. Agent toolkit integration requires browser-use automation.</p>
+            <div class="unresolved-app">
+              <span>#50 Fanbasis &bull; Ecommerce</span>
+              <span class="class-badge right-but-hard">right-but-hard</span>
+            </div>
+            <p class="unresolved-desc">Agent correctly classified this platform as Blocked (No API) with zero public developer endpoints. Integration is hard because toolkit creation strictly requires browser-use automation.</p>
           </div>
           <div class="unresolved-item">
-            <span class="unresolved-app">#90 PitchBook &bull; Fintech</span>
-            <p class="unresolved-desc"><strong>Cloudflare WAF Shield & Sales Gate:</strong> Shields developer portal behind Cloudflare Enterprise WAF (HTTP 403 on CLI requests); requires an enterprise sales agreement.</p>
+            <div class="unresolved-app">
+              <span>#90 PitchBook &bull; Fintech</span>
+              <span class="class-badge right-but-hard">right-but-hard</span>
+            </div>
+            <p class="unresolved-desc">Agent correctly classified platform as Gated / Partner Required. Verification was hard because developer docs are shielded by Cloudflare Enterprise WAF (HTTP 403 on CLI) and pricing is undisclosed institutional sales.</p>
           </div>
         </div>
       </div>

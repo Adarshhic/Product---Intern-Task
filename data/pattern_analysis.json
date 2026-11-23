@@ -16,6 +16,8 @@
     "free_self_serve_pct": 74.0,
     "paid_self_serve_count": 11,
     "paid_self_serve_pct": 11.0,
+    "total_self_serve_count": 85,
+    "total_self_serve_pct": 85.0,
     "total_gated_non_self_serve_count": 15,
     "total_gated_non_self_serve_pct": 15.0,
     "mcp_existing_count": 58,
@@ -24,13 +26,12 @@
     "composio_greenfield_pct": 42.0
   },
   "auth_distribution": {
+    "API Key / Bearer Token": 60,
     "OAuth 2.0 / Managed OAuth": 25,
-    "Direct API Key / Bearer Token": 58,
-    "Multi-Header / Dual-Key Token": 1,
     "HTTP Basic Auth (Key/Secret)": 5,
-    "Cryptographic Signatures (HMAC/JWT/SigV4)": 2,
-    "Other": 6,
-    "Local CLI / Process Execution": 3
+    "Local CLI / Process Execution": 3,
+    "Other Custom Auth (HMAC / SigV4 / Hash / Session Cookie)": 6,
+    "None (No Public API)": 1
   },
   "gating_distribution": {
     "Self-Serve (Free Tier/Trial)": 74,

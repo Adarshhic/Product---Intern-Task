@@ -794,7 +794,7 @@
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Feasible with Caveats",
     "main_blocker": "Production use requires Meta Business Manager verification and pre-approved message templates for business-initiated chats",
-    "evidence_url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+    "evidence_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Gated (Enterprise/Partner Sales)",
@@ -909,7 +909,7 @@
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Feasible with Caveats",
     "main_blocker": "Meta App Review and business verification required for ads_management and ads_read permissions in production",
-    "evidence_url": "https://developers.facebook.com/docs/marketing-apis",
+    "evidence_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
     "pass1_self_serve": "Self-Serve (Free Tier/Trial)",
@@ -1108,7 +1108,7 @@
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
     "main_blocker": "None",
-    "evidence_url": "https://developers.facebook.com/docs/threads",
+    "evidence_url": "https://developers.facebook.com/documentation/threads",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
     "pass1_self_serve": "Self-Serve (Free Tier/Trial)",
@@ -1320,7 +1320,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Commerce Advanced subscription plan required. Commerce APIs are locked behind the Commerce Advanced tier. API keys are generated in account settings."
+    "notes": "Commerce Advanced (or eligible Commerce/Plus/Advanced) plan required to generate API keys in Settings -> Advanced -> Developer API Keys."
   },
   {
     "id": 47,
@@ -1489,7 +1489,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Paid Pro or Business plan subscription required (pricing starts on Pro plan). API access is included or available as an add-on for Pro and Business plans."
+    "notes": "Paid Pro (or Core/Growth) subscription required; Pro plan includes 25,000 Data API credits/month, or standalone API plans starting at $179/mo."
   },
   {
     "id": 53,
@@ -1505,8 +1505,8 @@
     "api_surface": "REST (Broad v3 API, backlinks, refdomains, organic keywords, pages)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Feasible with Caveats",
-    "main_blocker": "Enterprise plan subscription required (pricing not publicly listed, requires sales/account upgrade)",
-    "evidence_url": "https://ahrefs.com/api/documentation",
+    "main_blocker": "Enterprise plan subscription required (pricing not publicly confirmed on developer portal, requires sales contact)",
+    "evidence_url": "https://docs.ahrefs.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Self-Serve (Free Tier/Trial)",
@@ -1517,7 +1517,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": true,
-    "notes": "API v3 access is restricted to Enterprise subscriptions or custom consumption unit add-ons."
+    "notes": "API v3 access is restricted to Enterprise subscriptions or custom consumption add-ons (pricing not publicly confirmed on developer portal)."
   },
   {
     "id": 54,
@@ -1714,7 +1714,7 @@
     "pass1_correct": true,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Public v0 API for searches, routines, and table queries using clay-api-key header; official Clay Agent Plugin available."
+    "notes": "Official developer documentation on Mintlify; provides public v0 API for searches, routines, and webhook triggers with clay-api-key header."
   },
   {
     "id": 61,
@@ -2412,7 +2412,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "No public self-serve registration. Strictly requires business verification, corporate contract, and IP whitelisting."
+    "notes": "Japanese payment gateway service requiring corporate contract, business entity registration, and IP whitelisting."
   },
   {
     "id": 85,
@@ -2429,7 +2429,7 @@
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Gated / Partner Required",
     "main_blocker": "Requires commercial onboarding and compliance clearance for merchant underwriting",
-    "evidence_url": "https://ipayx.ai/docs",
+    "evidence_url": "https://www.ipayx.ai/docs",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Self-Serve (Free Tier/Trial)",
@@ -2440,7 +2440,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Access requires partner agreement or enterprise merchant onboarding; no public sandbox self-registration."
+    "notes": "FINTRAC-registered FX forensic audit protocol; access requires institutional merchant underwriting."
   },
   {
     "id": 86,
@@ -2569,8 +2569,8 @@
     "api_surface": "REST (Companies, funding rounds, investors, valuations, deals, executives)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Gated / Partner Required",
-    "main_blocker": "Enterprise data licensing paywall (pricing not publicly confirmed, requires annual institutional contract)",
-    "evidence_url": "https://pitchbook.com/",
+    "main_blocker": "Enterprise data licensing paywall (pricing not publicly confirmed; requires annual institutional contract)",
+    "evidence_url": "https://pitchbook.com/products/data/api",
     "url_status_note": "HTTP 403 on automated curl due to Akamai bot shield; opens 200 in browser",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Self-Serve (Paid Plan Only)",
@@ -2581,7 +2581,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": true,
-    "notes": "Portal protected by Cloudflare Enterprise WAF (HTTP 403 on CLI, opens 200 in browser); requires sales outreach."
+    "notes": "Developer portal protected by Cloudflare Enterprise WAF (HTTP 403 on automated requests). Pricing not publicly confirmed; requires institutional sales agreement."
   },
   {
     "id": 91,
@@ -2694,7 +2694,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Free tier includes 30 API calls/month; keys generated at consensus.app/api-mcp; official MCP client support."
+    "notes": "Official REST API (/v1/search) and official remote MCP server (mcp.consensus.app/mcp) with x-api-key authentication."
   },
   {
     "id": 95,
@@ -2750,7 +2750,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": true,
-    "notes": "Paid Devin subscription required (Team or Enterprise tier; pricing subject to plan). Official Devin MCP server and REST session management API available."
+    "notes": "Paid Devin subscription required (self-serve Pro $20/mo, Teams, or Enterprise; pricing subject to plan). Official Devin MCP server available at mcp.devin.ai/mcp."
   },
   {
     "id": 97,
@@ -2778,7 +2778,7 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Pay-as-you-go prepaid credits; official REST API (api.higgsfield.ai) and CLI (@higgsfield/cli)."
+    "notes": "Pay-as-you-go prepaid USD balance; official REST API (api.higgsfield.ai) and CLI (@higgsfield/cli)."
   },
   {
     "id": 98,
@@ -2863,6 +2863,6 @@
     "pass1_correct": false,
     "pass2_correct": true,
     "in_sample_audit": false,
-    "notes": "Personal access token generated self-serve in integrations settings; requires Public-Api-Version header; official MCP server available."
+    "notes": "Official REST API (api.grain.com) and official MCP server (api.grain.com/_/mcp); personal access token generated self-serve in integrations settings."
   }
 ]

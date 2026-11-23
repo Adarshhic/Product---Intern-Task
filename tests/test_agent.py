@@ -52,10 +52,13 @@ class TestComposioResearchAgent(unittest.TestCase):
     def test_verification_metrics(self):
         report = run_verification(self.dataset_file, check_live_sample=False)
         self.assertEqual(report["total_apps_audited"], 100)
-        self.assertGreater(report["full_dataset_pass2_strict_pct"], report["full_dataset_pass1_strict_pct"])
+        self.assertEqual(report["full_dataset_pass1_strict_pct"], 23.0)
+        self.assertEqual(report["full_dataset_pass2_strict_pct"], 96.0)
         self.assertEqual(report["residual_unresolved_count"], 4)
-        self.assertEqual(len(report["random_sample"]), 20)
-        self.assertEqual(len(report["edge_case_sample"]), 13)
+        self.assertEqual(len(report["random_sample"]), 10)
+        self.assertEqual(len(report["edge_case_sample"]), 10)
+        self.assertEqual(len(report["audit_sample_20"]), 20)
+        self.assertEqual(len(report["hard_cases"]), 4)
 
     def test_pattern_analysis(self):
         analysis = analyze_patterns(self.dataset_file)
@@ -67,6 +70,7 @@ class TestComposioResearchAgent(unittest.TestCase):
         self.assertEqual(metrics["blocked_no_api_count"], 1)
         self.assertEqual(metrics["free_self_serve_count"], 74)
         self.assertEqual(metrics["paid_self_serve_count"], 11)
+        self.assertEqual(metrics["total_self_serve_count"], 85)
         self.assertEqual(metrics["total_gated_non_self_serve_count"], 15)
         self.assertEqual(metrics["composio_greenfield_count"], 42)
 
@@ -77,6 +81,7 @@ class TestComposioResearchAgent(unittest.TestCase):
         
         ready_pct_str = f"{int(metrics['ready_for_agent_today_pct'])}%"
         free_ss_pct_str = f"{int(metrics['free_self_serve_pct'])}%"
+        total_ss_pct_str = f"{int(metrics['total_self_serve_pct'])}%"
         gated_pct_str = f"{int(metrics['total_gated_non_self_serve_pct'])}%"
         greenfield_pct_str = f"{int(metrics['composio_greenfield_pct'])}%"
 
@@ -88,14 +93,26 @@ class TestComposioResearchAgent(unittest.TestCase):
         # Check README agreement
         self.assertIn(ready_pct_str, readme_text, f"README missing {ready_pct_str}")
         self.assertIn(free_ss_pct_str, readme_text, f"README missing {free_ss_pct_str}")
+        self.assertIn(total_ss_pct_str, readme_text, f"README missing {total_ss_pct_str}")
         self.assertIn(gated_pct_str, readme_text, f"README missing {gated_pct_str}")
         self.assertIn(greenfield_pct_str, readme_text, f"README missing {greenfield_pct_str}")
 
         # Check HTML agreement
         self.assertIn(ready_pct_str, html_text, f"index.html missing {ready_pct_str}")
         self.assertIn(free_ss_pct_str, html_text, f"index.html missing {free_ss_pct_str}")
+        self.assertIn(total_ss_pct_str, html_text, f"index.html missing {total_ss_pct_str}")
         self.assertIn(gated_pct_str, html_text, f"index.html missing {gated_pct_str}")
         self.assertIn(greenfield_pct_str, html_text, f"index.html missing {greenfield_pct_str}")
+
+    def test_audit_sample_table_consistency(self):
+        """Verifies that the 20-app sample table in HTML contains exactly 20 rows matching the verifier."""
+        report = run_verification(self.dataset_file, check_live_sample=False)
+        with open(self.html_file, "r", encoding="utf-8") as f:
+            html_text = f.read()
+
+        for s in report["audit_sample_20"]:
+            self.assertIn(s["name"], html_text, f"Audit sample app {s['name']} missing from HTML table")
+            self.assertIn(s["sample_type"], html_text, f"Sample type {s['sample_type']} for {s['name']} missing from HTML")
 
 if __name__ == "__main__":
     unittest.main()

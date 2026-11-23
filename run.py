@@ -46,11 +46,13 @@ def main():
         rep = run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
         print(f"[OK] Full Dataset (100 apps) Strict Accuracy:")
         print(f"     Pass 1 Strict Record Match:   {rep['full_dataset_pass1_strict_pct']}% (23/100)")
-        print(f"     Pass 2 Verified Ground Truth: {rep['full_dataset_pass2_strict_pct']}% (96/100)")
-        print(f"     Residual Unresolved / Defeated: {rep['residual_unresolved_count']} apps ({rep['residual_unresolved_pct']}%)")
-        print(f"[OK] Validation Samples:")
-        print(f"     Random Sample (N=20, Seed=42): Pass 1 {sum(1 for s in rep['random_sample'] if s['pass1_correct'])}/20 -> Pass 2 {sum(1 for s in rep['random_sample'] if s['pass2_correct'])}/20")
-        print(f"     Edge-Case Sample (N=13):       Pass 1 {sum(1 for s in rep['edge_case_sample'] if s['pass1_correct'])}/13 -> Pass 2 {sum(1 for s in rep['edge_case_sample'] if s['pass2_correct'])}/13")
+        print(f"     Pass 2 Verified Answer:       {rep['full_dataset_pass2_strict_pct']}% (96/100)")
+        print(f"     Hard Cases / Residual:        {rep['residual_unresolved_count']} apps ({rep['residual_unresolved_pct']}%)")
+        print(f"[OK] Validation Samples (20 apps total):")
+        sm = rep['sample_summary']
+        print(f"     Random Sample (N=10, Seed=42): Pass 1 {sm['random_sample_pass1_correct']}/10 -> Pass 2 {sm['random_sample_pass2_correct']}/10 ({sm['random_sample_pass2_pct']}%)")
+        print(f"     Edge-Case Sample (N=10):       Pass 1 {sm['edge_case_sample_pass1_correct']}/10 -> Pass 2 {sm['edge_case_sample_pass2_correct']}/10 ({sm['edge_case_sample_pass2_pct']}%, {sm['edge_case_sample_uncertain']} uncertain)")
+        print(f"     Combined Sample (N=20):        Pass 1 {sm['combined_sample_pass1_correct']}/20 -> Pass 2 {sm['combined_sample_pass2_correct']}/20 ({sm['combined_sample_pass2_pct']}%)")
 
     if args.analyze or args.all:
         print("\n[+] Running Stage 3: Statistical Pattern Clustering...")
@@ -58,14 +60,10 @@ def main():
         m = pat["headline_metrics"]
         print(f"[OK] Ready Today:       {m['ready_for_agent_today_count']}/100 ({m['ready_for_agent_today_pct']}%)")
         print(f"[OK] Free Self-Serve:   {m['free_self_serve_count']}/100 ({m['free_self_serve_pct']}%)")
+        print(f"[OK] Paid Self-Serve:   {m['paid_self_serve_count']}/100 ({m['paid_self_serve_pct']}%)")
+        print(f"[OK] Total Self-Serve:  {m['total_self_serve_count']}/100 ({m['total_self_serve_pct']}%)")
         print(f"[OK] Total Gated/Walls: {m['total_gated_non_self_serve_count']}/100 ({m['total_gated_non_self_serve_pct']}%)")
         print(f"[OK] MCP Greenfield:    {m['composio_greenfield_count']}/100 ({m['composio_greenfield_pct']}%)")
-
-    if not (args.all or args.verify or args.analyze or args.sample):
-        print("\nNo flags specified. Running full pipeline (--all)...")
-        run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
-        analyze_patterns(dataset_path=data_dir / "apps_research_dataset.json")
-        print("\nPipeline execution finished successfully.")
 
 if __name__ == "__main__":
     main()

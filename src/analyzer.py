@@ -20,27 +20,31 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
 
     total = len(data)
 
-    # 1. Primary Auth Distribution (Coarse Categories)
-    auth_counts = Counter()
+    # 1. Primary Auth Distribution (Mutually Exclusive Buckets summing to 100)
+    auth_counts = {
+        "API Key / Bearer Token": 0,
+        "OAuth 2.0 / Managed OAuth": 0,
+        "HTTP Basic Auth (Key/Secret)": 0,
+        "Local CLI / Process Execution": 0,
+        "Other Custom Auth (HMAC / SigV4 / Hash / Session Cookie)": 0,
+        "None (No Public API)": 0
+    }
+
     for a in data:
-        auth_type = a.get("primary_auth", "")
-        if "OAuth" in auth_type:
+        pa = a.get("primary_auth", "")
+        bv = a.get("buildability_verdict", "")
+        if bv == "Blocked (No API)" or pa == "None (No Public API)":
+            auth_counts["None (No Public API)"] += 1
+        elif "OAuth" in pa:
             auth_counts["OAuth 2.0 / Managed OAuth"] += 1
-        elif "API Key" in auth_type or "Token" in auth_type:
-            if "Basic" in auth_type:
-                auth_counts["HTTP Basic Auth (Key/Secret)"] += 1
-            elif "HMAC" in auth_type or "JWT" in auth_type or "SigV4" in auth_type:
-                auth_counts["Cryptographic Signatures (HMAC/JWT/SigV4)"] += 1
-            elif "Header" in auth_type or "Dual" in auth_type or "Account ID" in auth_type:
-                auth_counts["Multi-Header / Dual-Key Token"] += 1
-            else:
-                auth_counts["Direct API Key / Bearer Token"] += 1
-        elif "Basic Auth" in auth_type:
+        elif "Basic" in pa:
             auth_counts["HTTP Basic Auth (Key/Secret)"] += 1
-        elif "CLI" in auth_type or "None" in auth_type:
+        elif "CLI" in pa or "None (Open-Source CLI)" in pa:
             auth_counts["Local CLI / Process Execution"] += 1
+        elif any(k in pa for k in ["API Key", "Bearer", "Token", "Personal Access Token"]) and not any(k in pa for k in ["SigV4", "Basic", "Merchant", "Session"]):
+            auth_counts["API Key / Bearer Token"] += 1
         else:
-            auth_counts["Other"] += 1
+            auth_counts["Other Custom Auth (HMAC / SigV4 / Hash / Session Cookie)"] += 1
 
     # 2. Self-Serve vs Gated Breakdown
     gating_counts = Counter(a["self_serve_status"] for a in data)
@@ -75,13 +79,7 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
             "readiness_rate": round((ready_today / cat_total) * 100, 1)
         }
 
-    # 6. Strategic Categorization
-    easy_wins = [a for a in data if a["buildability_verdict"] == "Ready Today"]
-    caveated_apps = [a for a in data if a["buildability_verdict"] == "Feasible with Caveats"]
-    gated_apps = [a for a in data if a["buildability_verdict"] == "Gated / Partner Required"]
-    blocked_apps = [a for a in data if a["buildability_verdict"] == "Blocked (No API)"]
-
-    # 7. Common Blockers Ranking (computed dynamically)
+    # 6. Common Blockers Ranking
     sales_apps = [a["name"] for a in data if a["self_serve_status"] == "Gated (Enterprise/Partner Sales)"]
     review_apps = [a["name"] for a in data if a["self_serve_status"] == "Gated (Admin/Approval Required)"]
     paid_apps = [a["name"] for a in data if a["self_serve_status"] == "Self-Serve (Paid Plan Only)"]
@@ -114,6 +112,8 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
             "free_self_serve_pct": round((gating_counts["Self-Serve (Free Tier/Trial)"] / total) * 100, 1),
             "paid_self_serve_count": gating_counts["Self-Serve (Paid Plan Only)"],
             "paid_self_serve_pct": round((gating_counts["Self-Serve (Paid Plan Only)"] / total) * 100, 1),
+            "total_self_serve_count": gating_counts["Self-Serve (Free Tier/Trial)"] + gating_counts["Self-Serve (Paid Plan Only)"],
+            "total_self_serve_pct": round(((gating_counts["Self-Serve (Free Tier/Trial)"] + gating_counts["Self-Serve (Paid Plan Only)"]) / total) * 100, 1),
             "total_gated_non_self_serve_count": len(sales_apps) + len(review_apps) + len(no_api_apps),
             "total_gated_non_self_serve_pct": round(((len(sales_apps) + len(review_apps) + len(no_api_apps)) / total) * 100, 1),
             "mcp_existing_count": mcp_existing,
@@ -121,7 +121,7 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
             "composio_greenfield_count": mcp_greenfield,
             "composio_greenfield_pct": round((mcp_greenfield / total) * 100, 1)
         },
-        "auth_distribution": dict(auth_counts),
+        "auth_distribution": auth_counts,
         "gating_distribution": dict(gating_counts),
         "verdict_distribution": dict(verdict_counts),
         "mcp_distribution": {
