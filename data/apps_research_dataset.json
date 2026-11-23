@@ -15,7 +15,7 @@
     "api_surface": "REST & GraphQL (Extensive, 1000+ endpoints, Composite, Bulk & Streaming APIs)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Complex permission sets & SOQL knowledge required for deep agents)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
     "url_status_note": "HTTP 403 on automated curl due to Akamai bot protection; opens 200 in browser",
     "pass1_auth": "OAuth2",
@@ -26,7 +26,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Free Developer Edition org provides instant REST/SOQL API access. Deep integrations require proper Connected App OAuth scopes."
   },
   {
     "id": 2,
@@ -43,7 +44,7 @@
     "api_surface": "REST (Broad, CRM objects, marketing, deals, webhooks, search)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (API key deprecated in favor of Private App Tokens)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.hubspot.com/docs/api/overview",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -54,7 +55,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "API key deprecated in favor of Private App Tokens"
   },
   {
     "id": 3,
@@ -71,7 +73,7 @@
     "api_surface": "REST (Broad, deals, persons, organizations, leads, activities)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Direct personal API key in settings or OAuth2 app registration)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.pipedrive.com/docs/api/v1",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -82,7 +84,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Direct personal API key in settings or OAuth2 app registration"
   },
   {
     "id": 4,
@@ -99,7 +102,7 @@
     "api_surface": "REST (Modern, OpenAPI 3.0 spec, custom objects, records, attributes)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Clean OpenAPI spec, high developer ergonomics)",
+    "main_blocker": "None",
     "evidence_url": "https://attio.com/docs",
     "url_status_note": "HTTP 200 OK (redirects to docs.attio.com/docs/overview)",
     "pass1_auth": "API Key",
@@ -110,7 +113,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Clean OpenAPI spec, high developer ergonomics"
   },
   {
     "id": 5,
@@ -128,7 +132,7 @@
     "api_surface": "REST & GraphQL (Full CRUD on all standard & custom CRM objects)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Ideal agent playground with local Docker instance support)",
+    "main_blocker": "None",
     "evidence_url": "https://twenty.com/developers",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -139,7 +143,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Ideal agent playground with local Docker instance support"
   },
   {
     "id": 6,
@@ -155,7 +160,7 @@
     "api_surface": "REST (Broad, items, apps, workspaces, webhooks, batch operations)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Legacy rate limits and aging developer portal)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.podio.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -166,7 +171,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Legacy rate limits and aging developer portal"
   },
   {
     "id": 7,
@@ -182,7 +188,7 @@
     "api_surface": "REST (Broad v2/v3/v6 APIs, records, blueprints, COQL query language)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Multi-region data centers (.com, .eu, .in) require regional domain handling in agent tool calls",
+    "main_blocker": "None",
     "evidence_url": "https://www.zoho.com/crm/developer/docs/api/v6/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -193,7 +199,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Multi-region data centers (.com, .eu, .in) require regional domain handling in agent tool calls. Free edition (up to 3 users) with API access via Zoho Developer Console."
   },
   {
     "id": 8,
@@ -210,7 +217,7 @@
     "api_surface": "REST (Comprehensive, leads, contacts, activities, calls, emails, sequences)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Extremely developer friendly with HTTP Basic Auth passing API key as username)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.close.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -221,7 +228,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Extremely developer friendly with HTTP Basic Auth passing API key as username"
   },
   {
     "id": 9,
@@ -238,7 +246,7 @@
     "api_surface": "REST (Moderate to Broad, leads, companies, people, opportunities, activities)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Requires X-PW-AccessToken and X-PW-UserEmail headers simultaneously)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.copper.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -249,7 +257,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires X-PW-AccessToken and X-PW-UserEmail headers simultaneously"
   },
   {
     "id": 10,
@@ -276,7 +285,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "No self-serve developer tier. API access strictly requires paid institutional enterprise contract."
   },
   {
     "id": 11,
@@ -294,7 +304,7 @@
     "api_surface": "REST (Extensive, tickets, users, macros, triggers, help center, Sunshine objects)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Subdomain parameter required per tenant: {subdomain}.zendesk.com)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.zendesk.com/api-reference/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -305,7 +315,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Subdomain parameter required per tenant: {subdomain}.zendesk.com"
   },
   {
     "id": 12,
@@ -322,7 +333,7 @@
     "api_surface": "REST (Broad, conversations, contacts, articles, tickets, admin events)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Developer workspace grants immediate token without paid seat)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Bearer Token, OAuth2",
@@ -333,7 +344,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Developer workspace grants immediate token without paid seat"
   },
   {
     "id": 13,
@@ -350,7 +362,7 @@
     "api_surface": "REST (Broad, tickets, contacts, companies, conversations, solutions)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Freshdesk free tier provides unrestricted REST API access)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.freshdesk.com/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -361,7 +373,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Freshdesk free tier provides unrestricted REST API access"
   },
   {
     "id": 14,
@@ -378,7 +391,7 @@
     "api_surface": "REST (Broad, conversations, messages, channels, tags, teamboxes)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Trial duration is short (7 days); requires business email to register trial",
+    "main_blocker": "None",
     "evidence_url": "https://dev.frontapp.com/reference/introduction",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -389,7 +402,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Trial duration is short (7 days); requires business email to register trial. 7-day trial available; API tokens are generated in company settings (Growth or Scale tier required for full webhooks)."
   },
   {
     "id": 15,
@@ -416,7 +430,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Self-serve signup not available; requires demo booking or sales onboarding to obtain workspace."
   },
   {
     "id": 16,
@@ -432,7 +447,7 @@
     "api_surface": "REST (Broad v3 API, tickets, chats, calls, customers, departments)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (v3 API key authentication works directly out of the box)",
+    "main_blocker": "None",
     "evidence_url": "https://support.liveagent.com/061754-LiveAgent-API-v3",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -443,7 +458,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "v3 API key authentication works directly out of the box"
   },
   {
     "id": 17,
@@ -459,7 +475,7 @@
     "api_surface": "GraphQL API (Comprehensive, threads, customers, events, cards, timelines)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Pure GraphQL API; requires GraphQL query payload formatting in agent tool calls)",
+    "main_blocker": "None",
     "evidence_url": "https://www.plain.com/docs/api-reference",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -470,7 +486,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Pure GraphQL API; requires GraphQL query payload formatting in agent tool calls"
   },
   {
     "id": 18,
@@ -486,7 +503,7 @@
     "api_surface": "REST (Broad Mailbox API 2.0, conversations, mailboxes, customers, tags)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Client credentials flow grants instant server-to-server token without user redirects)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.helpscout.com/mailbox-api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -497,7 +514,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Client credentials flow grants instant server-to-server token without user redirects"
   },
   {
     "id": 19,
@@ -514,7 +532,7 @@
     "api_surface": "REST (Broad, tickets, customers, messages, satisfaction surveys, macros)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Requires email and API key passed as HTTP Basic Authorization)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.gorgias.com/reference/introduction",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -525,7 +543,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires email and API key passed as HTTP Basic Authorization"
   },
   {
     "id": 20,
@@ -552,7 +571,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "No public self-serve registration. High-ticket enterprise contract required for tenant deployment."
   },
   {
     "id": 21,
@@ -570,7 +590,7 @@
     "api_surface": "REST (Extensive Web API, 200+ methods, Events API, Socket Mode, Block Kit)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Socket Mode allows building agent tools without hosting public webhook URLs)",
+    "main_blocker": "None",
     "evidence_url": "https://api.slack.com/methods",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2, Bot Token",
@@ -581,7 +601,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Socket Mode allows building agent tools without hosting public webhook URLs"
   },
   {
     "id": 22,
@@ -598,7 +619,7 @@
     "api_surface": "REST (Massive, SMS, voice, verify, conversations, serverless functions)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Regulatory compliance (A2P 10DLC campaign registration required for high-volume SMS in US)",
+    "main_blocker": "None",
     "evidence_url": "https://www.twilio.com/docs/usage/api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -609,7 +630,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Regulatory compliance (A2P 10DLC campaign registration required for high-volume SMS in US). Free trial with trial phone number and $15 credit upon email/phone verification."
   },
   {
     "id": 23,
@@ -626,7 +648,7 @@
     "api_surface": "REST (Broad, channels, messages, bots, schedulers, slash commands)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Regional data center endpoint variation (.com, .eu, .in)",
+    "main_blocker": "None",
     "evidence_url": "https://www.zoho.com/cliq/help/restapi/v2/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -637,7 +659,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Regional data center endpoint variation (.com, .eu, .in). Free plan (up to 100 users) provides instant bot creation and developer console access."
   },
   {
     "id": 24,
@@ -655,7 +678,7 @@
     "api_surface": "REST (Extensive, IM, base/database, calendar, docs, approval flows)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Token lifecycle requires exchanging app_id/app_secret for temporary 2-hour tenant_access_token",
+    "main_blocker": "None",
     "evidence_url": "https://open.larksuite.com/document/home/index",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -666,7 +689,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Token lifecycle requires exchanging app_id/app_secret for temporary 2-hour tenant_access_token. Free plan (up to 50 users); instant custom bot app creation on Lark Open Platform."
   },
   {
     "id": 25,
@@ -683,7 +707,7 @@
     "api_surface": "REST (Moderate, channels, messages, users, webhooks)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Straightforward Bearer token authentication)",
+    "main_blocker": "None",
     "evidence_url": "https://pumble.com/help/category/integrations/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -694,7 +718,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Straightforward Bearer token authentication"
   },
   {
     "id": 26,
@@ -711,7 +736,7 @@
     "api_surface": "REST & Gateway WebSocket (Extensive, channels, messages, slash commands, voice, reactions)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Privileged Gateway Intents (Message Content) must be toggled on manually in developer portal",
+    "main_blocker": "None",
     "evidence_url": "https://discord.com/developers/docs/reference",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Bot Token, OAuth2",
@@ -722,7 +747,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Privileged Gateway Intents (Message Content) must be toggled on manually in developer portal. 100% free developer portal with instant bot token creation and test server invitation."
   },
   {
     "id": 27,
@@ -738,7 +764,7 @@
     "api_surface": "REST (Broad Bot API, messages, media, keyboards, webhooks, long polling)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Uniquely seamless onboarding; fastest time-to-first-call of any messaging app)",
+    "main_blocker": "None",
     "evidence_url": "https://core.telegram.org/bots/api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Bot Token",
@@ -749,7 +775,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Uniquely seamless onboarding; fastest time-to-first-call of any messaging app"
   },
   {
     "id": 28,
@@ -777,7 +804,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Free Cloud API test environment on Meta for Developers with test phone number and 1,000 free conversations/month."
   },
   {
     "id": 29,
@@ -794,7 +822,7 @@
     "api_surface": "REST (Broad, calls, users, numbers, contacts, webhooks, tags)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Basic Auth header with api_id:api_token)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.aircall.io/api-references/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -805,7 +833,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Basic Auth header with api_id:api_token"
   },
   {
     "id": 30,
@@ -822,7 +851,7 @@
     "api_surface": "REST (Massive, SMS, voice, messages, verify, video, dispatch)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Voice and Messages APIs use private key RSA JWTs rather than basic API keys",
+    "main_blocker": "None",
     "evidence_url": "https://developer.vonage.com/en/api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -833,7 +862,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Voice and Messages APIs use private key RSA JWTs rather than basic API keys. Free trial with \u20ac2 free credit upon signup; instant API Key and secret on dashboard."
   },
   {
     "id": 31,
@@ -860,7 +890,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Test Accounts available with Test Developer Token, but Production Developer Token requires compliance application and review."
   },
   {
     "id": 32,
@@ -888,7 +919,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Development mode allows self-serve testing on developer-owned ad accounts; Advanced Access requires Meta App Review."
   },
   {
     "id": 33,
@@ -915,7 +947,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Developer portal is self-serve, but 'Marketing Developer Platform' product access requires formal application."
   },
   {
     "id": 34,
@@ -932,7 +965,7 @@
     "api_surface": "REST (Broad API v2, contacts, funnels, calendars, opportunities, conversations)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "High entry subscription cost ($97/mo minimum) to host and test integrations",
+    "main_blocker": "None",
     "evidence_url": "https://highlevel.stoplight.io/docs/integrations/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -943,7 +976,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Paid Starter plan ($97/mo) or Marketplace Developer account required. API v2 access requires private app token or OAuth2 app registration via HighLevel Marketplace."
   },
   {
     "id": 35,
@@ -960,7 +994,7 @@
     "api_surface": "REST (Broad v3.0 API, lists, campaigns, templates, reports, members)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Requires extracting the datacenter prefix from the API key, e.g. -us19, for base URL routing)",
+    "main_blocker": "None",
     "evidence_url": "https://mailchimp.com/developer/marketing/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -971,7 +1005,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires extracting the datacenter prefix from the API key, e.g. -us19, for base URL routing"
   },
   {
     "id": 36,
@@ -988,7 +1023,7 @@
     "api_surface": "REST (Broad JSON:API compliant, profiles, segments, campaigns, events, flows)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Modern JSON:API spec requires strict revision headers, e.g., 'revision: 2024-10-15')",
+    "main_blocker": "None",
     "evidence_url": "https://developers.klaviyo.com/en/reference/api_overview",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -999,7 +1034,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Modern JSON:API spec requires strict revision headers, e.g., 'revision: 2024-10-15'"
   },
   {
     "id": 37,
@@ -1015,7 +1051,7 @@
     "api_surface": "REST (Moderate, contacts, tags, courses, purchases, sales funnels)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Direct header X-API-KEY authentication)",
+    "main_blocker": "None",
     "evidence_url": "https://systeme.io/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1026,7 +1062,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Direct header X-API-KEY authentication"
   },
   {
     "id": 38,
@@ -1042,7 +1079,7 @@
     "api_surface": "REST (Broad v5 API, pins, boards, ad accounts, analytics, catalogs)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Standard access requires app submission to publish pins on behalf of external users",
+    "main_blocker": "None",
     "evidence_url": "https://developers.pinterest.com/docs/api/v5/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -1053,7 +1090,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Standard access requires app submission to publish pins on behalf of external users. Free developer account with trial/sandbox access tokens generated directly in Pinterest Developer Portal."
   },
   {
     "id": 39,
@@ -1069,7 +1107,7 @@
     "api_surface": "REST (Moderate, publish posts, reply management, insights, user profile)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Two-step publishing flow: POST /threads to create media container, then POST /threads_publish to publish",
+    "main_blocker": "None",
     "evidence_url": "https://developers.facebook.com/docs/threads",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -1080,7 +1118,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Two-step publishing flow: POST /threads to create media container, then POST /threads_publish to publish. Free access via Meta for Developers; can generate 60-day user tokens for test users instantly."
   },
   {
     "id": 40,
@@ -1096,7 +1135,7 @@
     "api_surface": "REST (Broad v3 API, mail send, marketing campaigns, suppression lists, stats)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Sender identity verification (verified single sender email or domain DNS authentication required to send)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.sendgrid.com/api-reference",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1107,7 +1146,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Sender identity verification (verified single sender email or domain DNS authentication required to send). Free plan (100 emails/day forever) with instant API key creation under Settings -> API Keys."
   },
   {
     "id": 41,
@@ -1124,7 +1164,7 @@
     "api_surface": "GraphQL & REST (Extensive, Admin GraphQL API, Storefront API, Webhooks, Functions)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Shopify is aggressively deprecating REST Admin endpoints in favor of GraphQL Admin API",
+    "main_blocker": "None",
     "evidence_url": "https://shopify.dev/docs/api/admin-graphql",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key, OAuth2",
@@ -1135,7 +1175,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Shopify is aggressively deprecating REST Admin endpoints in favor of GraphQL Admin API. Free Shopify Partners account provides unlimited free development stores with instant API tokens."
   },
   {
     "id": 42,
@@ -1151,7 +1192,7 @@
     "api_surface": "REST (Broad, products, orders, customers, coupons, reports, webhooks)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires HTTPS for Basic Auth, or query parameters over HTTP",
+    "main_blocker": "None",
     "evidence_url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1162,7 +1203,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires HTTPS for Basic Auth, or query parameters over HTTP. 100% open source and self-hostable; generate keys instantly in WP Admin -> WooCommerce -> Advanced -> REST API."
   },
   {
     "id": 43,
@@ -1179,7 +1221,7 @@
     "api_surface": "REST & GraphQL (Extensive v3 API, catalog, orders, customers, carts, checkouts)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires store_hash in URL path: api.bigcommerce.com/stores/{store_hash}/v3/",
+    "main_blocker": "None",
     "evidence_url": "https://developer.bigcommerce.com/docs/rest-management",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1190,7 +1232,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires store_hash in URL path: api.bigcommerce.com/stores/{store_hash}/v3/. 15-day free trial or free BigCommerce Developer sandbox store with instant Store-Level API credentials."
   },
   {
     "id": 44,
@@ -1217,7 +1260,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "No public self-serve signup. Requires enterprise Salesforce contract or official registered partner status."
   },
   {
     "id": 45,
@@ -1235,7 +1279,7 @@
     "api_surface": "REST & GraphQL (Comprehensive, catalog, checkout, customers, carts, inventory)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Self-hosting complexity for local tests, or legacy OAuth 1.0a token dance on older versions",
+    "main_blocker": "None",
     "evidence_url": "https://developer.adobe.com/commerce/webapi/get-started/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -1246,7 +1290,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Self-hosting complexity for local tests, or legacy OAuth 1.0a token dance on older versions. Magento Open Source is 100% free to download and run locally via Docker with immediate REST/GraphQL access."
   },
   {
     "id": 46,
@@ -1263,7 +1308,7 @@
     "api_surface": "REST (Moderate, orders, inventory, products, profiles, transactions, webhooks)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "API key generation is locked behind Commerce Advanced subscription tier",
+    "main_blocker": "None",
     "evidence_url": "https://developers.squarespace.com/commerce-apis/overview",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1274,7 +1319,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Commerce Advanced subscription plan required. Commerce APIs are locked behind the Commerce Advanced tier. API keys are generated in account settings."
   },
   {
     "id": 47,
@@ -1290,7 +1336,7 @@
     "api_surface": "REST (Broad, store, products, orders, customers, categories, storage)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Developer account grants test store and instant secret tokens)",
+    "main_blocker": "None",
     "evidence_url": "https://api-docs.ecwid.com/reference/overview",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1301,7 +1347,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Developer account grants test store and instant secret tokens"
   },
   {
     "id": 48,
@@ -1318,7 +1365,7 @@
     "api_surface": "REST (Moderate, products, sales, subscribers, custom fields, licenses)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Extremely straightforward personal access token passed in Authorization header or query param)",
+    "main_blocker": "None",
     "evidence_url": "https://gumroad.com/api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Access Token, OAuth2",
@@ -1329,7 +1376,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Extremely straightforward personal access token passed in Authorization header or query param"
   },
   {
     "id": 49,
@@ -1356,7 +1404,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Requires Amazon Professional Selling account ($39.99/mo) and Developer Profile application approval with security vetting."
   },
   {
     "id": 50,
@@ -1372,7 +1421,7 @@
     "api_surface": "No Public API (Internal web app endpoints only)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Blocked (No API)",
-    "main_blocker": "No documented public REST or GraphQL API exists; integrations require browser automation or unofficial reverse engineering",
+    "main_blocker": "No public developer portal or API documentation exists; web UI only",
     "evidence_url": "https://fanbasis.com",
     "url_status_note": "HTTP 200 OK (Consumer platform only; no /api or /docs exists)",
     "pass1_auth": "API Key",
@@ -1383,7 +1432,8 @@
     "pass2_verdict": "Blocked (No API)",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Defeated: Only app in the 100 with zero developer endpoints; requires browser-use automation."
   },
   {
     "id": 51,
@@ -1399,7 +1449,7 @@
     "api_surface": "REST (Massive, SERP, keywords data, backlinks, business data, app data)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Asynchronous task POST/GET architecture for heavy scraping jobs)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.dataforseo.com/v3/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Basic Auth",
@@ -1410,7 +1460,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Asynchronous task POST/GET architecture for heavy scraping jobs"
   },
   {
     "id": 52,
@@ -1426,7 +1477,7 @@
     "api_surface": "REST (Broad, ranking, keywords, backlinks, audit, competitor analysis)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "API access requires paid Pro or Business plan subscription",
+    "main_blocker": "None",
     "evidence_url": "https://seranking.com/api.html",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1437,7 +1488,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Paid Pro or Business plan subscription required (pricing starts on Pro plan). API access is included or available as an add-on for Pro and Business plans."
   },
   {
     "id": 53,
@@ -1453,7 +1505,7 @@
     "api_surface": "REST (Broad v3 API, backlinks, refdomains, organic keywords, pages)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Feasible with Caveats",
-    "main_blocker": "Very high financial paywall ($500+/month API add-on) and strict consumption unit budgeting",
+    "main_blocker": "Enterprise plan subscription required (pricing not publicly listed, requires sales/account upgrade)",
     "evidence_url": "https://ahrefs.com/api/documentation",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1464,7 +1516,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "API v3 access is restricted to Enterprise subscriptions or custom consumption unit add-ons."
   },
   {
     "id": 54,
@@ -1480,7 +1533,7 @@
     "api_surface": "REST (Moderate, triggers, runs, scrapers, data export)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Direct Bearer token with simple JSON payload)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.mrscraper.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1491,7 +1544,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Direct Bearer token with simple JSON payload"
   },
   {
     "id": 55,
@@ -1507,7 +1561,7 @@
     "api_surface": "REST (Extensive, run Actors, tasks, datasets, key-value stores, request queues)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (First-class agent ecosystem with dedicated official MCP server)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.apify.com/api/v2",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -1518,7 +1572,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "First-class agent ecosystem with dedicated official MCP server"
   },
   {
     "id": 56,
@@ -1534,7 +1589,7 @@
     "api_surface": "REST (Focused/High Utility: /scrape, /crawl, /map, /extract, /batch)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Built specifically for AI agent integration, OpenAPI spec provided)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.firecrawl.dev/api-reference/introduction",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1545,7 +1600,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Built specifically for AI agent integration, OpenAPI spec provided"
   },
   {
     "id": 57,
@@ -1562,7 +1618,7 @@
     "api_surface": "REST (Broad, scraping browser, web unlocker, datasets, SERP API, zone management)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires KYC verification or credit card validation before proxy zones can be activated",
+    "main_blocker": "None",
     "evidence_url": "https://docs.brightdata.com/api-reference",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1573,7 +1629,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires KYC verification or credit card validation before proxy zones can be activated. Free trial available with credit card; instant API token generation in control panel."
   },
   {
     "id": 58,
@@ -1589,7 +1646,7 @@
     "api_surface": "CLI / Library (No hosted REST API; executed via subprocess or Docker wrapper)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Not a hosted SaaS API; toolkit must execute local CLI subprocess or containerized tool runner",
+    "main_blocker": "None",
     "evidence_url": "https://github.com/sherlock-project/sherlock",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1600,7 +1657,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Not a hosted SaaS API; toolkit must execute local CLI subprocess or containerized tool runner. 100% free open-source GitHub tool. Run via python -m sherlock or Docker container without any credentials."
   },
   {
     "id": 59,
@@ -1627,7 +1685,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "No open self-serve registration. Requires enterprise demo booking and customized credit package."
   },
   {
     "id": 60,
@@ -1643,7 +1702,7 @@
     "api_surface": "REST (Modern public v0 API, search GTM data, run routines, webhook triggers)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Clay's API is primarily webhook and row injection focused; full visual workbook manipulation is web-based",
+    "main_blocker": "None",
     "evidence_url": "https://claydevelopers.mintlify.app/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1654,7 +1713,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Public v0 API for searches, routines, and table queries using clay-api-key header; official Clay Agent Plugin available."
   },
   {
     "id": 61,
@@ -1672,7 +1732,7 @@
     "api_surface": "REST & GraphQL (Massive, repos, issues, pull requests, actions, gists, users)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Gold standard API with official Model Context Protocol server published by GitHub)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.github.com/en/rest",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "PAT, OAuth2",
@@ -1683,7 +1743,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Gold standard API with official Model Context Protocol server published by GitHub"
   },
   {
     "id": 62,
@@ -1700,7 +1761,7 @@
     "api_surface": "REST (Broad, deployments, projects, domains, env vars, edge config, logs)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Team endpoints require teamId query param in addition to bearer token)",
+    "main_blocker": "None",
     "evidence_url": "https://vercel.com/docs/rest-api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Bearer Token",
@@ -1711,7 +1772,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Team endpoints require teamId query param in addition to bearer token"
   },
   {
     "id": 63,
@@ -1728,7 +1790,7 @@
     "api_surface": "REST (Broad OpenAPI 2.0 spec, sites, deploys, builds, DNS, forms, functions)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Clean OpenAPI spec enables automatic client SDK and agent tool generation)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.netlify.com/api/get-started/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Personal Access Token",
@@ -1739,7 +1801,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Clean OpenAPI spec enables automatic client SDK and agent tool generation"
   },
   {
     "id": 64,
@@ -1756,7 +1819,7 @@
     "api_surface": "REST (Massive, DNS, Workers, R2, D1, KV, security rules, tunnels, analytics)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Official Cloudflare Workers & Docs MCP server available; granular permission scopes)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.cloudflare.com/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -1767,7 +1830,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Official Cloudflare Workers & Docs MCP server available; granular permission scopes"
   },
   {
     "id": 65,
@@ -1784,7 +1848,7 @@
     "api_surface": "REST (PostgREST), GraphQL, Storage API, Management API",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (PostgREST exposes auto-generated REST endpoints for every database table)",
+    "main_blocker": "None",
     "evidence_url": "https://supabase.com/docs/reference/api/introduction",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1795,7 +1859,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "PostgREST exposes auto-generated REST endpoints for every database table"
   },
   {
     "id": 66,
@@ -1813,7 +1878,7 @@
     "api_surface": "REST (HTTP Query API) & Binary Bolt protocol (Comprehensive Cypher execution)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Official Neo4j MCP server provides Cypher execution tool for LLM agents)",
+    "main_blocker": "None",
     "evidence_url": "https://neo4j.com/docs/http-api/current/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Basic Auth",
@@ -1824,7 +1889,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Official Neo4j MCP server provides Cypher execution tool for LLM agents"
   },
   {
     "id": 67,
@@ -1842,7 +1908,7 @@
     "api_surface": "REST (Snowflake SQL API v2, submit SQL statements, poll status, retrieve result sets)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "SQL API requires JWT authentication signed with an RSA private key associated with a Snowflake user",
+    "main_blocker": "None",
     "evidence_url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1853,7 +1919,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "SQL API requires JWT authentication signed with an RSA private key associated with a Snowflake user. 30-day free trial with $400 free credit; instant access to SQL API."
   },
   {
     "id": 68,
@@ -1871,7 +1938,7 @@
     "api_surface": "REST (Atlas Admin API v2, Atlas Data API for CRUD operations, GraphQL)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Atlas Admin API requires HTTP Digest Authentication rather than standard Bearer tokens",
+    "main_blocker": "None",
     "evidence_url": "https://www.mongodb.com/docs/atlas/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key (Bearer)",
@@ -1882,7 +1949,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Atlas Admin API requires HTTP Digest Authentication rather than standard Bearer tokens. Permanent free M0 sandbox cluster; Programmatic API keys generated in Organization Access Manager."
   },
   {
     "id": 69,
@@ -1898,7 +1966,7 @@
     "api_surface": "REST (Massive v1 & v2 APIs, metrics, logs, traces, dashboards, monitors, incidents)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires both DD-API-KEY and DD-APPLICATION-KEY headers; multi-region base URLs (.com, .eu, us3, us5)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.datadoghq.com/api/latest/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1909,7 +1977,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires both DD-API-KEY and DD-APPLICATION-KEY headers; multi-region base URLs (.com, .eu, us3, us5). 14-day free trial gives instant generation of API and Application keys in Organization Settings."
   },
   {
     "id": 70,
@@ -1927,7 +1996,7 @@
     "api_surface": "REST (Broad, issues, projects, releases, events, alerts, teams)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Official Sentry MCP server published for debugging and issue triaging agents)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.sentry.io/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Auth Token (Bearer)",
@@ -1938,7 +2007,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Official Sentry MCP server published for debugging and issue triaging agents"
   },
   {
     "id": 71,
@@ -1955,7 +2025,7 @@
     "api_surface": "REST (Broad, databases, pages, blocks, users, search, comments)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Pages and databases must be explicitly shared with the internal integration before the agent can query them",
+    "main_blocker": "None",
     "evidence_url": "https://developers.notion.com/reference/intro",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Internal Token, OAuth2",
@@ -1966,7 +2036,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Pages and databases must be explicitly shared with the internal integration before the agent can query them. Free plan includes unlimited API calls; create internal integration at notion.so/my-integrations in 60s."
   },
   {
     "id": 72,
@@ -1983,7 +2054,7 @@
     "api_surface": "REST (Broad, records CRUD, schema inspection, webhooks, bases, comments)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Legacy API keys were sunset Feb 2024; agents must use Personal Access Tokens with explicit scopes",
+    "main_blocker": "None",
     "evidence_url": "https://airtable.com/developers/web/api/introduction",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -1994,7 +2065,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Legacy API keys were sunset Feb 2024; agents must use Personal Access Tokens with explicit scopes. Free plan includes API access; generate granular PATs at airtable.com/create/tokens."
   },
   {
     "id": 73,
@@ -2011,7 +2083,7 @@
     "api_surface": "GraphQL (Comprehensive, issues, projects, cycles, roadmaps, teams, attachments)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Pure GraphQL schema; requires GraphQL client library or properly formatted POST queries",
+    "main_blocker": "None",
     "evidence_url": "https://developers.linear.app/docs/graphql/working-with-the-graphql-api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Personal API Key, OAuth2",
@@ -2022,7 +2094,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Pure GraphQL schema; requires GraphQL client library or properly formatted POST queries. Free plan (up to 250 active issues) with instant API key creation in Settings -> Security & Access."
   },
   {
     "id": 74,
@@ -2039,7 +2112,7 @@
     "api_surface": "REST (Massive Jira Cloud REST API v3, issues, sprints, boards, workflows, JQL search)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Atlassian Document Format (ADF) JSON structure required for rich-text issue descriptions and comments",
+    "main_blocker": "None",
     "evidence_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token, OAuth2",
@@ -2050,7 +2123,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Atlassian Document Format (ADF) JSON structure required for rich-text issue descriptions and comments. Free Cloud plan (up to 10 users); generate API token instantly at id.atlassian.com/manage-profile/security/api-tokens."
   },
   {
     "id": 75,
@@ -2067,7 +2141,7 @@
     "api_surface": "REST (Broad, tasks, projects, stories, workspaces, custom fields, portfolios)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Clean, predictable REST API with opt_fields query param for payload control)",
+    "main_blocker": "None",
     "evidence_url": "https://developers.asana.com/reference/rest-api-reference",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "PAT, OAuth2",
@@ -2078,7 +2152,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Clean, predictable REST API with opt_fields query param for payload control"
   },
   {
     "id": 76,
@@ -2095,7 +2170,7 @@
     "api_surface": "GraphQL (Comprehensive, boards, items, columns, groups, updates, tags)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Pure GraphQL API; requires GraphQL POST query syntax and complexity budget management",
+    "main_blocker": "None",
     "evidence_url": "https://developer.monday.com/api-reference/docs",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2106,7 +2181,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Pure GraphQL API; requires GraphQL POST query syntax and complexity budget management. 14-day trial or free plan (up to 2 seats); instant API token under Avatar -> Administration -> API."
   },
   {
     "id": 77,
@@ -2123,7 +2199,7 @@
     "api_surface": "REST (Broad API v2, tasks, spaces, folders, lists, checklists, time tracking)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (pk_... token passed in Authorization header or raw Authorization: pk_...)",
+    "main_blocker": "None",
     "evidence_url": "https://clickup.com/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -2134,7 +2210,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "pk_... token passed in Authorization header or raw Authorization: pk_..."
   },
   {
     "id": 78,
@@ -2150,7 +2227,7 @@
     "api_surface": "REST (Broad, docs, tables, rows, columns, formulas, controls, permissions)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Clean OpenAPI spec, high developer ergonomics for table and doc manipulation)",
+    "main_blocker": "None",
     "evidence_url": "https://coda.io/developers/apis/v1",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -2161,7 +2238,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Clean OpenAPI spec, high developer ergonomics for table and doc manipulation"
   },
   {
     "id": 79,
@@ -2178,7 +2256,7 @@
     "api_surface": "REST (Broad v2.0, sheets, rows, columns, reports, workspaces, webhooks)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Direct Bearer token with standard JSON payloads)",
+    "main_blocker": "None",
     "evidence_url": "https://smartsheet.redoc.ly/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Token",
@@ -2189,7 +2267,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Direct Bearer token with standard JSON payloads"
   },
   {
     "id": 80,
@@ -2206,7 +2285,7 @@
     "api_surface": "REST (Broad v2 API, time entries, clients, projects, tasks, invoices, expenses)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires two mandatory headers: Authorization: Bearer <token> AND Harvest-Account-ID: <account_id>",
+    "main_blocker": "None",
     "evidence_url": "https://help.getharvest.com/api-v2/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "PAT",
@@ -2217,7 +2296,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Requires two mandatory headers: Authorization: Bearer <token> AND Harvest-Account-ID: <account_id>. Free plan (1 seat, 2 projects) with instant Personal Access Token generation at id.getharvest.com/developers."
   },
   {
     "id": 81,
@@ -2235,7 +2315,7 @@
     "api_surface": "REST (Massive, payments, subscriptions, customers, invoices, checkout, refunds, connect)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Benchmark standard for developer ergonomics; official Stripe Agent Toolkit and MCP exist)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.stripe.com/api",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2246,7 +2326,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Benchmark standard for developer ergonomics; official Stripe Agent Toolkit and MCP exist"
   },
   {
     "id": 82,
@@ -2262,7 +2343,7 @@
     "api_surface": "REST (Broad, auth, transactions, balance, identity, transfer, investments, assets)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Production bank linking requires client-side Plaid Link SDK token exchange and compliance questionnaire",
+    "main_blocker": "None",
     "evidence_url": "https://plaid.com/docs/api/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "Client ID + Secret",
@@ -2273,7 +2354,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Production bank linking requires client-side Plaid Link SDK token exchange and compliance questionnaire. Free Sandbox environment with instant test credentials and mock institution testing data."
   },
   {
     "id": 83,
@@ -2290,7 +2372,7 @@
     "api_surface": "REST & WebSocket (Massive, market data, order execution, account status, streaming tickers)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires cryptographic HMAC-SHA256 signature calculated over timestamp and query parameters on private endpoints",
+    "main_blocker": "None",
     "evidence_url": "https://binance-docs.github.io/apidocs/spot/en/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2301,7 +2383,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires cryptographic HMAC-SHA256 signature calculated over timestamp and query parameters on private endpoints. Free Spot Testnet (testnet.binance.vision) provides instant test API keys without KYC."
   },
   {
     "id": 84,
@@ -2328,7 +2411,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "No public self-serve registration. Strictly requires business verification, corporate contract, and IP whitelisting."
   },
   {
     "id": 85,
@@ -2355,7 +2439,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Access requires partner agreement or enterprise merchant onboarding; no public sandbox self-registration."
   },
   {
     "id": 86,
@@ -2371,7 +2456,7 @@
     "api_surface": "REST (Broad, invoices, payments, customers, vendors, accounts, reports)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires realmId (companyId) in endpoint URI; strict OAuth2 refresh token expiration cycles (101 days / 24 hr access)",
+    "main_blocker": "None",
     "evidence_url": "https://developer.intuit.com/app/developer/qbo/docs/develop",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth 2.0",
@@ -2382,7 +2467,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires realmId (companyId) in endpoint URI; strict OAuth2 refresh token expiration cycles (101 days / 24 hr access). Free Intuit Developer account provides instant access to sandbox companies and OAuth2 credentials."
   },
   {
     "id": 87,
@@ -2398,7 +2484,7 @@
     "api_surface": "REST (Broad, invoices, bank transactions, contacts, bills, payroll, assets)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires xero-tenant-id header passed in every API call alongside Bearer token",
+    "main_blocker": "None",
     "evidence_url": "https://developer.xero.com/documentation/api/accounting/overview",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth 2.0",
@@ -2409,7 +2495,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires xero-tenant-id header passed in every API call alongside Bearer token. Free Xero developer account allows creating demo company and test app credentials in 2 minutes."
   },
   {
     "id": 88,
@@ -2437,7 +2524,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Developer documentation is public; API tokens are generated directly in Brex Dashboard for approved corporate accounts."
   },
   {
     "id": 89,
@@ -2464,7 +2552,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Developer portal is self-serve for existing Ramp business customers; Developer Console provides client credentials."
   },
   {
     "id": 90,
@@ -2480,7 +2569,7 @@
     "api_surface": "REST (Companies, funding rounds, investors, valuations, deals, executives)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Gated / Partner Required",
-    "main_blocker": "Extreme financial sales paywall ($25k+/yr institutional contract) and mandatory data licensing agreements",
+    "main_blocker": "Enterprise data licensing paywall (pricing not publicly confirmed, requires annual institutional contract)",
     "evidence_url": "https://pitchbook.com/",
     "url_status_note": "HTTP 403 on automated curl due to Akamai bot shield; opens 200 in browser",
     "pass1_auth": "API Key",
@@ -2491,7 +2580,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Portal protected by Cloudflare Enterprise WAF (HTTP 403 on CLI, opens 200 in browser); requires sales outreach."
   },
   {
     "id": 91,
@@ -2507,7 +2597,7 @@
     "api_surface": "Enterprise API / Vertex AI Extensions (No public standalone consumer REST API)",
     "mcp_status": "Community MCP Available (reverse-engineered / web automation)",
     "buildability_verdict": "Feasible with Caveats",
-    "main_blocker": "Consumer version lacks an official public open REST API; agents must use Google Cloud enterprise connectors or browser automation",
+    "main_blocker": "Consumer app lacks public REST API; programmatic access requires Google Cloud Gemini Notebook Enterprise and Vertex AI permissions",
     "evidence_url": "https://cloud.google.com/gemini",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2518,7 +2608,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": false,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Unresolved edge case: sharp separation between consumer notebooklm.google.com and enterprise Google Cloud Discovery Engine APIs."
   },
   {
     "id": 92,
@@ -2534,7 +2625,7 @@
     "api_surface": "Unofficial REST / Enterprise Webhooks (No open documented public REST API)",
     "mcp_status": "Community MCP Available (Unofficial session token wrapper)",
     "buildability_verdict": "Feasible with Caveats",
-    "main_blocker": "Lack of an official, documented public developer REST API; existing MCP servers rely on reverse-engineered user session cookies",
+    "main_blocker": "No official public developer REST API; existing MCP tools rely on unofficial reverse-engineered session cookies",
     "evidence_url": "https://help.otter.ai/",
     "url_status_note": "HTTP 403 on automated curl due to Cloudflare bot shield; opens 200 in browser",
     "pass1_auth": "API Key",
@@ -2545,7 +2636,8 @@
     "pass2_verdict": "Feasible with Caveats",
     "pass1_correct": false,
     "pass2_correct": false,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Unresolved edge case: platform lacks public developer program; session cookie auth has high maintenance fragility."
   },
   {
     "id": 93,
@@ -2561,7 +2653,7 @@
     "api_surface": "REST (Moderate, meetings, transcripts, summaries, action items, webhooks)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires Fathom Team Edition or paid subscription to unlock developer API keys",
+    "main_blocker": "None",
     "evidence_url": "https://fathom.video/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2572,7 +2664,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Requires Fathom Team Edition or paid subscription to unlock developer API keys. Fathom Team Edition / paid plan provides immediate API key access under Settings -> Integrations -> API Access."
   },
   {
     "id": 94,
@@ -2580,15 +2673,16 @@
     "category": "AI, Research and Media-native",
     "description": "AI-powered academic search engine delivering evidence-based answers synthesized from 200M+ research papers.",
     "auth_methods": [
-      "API Key (Enterprise Beta / Custom)"
+      "API Key (x-api-key Header)",
+      "OAuth2"
     ],
     "primary_auth": "API Key",
-    "self_serve_status": "Gated (Enterprise/Partner Sales)",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "self_serve_details": "Public API is currently in private beta / enterprise contact-sales; self-serve consumer subscriptions do not include API keys.",
-    "api_surface": "REST (Search, academic claims synthesis, paper metadata, citations)",
-    "mcp_status": "No MCP (Composio Opportunity)",
-    "buildability_verdict": "Gated / Partner Required",
-    "main_blocker": "API is in private beta requiring sales approval; OAuth2 requested by community but not yet public self-serve",
+    "api_surface": "REST & MCP (Search /v1/search, full-text retrieval, threads research agent)",
+    "mcp_status": "Official & Community MCP Available",
+    "buildability_verdict": "Ready Today",
+    "main_blocker": "None",
     "evidence_url": "https://consensus.app/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "OAuth2",
@@ -2599,7 +2693,8 @@
     "pass2_verdict": "Gated / Partner Required",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Free tier includes 30 API calls/month; keys generated at consensus.app/api-mcp; official MCP client support."
   },
   {
     "id": 95,
@@ -2615,7 +2710,7 @@
     "api_surface": "REST (High Utility, /parse, /extract, /async, /job status, webhooks)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Designed natively for LLM pipeline integration with direct Bearer token auth)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.reducto.ai/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2626,7 +2721,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Designed natively for LLM pipeline integration with direct Bearer token auth"
   },
   {
     "id": 96,
@@ -2642,7 +2738,7 @@
     "api_surface": "REST & Official MCP (Create sessions, send messages, inspect execution logs, retrieve snapshots)",
     "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires paid Devin account subscription ($500/mo minimum tier for API access)",
+    "main_blocker": "None",
     "evidence_url": "https://docs.devin.ai/mcp",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2653,7 +2749,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Paid Devin subscription required (Team or Enterprise tier; pricing subject to plan). Official Devin MCP server and REST session management API available."
   },
   {
     "id": 97,
@@ -2669,8 +2766,8 @@
     "api_surface": "CLI & REST (Video generation, camera prompts, job queue polling)",
     "mcp_status": "No MCP (Composio Opportunity)",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Requires paid generation compute credits; long-polling asynchronous job execution required for video rendering",
-    "evidence_url": "https://higgsfield.ai/",
+    "main_blocker": "None",
+    "evidence_url": "https://docs.higgsfield.ai/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
     "pass1_self_serve": "Self-Serve (Free Tier/Trial)",
@@ -2680,7 +2777,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Pay-as-you-go prepaid credits; official REST API (api.higgsfield.ai) and CLI (@higgsfield/cli)."
   },
   {
     "id": 98,
@@ -2696,7 +2794,7 @@
     "api_surface": "CLI / Library (Command line flags: -i input.mmd -o output.svg; no SaaS HTTP endpoint)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "Not a SaaS REST API; agent toolkit must invoke local Node.js / Puppeteer process to render diagrams",
+    "main_blocker": "None",
     "evidence_url": "https://github.com/mermaid-js/mermaid-cli",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2707,7 +2805,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": true
+    "in_sample_audit": true,
+    "notes": "Not a SaaS REST API; agent toolkit must invoke local Node.js / Puppeteer process to render diagrams. 100% free open-source npm package (@mermaid-js/mermaid-cli); run via npx mmdc without any registration."
   },
   {
     "id": 99,
@@ -2723,7 +2822,7 @@
     "api_surface": "REST (Focused/High Utility: /transcript, /subtitles, /languages, /metadata)",
     "mcp_status": "Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "None (Direct HTTP GET requests with video ID parameter and API key header)",
+    "main_blocker": "None",
     "evidence_url": "https://transcriptapi.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2734,7 +2833,8 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": true,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Direct HTTP GET requests with video ID parameter and API key header"
   },
   {
     "id": 100,
@@ -2742,16 +2842,16 @@
     "category": "AI, Research and Media-native",
     "description": "AI meeting recorder, clip creator, and conversation intelligence platform for sales and customer success teams.",
     "auth_methods": [
-      "API Key (Bearer Token)",
+      "Personal Access Token (Bearer)",
       "OAuth2"
     ],
-    "primary_auth": "API Key",
+    "primary_auth": "Personal Access Token",
     "self_serve_status": "Self-Serve (Paid Plan Only)",
     "self_serve_details": "Free plan is UI-only; API access and webhook integrations require the Business / Enterprise paid subscription.",
-    "api_surface": "REST (Moderate, recordings, highlights, transcripts, summaries, webhooks)",
-    "mcp_status": "No MCP (Composio Opportunity)",
+    "api_surface": "REST & Official MCP (Recordings, transcripts, summaries, action items, webhooks)",
+    "mcp_status": "Official & Community MCP Available",
     "buildability_verdict": "Ready Today",
-    "main_blocker": "API keys are restricted to paid Business plan workspaces",
+    "main_blocker": "None",
     "evidence_url": "https://grain.com/",
     "url_status_note": "HTTP 200 OK",
     "pass1_auth": "API Key",
@@ -2762,6 +2862,7 @@
     "pass2_verdict": "Ready Today",
     "pass1_correct": false,
     "pass2_correct": true,
-    "in_sample_audit": false
+    "in_sample_audit": false,
+    "notes": "Personal access token generated self-serve in integrations settings; requires Public-Api-Version header; official MCP server available."
   }
 ]

@@ -3,8 +3,9 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 
 async def main():
-    html_path = Path(r"C:\Users\HP\.gemini\antigravity\scratch\composio-research-agent\web\index.html").resolve()
-    screenshot_path = Path(r"C:\Users\HP\.gemini\antigravity\scratch\composio-research-agent\web\screenshot.png").resolve()
+    base_dir = Path(__file__).resolve().parent.parent
+    html_path = (base_dir / "web" / "index.html").resolve()
+    screenshot_path = (base_dir / "web" / "screenshot.png").resolve()
 
     async with async_playwright() as p:
         browser = await p.chromium.launch()

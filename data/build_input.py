@@ -123,7 +123,7 @@ apps = [
     {"id": 100, "name": "Grain", "category": "AI, Research and Media-native", "website_hint": "grain.com (meeting notes)"}
 ]
 
-out_path = Path(r"C:\Users\HP\.gemini\antigravity\scratch\composio-research-agent\data\apps_input.json")
+out_path = Path(__file__).resolve().parent / "apps_input.json"
 out_path.parent.mkdir(parents=True, exist_ok=True)
 with open(out_path, "w", encoding="utf-8") as f:
     json.dump(apps, f, indent=2)

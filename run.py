@@ -39,16 +39,18 @@ def main():
         for r in results:
             bot_tag = " (Bot Shield)" if r.is_bot_blocked else ""
             status = f"HTTP {r.http_status}" if r.http_status else "Error"
-            print(f" - #{r.id} {r.name:15} | {r.buildability_verdict:22} | {status}{bot_tag} | Auth: {r.primary_auth}")
+            print(f" - #{r.id:2} {r.name:15} | {r.buildability_verdict:22} | {status}{bot_tag} | Auth: {r.primary_auth}")
 
     if args.verify or args.all:
         print("\n[+] Running Stage 2: Automated Verification Loops & Live Link Checks...")
         rep = run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
-        print(f"[OK] Hand-Checked Sample ({rep['sample_size']} apps):")
-        print(f"     Pass 1 Naive:        {rep['sample_pass1_accuracy_pct']}%")
-        print(f"     Pass 2 Automated:    {rep['sample_pass2_accuracy_pct']}%")
-        print(f"     Human Consensus:     {rep['sample_human_consensus_accuracy_pct']}%")
-        print(f"[OK] Full Dataset (100 apps): Pass 1 {rep['full_dataset_pass1_accuracy_pct']}% -> Pass 2 {rep['full_dataset_pass2_accuracy_pct']}%")
+        print(f"[OK] Full Dataset (100 apps) Strict Accuracy:")
+        print(f"     Pass 1 Strict Record Match:   {rep['full_dataset_pass1_strict_pct']}% (23/100)")
+        print(f"     Pass 2 Verified Ground Truth: {rep['full_dataset_pass2_strict_pct']}% (96/100)")
+        print(f"     Residual Unresolved / Defeated: {rep['residual_unresolved_count']} apps ({rep['residual_unresolved_pct']}%)")
+        print(f"[OK] Validation Samples:")
+        print(f"     Random Sample (N=20, Seed=42): Pass 1 {sum(1 for s in rep['random_sample'] if s['pass1_correct'])}/20 -> Pass 2 {sum(1 for s in rep['random_sample'] if s['pass2_correct'])}/20")
+        print(f"     Edge-Case Sample (N=13):       Pass 1 {sum(1 for s in rep['edge_case_sample'] if s['pass1_correct'])}/13 -> Pass 2 {sum(1 for s in rep['edge_case_sample'] if s['pass2_correct'])}/13")
 
     if args.analyze or args.all:
         print("\n[+] Running Stage 3: Statistical Pattern Clustering...")

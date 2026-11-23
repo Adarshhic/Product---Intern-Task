@@ -1,6 +1,6 @@
 """
 Pattern Clustering and Statistical Analysis Engine for Composio Research
-Extracts macro trends, auth breakdowns, gating dynamics, and mathematically grounded metrics.
+Extracts macro trends, auth breakdowns, gating dynamics, and category-level patterns.
 """
 
 import json
@@ -23,7 +23,7 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
     # 1. Primary Auth Distribution (Coarse Categories)
     auth_counts = Counter()
     for a in data:
-        auth_type = a["primary_auth"]
+        auth_type = a.get("primary_auth", "")
         if "OAuth" in auth_type:
             auth_counts["OAuth 2.0 / Managed OAuth"] += 1
         elif "API Key" in auth_type or "Token" in auth_type:
@@ -38,7 +38,7 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
         elif "Basic Auth" in auth_type:
             auth_counts["HTTP Basic Auth (Key/Secret)"] += 1
         elif "CLI" in auth_type or "None" in auth_type:
-            auth_counts["Local CLI / Zero Auth / Internal"] += 1
+            auth_counts["Local CLI / Process Execution"] += 1
         else:
             auth_counts["Other"] += 1
 
@@ -81,13 +81,19 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
     gated_apps = [a for a in data if a["buildability_verdict"] == "Gated / Partner Required"]
     blocked_apps = [a for a in data if a["buildability_verdict"] == "Blocked (No API)"]
 
-    # 7. Common Blockers Ranking (Mathematically Aligned with Dataset)
+    # 7. Common Blockers Ranking (computed dynamically)
+    sales_apps = [a["name"] for a in data if a["self_serve_status"] == "Gated (Enterprise/Partner Sales)"]
+    review_apps = [a["name"] for a in data if a["self_serve_status"] == "Gated (Admin/Approval Required)"]
+    paid_apps = [a["name"] for a in data if a["self_serve_status"] == "Self-Serve (Paid Plan Only)"]
+    no_api_apps = [a["name"] for a in data if a["self_serve_status"] == "No Public API"]
+    cli_apps = [a["name"] for a in data if "CLI" in a.get("primary_auth", "")]
+
     blockers_list = [
-        {"blocker": "Enterprise Sales Wall / Institutional Contract Required", "count": 10, "apps": [a["name"] for a in data if a["self_serve_status"] == "Gated (Enterprise/Partner Sales)"]},
-        {"blocker": "Platform App Review / Developer Approval Gate", "count": 5, "apps": [a["name"] for a in data if a["self_serve_status"] == "Gated (Admin/Approval Required)"]},
-        {"blocker": "Paid Subscription Tier Required for API Key Generation", "count": 11, "apps": [a["name"] for a in data if a["self_serve_status"] == "Self-Serve (Paid Plan Only)"]},
-        {"blocker": "No Official Documented Public REST API (Browser or Internal)", "count": 1, "apps": ["fanbasis"]},
-        {"blocker": "Non-SaaS CLI / Subprocess Execution Needed", "count": 2, "apps": ["Sherlock", "Mermaid CLI"]}
+        {"blocker": "Enterprise Sales Wall / Institutional Contract Required", "count": len(sales_apps), "apps": sales_apps},
+        {"blocker": "Platform App Review / Developer Approval Gate", "count": len(review_apps), "apps": review_apps},
+        {"blocker": "Paid Subscription Tier Required for API Key Generation", "count": len(paid_apps), "apps": paid_apps},
+        {"blocker": "No Official Documented Public REST API", "count": len(no_api_apps), "apps": no_api_apps},
+        {"blocker": "Non-SaaS CLI / Local Process Execution Needed", "count": len(cli_apps), "apps": cli_apps}
     ]
 
     analysis_results = {
@@ -108,8 +114,8 @@ def analyze_patterns(dataset_path: Path = None) -> Dict[str, Any]:
             "free_self_serve_pct": round((gating_counts["Self-Serve (Free Tier/Trial)"] / total) * 100, 1),
             "paid_self_serve_count": gating_counts["Self-Serve (Paid Plan Only)"],
             "paid_self_serve_pct": round((gating_counts["Self-Serve (Paid Plan Only)"] / total) * 100, 1),
-            "total_gated_non_self_serve_count": gating_counts["Gated (Enterprise/Partner Sales)"] + gating_counts["Gated (Admin/Approval Required)"] + gating_counts["No Public API"],
-            "total_gated_non_self_serve_pct": round(((gating_counts["Gated (Enterprise/Partner Sales)"] + gating_counts["Gated (Admin/Approval Required)"] + gating_counts["No Public API"]) / total) * 100, 1),
+            "total_gated_non_self_serve_count": len(sales_apps) + len(review_apps) + len(no_api_apps),
+            "total_gated_non_self_serve_pct": round(((len(sales_apps) + len(review_apps) + len(no_api_apps)) / total) * 100, 1),
             "mcp_existing_count": mcp_existing,
             "mcp_existing_pct": round((mcp_existing / total) * 100, 1),
             "composio_greenfield_count": mcp_greenfield,

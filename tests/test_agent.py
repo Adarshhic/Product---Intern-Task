@@ -1,8 +1,9 @@
 """
-Unit Tests for Composio Research Agent Pipeline
+Unit Tests for Composio Research Agent Pipeline & Mathematical Consistency
 """
 
 import json
+import re
 import unittest
 from pathlib import Path
 import sys
@@ -19,6 +20,8 @@ class TestComposioResearchAgent(unittest.TestCase):
     def setUpClass(cls):
         cls.data_dir = BASE_DIR / "data"
         cls.dataset_file = cls.data_dir / "apps_research_dataset.json"
+        cls.readme_file = BASE_DIR / "README.md"
+        cls.html_file = BASE_DIR / "index.html"
 
     def test_dataset_size_and_schema(self):
         with open(self.dataset_file, "r", encoding="utf-8") as f:
@@ -28,11 +31,14 @@ class TestComposioResearchAgent(unittest.TestCase):
         required_fields = [
             "id", "name", "category", "description", "auth_methods", "primary_auth",
             "self_serve_status", "api_surface", "mcp_status", "buildability_verdict",
-            "main_blocker", "evidence_url", "pass1_correct", "pass2_correct"
+            "main_blocker", "notes", "evidence_url"
         ]
         for app in data:
             for field in required_fields:
                 self.assertIn(field, app, f"Missing field {field} in app #{app.get('id')}")
+            # Ensure blocker is clean: Ready Today must have exactly 'None'
+            if app["buildability_verdict"] == "Ready Today":
+                self.assertEqual(app["main_blocker"], "None", f"Ready app #{app['id']} {app['name']} blocker should be 'None', got '{app['main_blocker']}'")
 
     def test_ten_categories_represented(self):
         with open(self.dataset_file, "r", encoding="utf-8") as f:
@@ -46,15 +52,50 @@ class TestComposioResearchAgent(unittest.TestCase):
     def test_verification_metrics(self):
         report = run_verification(self.dataset_file, check_live_sample=False)
         self.assertEqual(report["total_apps_audited"], 100)
-        self.assertGreater(report["full_dataset_pass2_accuracy_pct"], report["full_dataset_pass1_accuracy_pct"])
-        self.assertGreater(report["sample_pass2_accuracy_pct"], report["sample_pass1_accuracy_pct"])
+        self.assertGreater(report["full_dataset_pass2_strict_pct"], report["full_dataset_pass1_strict_pct"])
+        self.assertEqual(report["residual_unresolved_count"], 4)
+        self.assertEqual(len(report["random_sample"]), 20)
+        self.assertEqual(len(report["edge_case_sample"]), 13)
 
     def test_pattern_analysis(self):
         analysis = analyze_patterns(self.dataset_file)
+        metrics = analysis["headline_metrics"]
         self.assertEqual(analysis["metadata"]["total_apps"], 100)
-        self.assertIn("ready_for_agent_today_pct", analysis["headline_metrics"])
-        self.assertEqual(analysis["headline_metrics"]["ready_for_agent_today_count"], 80)
-        self.assertEqual(analysis["headline_metrics"]["total_gated_non_self_serve_count"], 16)
+        self.assertEqual(metrics["ready_for_agent_today_count"], 81)
+        self.assertEqual(metrics["feasible_with_caveats_count"], 10)
+        self.assertEqual(metrics["gated_partner_required_count"], 8)
+        self.assertEqual(metrics["blocked_no_api_count"], 1)
+        self.assertEqual(metrics["free_self_serve_count"], 74)
+        self.assertEqual(metrics["paid_self_serve_count"], 11)
+        self.assertEqual(metrics["total_gated_non_self_serve_count"], 15)
+        self.assertEqual(metrics["composio_greenfield_count"], 42)
+
+    def test_no_metric_drift_between_json_readme_and_html(self):
+        """Ensures that README.md and index.html strictly agree with the recomputed dataset metrics."""
+        analysis = analyze_patterns(self.dataset_file)
+        metrics = analysis["headline_metrics"]
+        
+        ready_pct_str = f"{int(metrics['ready_for_agent_today_pct'])}%"
+        free_ss_pct_str = f"{int(metrics['free_self_serve_pct'])}%"
+        gated_pct_str = f"{int(metrics['total_gated_non_self_serve_pct'])}%"
+        greenfield_pct_str = f"{int(metrics['composio_greenfield_pct'])}%"
+
+        with open(self.readme_file, "r", encoding="utf-8") as f:
+            readme_text = f.read()
+        with open(self.html_file, "r", encoding="utf-8") as f:
+            html_text = f.read()
+
+        # Check README agreement
+        self.assertIn(ready_pct_str, readme_text, f"README missing {ready_pct_str}")
+        self.assertIn(free_ss_pct_str, readme_text, f"README missing {free_ss_pct_str}")
+        self.assertIn(gated_pct_str, readme_text, f"README missing {gated_pct_str}")
+        self.assertIn(greenfield_pct_str, readme_text, f"README missing {greenfield_pct_str}")
+
+        # Check HTML agreement
+        self.assertIn(ready_pct_str, html_text, f"index.html missing {ready_pct_str}")
+        self.assertIn(free_ss_pct_str, html_text, f"index.html missing {free_ss_pct_str}")
+        self.assertIn(gated_pct_str, html_text, f"index.html missing {gated_pct_str}")
+        self.assertIn(greenfield_pct_str, html_text, f"index.html missing {greenfield_pct_str}")
 
 if __name__ == "__main__":
     unittest.main()

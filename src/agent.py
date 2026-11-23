@@ -84,14 +84,14 @@ class ComposioAppResearchAgent:
 
     def tool_check_mcp_registry(self, app_name: str) -> str:
         """Tool Call: Checks Model Context Protocol community and official registries."""
-        official_mcp = {"GitHub", "Slack", "Cloudflare", "Neo4j", "Sentry", "Apify", "Firecrawl", "Devin"}
+        official_mcp = {"GitHub", "Slack", "Cloudflare", "Neo4j", "Sentry", "Apify", "Firecrawl", "Devin", "Stripe", "Grain", "Consensus"}
         known_community_mcp = {
             "Salesforce", "HubSpot", "Twenty", "Zoho CRM", "Close", "Zendesk", "Intercom",
             "Twilio", "Lark (Larksuite)", "Discord", "Telegram", "WhatsApp Business", "Google Ads",
             "GoHighLevel", "Mailchimp", "Klaviyo", "SendGrid", "Shopify", "WooCommerce", "DataForSEO",
             "Ahrefs", "Bright Data", "Sherlock", "Clay", "Vercel", "Netlify", "Supabase", "Snowflake",
             "MongoDB Atlas", "Datadog", "Notion", "Airtable", "Linear", "Jira", "Asana", "Monday.com",
-            "ClickUp", "Coda", "Stripe", "Plaid", "Binance", "QuickBooks", "Xero", "NotebookLM",
+            "ClickUp", "Coda", "Plaid", "Binance", "QuickBooks", "Xero", "NotebookLM",
             "Otter AI", "Reducto", "Mermaid CLI", "YouTube Transcript"
         }
         if app_name in official_mcp:
