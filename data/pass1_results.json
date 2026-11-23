@@ -1,0 +1,1602 @@
+[
+  {
+    "id": 1,
+    "name": "Salesforce",
+    "category": "CRM and Sales",
+    "description": "Enterprise CRM platform for sales, service, marketing automation, and customer lifecycle management.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Gated (Enterprise/Partner Sales)",
+    "api_surface": "REST & GraphQL (Extensive, 1000+ endpoints, Composite, Bulk & Streaming APIs)",
+    "buildability_verdict": "Feasible with Caveats",
+    "evidence_url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
+    "pass1_notes": "Naive pass assumed enterprise paid license was needed for API access.",
+    "is_correct": false
+  },
+  {
+    "id": 2,
+    "name": "HubSpot",
+    "category": "CRM and Sales",
+    "description": "Inbound marketing, sales CRM, customer service, and content management suite.",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, CRM objects, marketing, deals, webhooks, search)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.hubspot.com/docs/api/overview",
+    "pass1_notes": "Identified legacy API keys which HubSpot officially sunset in Nov 2022.",
+    "is_correct": false
+  },
+  {
+    "id": 3,
+    "name": "Pipedrive",
+    "category": "CRM and Sales",
+    "description": "Pipeline-centric CRM software for deal tracking, sales communications, and lead qualification.",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, deals, persons, organizations, leads, activities)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.pipedrive.com/docs/api/v1",
+    "pass1_notes": "Accurate first pass.",
+    "is_correct": true
+  },
+  {
+    "id": 4,
+    "name": "Attio",
+    "category": "CRM and Sales",
+    "description": "Modern, data-driven collaborative CRM built for dynamic workflows and custom relational objects.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Modern, OpenAPI 3.0 spec, custom objects, records, attributes)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.attio.com/reference/overview",
+    "pass1_notes": "Accurate, missed newly introduced OAuth2 support.",
+    "is_correct": true
+  },
+  {
+    "id": 5,
+    "name": "Twenty",
+    "category": "CRM and Sales",
+    "description": "Open-source CRM alternative to Salesforce, built on modern GraphQL and REST architectures.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & GraphQL (Full CRUD on all standard & custom CRM objects)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://twenty.com/developers",
+    "pass1_notes": "Identified open source nature correctly.",
+    "is_correct": true
+  },
+  {
+    "id": 6,
+    "name": "Podio",
+    "category": "CRM and Sales",
+    "description": "Citrix-owned modular customizable work management and CRM application builder.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, items, apps, workspaces, webhooks, batch operations)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://morethan.citrix.com/podio-api",
+    "pass1_notes": "Doc URL pointed to old podio.com/api redirect.",
+    "is_correct": true
+  },
+  {
+    "id": 7,
+    "name": "Zoho CRM",
+    "category": "CRM and Sales",
+    "description": "Omnichannel CRM platform managing leads, deals, contacts, and enterprise sales processes.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v2/v3 APIs, records, blueprints, COQL query language)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.zoho.com/crm/developer/docs/api/v6/",
+    "pass1_notes": "Mentioned v2 API instead of current v6.",
+    "is_correct": true
+  },
+  {
+    "id": 8,
+    "name": "Close",
+    "category": "CRM and Sales",
+    "description": "Inside sales CRM with integrated calling, SMS, email sequences, and pipeline tracking.",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Comprehensive, leads, contacts, activities, calls, emails, sequences)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.close.com/",
+    "pass1_notes": "Accurate first pass.",
+    "is_correct": true
+  },
+  {
+    "id": 9,
+    "name": "Copper",
+    "category": "CRM and Sales",
+    "description": "Google Workspace-native CRM deeply integrated into Gmail, Google Calendar, and Drive.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate to Broad, leads, companies, people, opportunities, activities)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.copper.com/",
+    "pass1_notes": "Missed the required custom user-email header in auth scheme.",
+    "is_correct": false
+  },
+  {
+    "id": 10,
+    "name": "DealCloud",
+    "category": "CRM and Sales",
+    "description": "Specialized investment banking and private equity CRM platform owned by Intapp.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Paid Plan Only)",
+    "api_surface": "REST (Data sync, entry creation, deal pipelines, reporting endpoints)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://api.docs.dealcloud.com/",
+    "pass1_notes": "Hallucinated self-serve access because docs were public at api.docs.dealcloud.com.",
+    "is_correct": false
+  },
+  {
+    "id": 11,
+    "name": "Zendesk",
+    "category": "Support and Helpdesk",
+    "description": "Customer service software, ticketing system, and knowledge base platform.",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Extensive, tickets, users, macros, triggers, help center, Sunshine objects)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.zendesk.com/api-reference/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 12,
+    "name": "Intercom",
+    "category": "Support and Helpdesk",
+    "description": "AI-first customer service platform featuring conversational messaging bots (Fin) and helpdesk.",
+    "auth_methods": [
+      "Bearer Token, OAuth2"
+    ],
+    "primary_auth": "Bearer Token, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, conversations, contacts, articles, tickets, admin events)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 13,
+    "name": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "description": "Cloud-based customer support software by Freshworks with multichannel ticketing and automation.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, tickets, contacts, companies, conversations, solutions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.freshdesk.com/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 14,
+    "name": "Front",
+    "category": "Support and Helpdesk",
+    "description": "Customer operations and collaborative shared inbox platform for email, SMS, and live chat.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, conversations, messages, channels, tags, teamboxes)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://dev.frontapp.com/reference/introduction",
+    "pass1_notes": "Marked as Free Tier; Front actually does not have a permanent free tier.",
+    "is_correct": false
+  },
+  {
+    "id": 15,
+    "name": "Pylon",
+    "category": "Support and Helpdesk",
+    "description": "Modern B2B customer support platform integrating Slack/Teams channels with ticketing.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Modern, issues, messages, accounts, tags, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.usepylon.com/pylon-docs/api-reference/introduction",
+    "pass1_notes": "Naive pass assumed public API reference meant self-serve access.",
+    "is_correct": false
+  },
+  {
+    "id": 16,
+    "name": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "description": "Omnichannel helpdesk and live chat ticketing system with call center support.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v3 API, tickets, chats, calls, customers, departments)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://support.liveagent.com/061754-LiveAgent-API-v3",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 17,
+    "name": "Plain",
+    "category": "Support and Helpdesk",
+    "description": "API-first, developer-centric modern support platform for engineering and product teams.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "GraphQL API (Comprehensive, threads, customers, events, cards, timelines)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.plain.com/docs/api-reference",
+    "pass1_notes": "Assumed REST API surface.",
+    "is_correct": false
+  },
+  {
+    "id": 18,
+    "name": "Help Scout",
+    "category": "Support and Helpdesk",
+    "description": "Shared inbox and customer service platform built for growing businesses and remote teams.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad Mailbox API 2.0, conversations, mailboxes, customers, tags)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.helpscout.com/mailbox-api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 19,
+    "name": "Gorgias",
+    "category": "Support and Helpdesk",
+    "description": "Ecommerce-focused customer service helpdesk built specifically for Shopify, BigCommerce, and Magento.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, tickets, customers, messages, satisfaction surveys, macros)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.gorgias.com/reference/introduction",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 20,
+    "name": "Gladly",
+    "category": "Support and Helpdesk",
+    "description": "People-centered customer service platform treating customer conversations as a lifelong relationship thread.",
+    "auth_methods": [
+      "Basic Auth"
+    ],
+    "primary_auth": "Basic Auth",
+    "self_serve_status": "Self-Serve (Paid Plan Only)",
+    "api_surface": "REST (Broad, conversation threads, customers, routing, tasks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.gladly.com/rest/",
+    "pass1_notes": "Assumed standard SaaS self-serve checkout.",
+    "is_correct": false
+  },
+  {
+    "id": 21,
+    "name": "Slack",
+    "category": "Communications and Messaging",
+    "description": "Channel-based enterprise team messaging and collaboration platform with extensive app directory.",
+    "auth_methods": [
+      "OAuth2, Bot Token"
+    ],
+    "primary_auth": "OAuth2, Bot Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Extensive Web API, 200+ methods, Events API, Socket Mode, Block Kit)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://api.slack.com/methods",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 22,
+    "name": "Twilio",
+    "category": "Communications and Messaging",
+    "description": "Cloud communications platform as a service for SMS, voice, WhatsApp, video, and email.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, SMS, voice, verify, conversations, serverless functions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.twilio.com/docs/usage/api",
+    "pass1_notes": "Omitted Account SID + Auth Token Basic Auth structure.",
+    "is_correct": false
+  },
+  {
+    "id": 23,
+    "name": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "description": "Business team communication, chat, audio/video channels, and workflow bots within Zoho ecosystem.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, channels, messages, bots, schedulers, slash commands)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.zoho.com/cliq/help/restapi/v2/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 24,
+    "name": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "description": "All-in-one enterprise collaboration platform combining chat, docs, calendar, and video (ByteDance).",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Extensive, IM, base/database, calendar, docs, approval flows)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://open.larksuite.com/document/home/index",
+    "pass1_notes": "Missed Lark's distinctive app/tenant access token exchange architecture.",
+    "is_correct": false
+  },
+  {
+    "id": 25,
+    "name": "Pumble",
+    "category": "Communications and Messaging",
+    "description": "Free team chat and collaboration app by Cake.com (Slack alternative).",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, channels, messages, users, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://pumble.com/help/integrations/pumble-api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 26,
+    "name": "Discord",
+    "category": "Communications and Messaging",
+    "description": "Voice, video, and text communication service popular in gaming, open source, and web3 communities.",
+    "auth_methods": [
+      "Bot Token, OAuth2"
+    ],
+    "primary_auth": "Bot Token, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & Gateway WebSocket (Extensive, channels, messages, slash commands, voice, reactions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://discord.com/developers/docs/reference",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 27,
+    "name": "Telegram",
+    "category": "Communications and Messaging",
+    "description": "Cloud-based mobile and desktop messaging app with extensive Bot API ecosystem.",
+    "auth_methods": [
+      "Bot Token"
+    ],
+    "primary_auth": "Bot Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad Bot API, messages, media, keyboards, webhooks, long polling)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://core.telegram.org/bots/api",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 28,
+    "name": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "description": "Meta's commercial messaging API for customer support, transactional notifications, and marketing.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Gated (Enterprise/Partner Sales)",
+    "api_surface": "REST (Cloud API, messages, media, business profiles, message templates)",
+    "buildability_verdict": "Gated / Partner Required",
+    "evidence_url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+    "pass1_notes": "Confused older on-premises WhatsApp Business API (which required BSP partners) with modern Cloud API.",
+    "is_correct": false
+  },
+  {
+    "id": 29,
+    "name": "Aircall",
+    "category": "Communications and Messaging",
+    "description": "Cloud-based voice call center and phone system integrated with CRMs and helpdesks.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, calls, users, numbers, contacts, webhooks, tags)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.aircall.io/api-references/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 30,
+    "name": "Vonage",
+    "category": "Communications and Messaging",
+    "description": "Communications API platform (formerly Nexmo) for SMS, voice calls, video, and verify.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, SMS, voice, messages, verify, video, dispatch)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.vonage.com/en/api",
+    "pass1_notes": "Missed the JWT requirement for modern Voice/Messages v1 APIs.",
+    "is_correct": false
+  },
+  {
+    "id": 31,
+    "name": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Google's online advertising platform for search, display, YouTube, and shopping ads.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & gRPC (Extensive, campaigns, ad groups, keywords, bidding, reporting via GAQL)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.google.com/google-ads/api/docs/first-call/overview",
+    "pass1_notes": "Missed the mandatory developer token approval gate.",
+    "is_correct": false
+  },
+  {
+    "id": 32,
+    "name": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Meta Marketing API for programmatic ad creation, audience management, and reporting on Facebook/Instagram.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Graph API, campaigns, ad sets, creatives, custom audiences, insights)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.facebook.com/docs/marketing-apis",
+    "pass1_notes": "Failed to flag Meta App Review blocker for multi-tenant production use.",
+    "is_correct": false
+  },
+  {
+    "id": 33,
+    "name": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "LinkedIn Marketing Solutions API for B2B sponsored content, lead gen forms, and ad campaigns.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, ad accounts, campaigns, creatives, analytics, conversions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "pass1_notes": "Assumed standard open OAuth2 access.",
+    "is_correct": false
+  },
+  {
+    "id": 34,
+    "name": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "All-in-one sales and marketing platform for marketing agencies and small businesses.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad API v2, contacts, funnels, calendars, opportunities, conversations)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://highlevel.stoplight.io/docs/integrations/",
+    "pass1_notes": "Mentioned deprecated v1 API keys and missed that GHL has no free tier.",
+    "is_correct": false
+  },
+  {
+    "id": 35,
+    "name": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Email marketing, newsletters, automations, and transactional email platform (Intuit).",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v3.0 API, lists, campaigns, templates, reports, members)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://mailchimp.com/developer/marketing/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 36,
+    "name": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Customer data and automated email/SMS marketing platform for ecommerce brands.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad JSON:API compliant, profiles, segments, campaigns, events, flows)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.klaviyo.com/en/reference/api_overview",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 37,
+    "name": "systeme.io",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "All-in-one marketing platform for sales funnels, email marketing, online courses, and affiliate management.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, contacts, tags, courses, purchases, sales funnels)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://systeme.io/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 38,
+    "name": "Pinterest",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Visual discovery and bookmarking engine with ads and organic pin publishing APIs.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v5 API, pins, boards, ad accounts, analytics, catalogs)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.pinterest.com/docs/api/v5/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 39,
+    "name": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Text-based social network by Meta with official public publishing and reply management API.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, publish posts, reply management, insights, user profile)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.facebook.com/docs/threads",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 40,
+    "name": "SendGrid",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Cloud-based customer communication platform for transactional and marketing email delivery (Twilio).",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v3 API, mail send, marketing campaigns, suppression lists, stats)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.sendgrid.com/api-reference",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 41,
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "description": "Global commerce platform powering online stores, checkout, point of sale, and merchant backends.",
+    "auth_methods": [
+      "API Key, OAuth2"
+    ],
+    "primary_auth": "API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "GraphQL & REST (Extensive, Admin GraphQL API, Storefront API, Webhooks, Functions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://shopify.dev/docs/api/admin-graphql",
+    "pass1_notes": "Identified deprecated API keys instead of Custom App Access Tokens.",
+    "is_correct": false
+  },
+  {
+    "id": 42,
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "description": "Open-source, customizable ecommerce platform built on WordPress.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, products, orders, customers, coupons, reports, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 43,
+    "name": "BigCommerce",
+    "category": "Ecommerce",
+    "description": "SaaS ecommerce platform for mid-market and enterprise merchants with headless commerce capabilities.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & GraphQL (Extensive v3 API, catalog, orders, customers, carts, checkouts)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.bigcommerce.com/docs/rest-management",
+    "pass1_notes": "Missed the custom header X-Auth-Token and store hash requirement.",
+    "is_correct": false
+  },
+  {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "description": "Enterprise cloud ecommerce solution (formerly Demandware) for high-volume B2B and B2C brands.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (SCAPI - Shopper & Admin APIs, Open Commerce API / OCAPI)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.salesforce.com/docs/commerce/commerce-api",
+    "pass1_notes": "Confused Commerce Cloud with Salesforce Core CRM Developer Editions.",
+    "is_correct": false
+  },
+  {
+    "id": 45,
+    "name": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "description": "Flexible, self-hosted and cloud enterprise ecommerce platform by Adobe.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Gated (Enterprise/Partner Sales)",
+    "api_surface": "REST & GraphQL (Comprehensive, catalog, checkout, customers, carts, inventory)",
+    "buildability_verdict": "Feasible with Caveats",
+    "evidence_url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "pass1_notes": "Only evaluated Adobe Commerce Cloud, missing Magento Open Source.",
+    "is_correct": false
+  },
+  {
+    "id": 46,
+    "name": "Squarespace",
+    "category": "Ecommerce",
+    "description": "Website builder and ecommerce platform for creative portfolios, stores, and service bookings.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, orders, inventory, products, profiles, transactions, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.squarespace.com/commerce-apis/overview",
+    "pass1_notes": "Missed that Squarespace restricts API generation to Commerce Advanced plan.",
+    "is_correct": false
+  },
+  {
+    "id": 47,
+    "name": "Ecwid",
+    "category": "Ecommerce",
+    "description": "Embeddable ecommerce widget and shopping cart software (Lightspeed).",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, store, products, orders, customers, categories, storage)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://api-docs.ecwid.com/reference/overview",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 48,
+    "name": "Gumroad",
+    "category": "Ecommerce",
+    "description": "E-commerce platform for digital creators, writers, educators, and software builders.",
+    "auth_methods": [
+      "Access Token, OAuth2"
+    ],
+    "primary_auth": "Access Token, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, products, sales, subscribers, custom fields, licenses)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://gumroad.com/api",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 49,
+    "name": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "description": "Amazon SP-API for programmatic access to seller inventory, orders, payments, and fulfillment (FBA).",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, orders, feeds, reports, fulfillment, finances, pricing)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer-docs.amazon.com/sp-api/docs/authorization",
+    "pass1_notes": "Grossly underestimated auth complexity and developer vetting.",
+    "is_correct": false
+  },
+  {
+    "id": 50,
+    "name": "fanbasis",
+    "category": "Ecommerce",
+    "description": "Fan engagement and creator monetization platform offering shoutouts, experiences, and merch.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "No Public API (Internal web app endpoints only)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://fanbasis.com",
+    "pass1_notes": "Hallucinated a public developer portal.",
+    "is_correct": false
+  },
+  {
+    "id": 51,
+    "name": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "description": "Comprehensive SEO and search engine scraping API provider for SERP, keywords, backlinks, and on-page data.",
+    "auth_methods": [
+      "Basic Auth"
+    ],
+    "primary_auth": "Basic Auth",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, SERP, keywords data, backlinks, business data, app data)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.dataforseo.com/v3/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 52,
+    "name": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "description": "All-in-one SEO and digital marketing platform for keyword tracking, audit, and competitor analysis.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, ranking, keywords, backlinks, audit, competitor analysis)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://seranking.com/api.html",
+    "pass1_notes": "Assumed free trial allowed API generation.",
+    "is_correct": false
+  },
+  {
+    "id": 53,
+    "name": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "description": "Industry-leading SEO software suite for backlink analysis, keyword research, and rank tracking.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v3 API, backlinks, refdomains, organic keywords, pages)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://ahrefs.com/api/documentation",
+    "pass1_notes": "Failed to identify the extreme $500/mo paywall on Ahrefs API v3.",
+    "is_correct": false
+  },
+  {
+    "id": 54,
+    "name": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "description": "Visual and automated web scraping tool for extracting structured data without coding.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, triggers, runs, scrapers, data export)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.mrscraper.com/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 55,
+    "name": "Apify",
+    "category": "Data, SEO and Scraping",
+    "description": "Cloud platform for web scraping, data extraction, and serverless Actor automation.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Extensive, run Actors, tasks, datasets, key-value stores, request queues)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.apify.com/api/v2",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 56,
+    "name": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "description": "Web scraping engine that turns entire websites into clean LLM-ready markdown or structured data.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Focused/High Utility: /scrape, /crawl, /map, /extract, /batch)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 57,
+    "name": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "description": "Enterprise proxy network and web data collection infrastructure platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, scraping browser, web unlocker, datasets, SERP API, zone management)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.brightdata.com/api-reference",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 58,
+    "name": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "description": "Open-source Python OSINT reconnaissance tool that hunts down social media accounts by username across 400+ sites.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "CLI / Library (No hosted REST API; executed via subprocess or Docker wrapper)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://github.com/sherlock-project/sherlock",
+    "pass1_notes": "Assumed Sherlock was a hosted cloud SaaS API.",
+    "is_correct": false
+  },
+  {
+    "id": 59,
+    "name": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "description": "B2B contact enrichment and data waterfall platform aggregating multi-vendor data providers.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Enrichment, search, waterfall cascading endpoints)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://waterfall.io",
+    "pass1_notes": "Assumed self-serve SaaS signup.",
+    "is_correct": false
+  },
+  {
+    "id": 60,
+    "name": "Clay",
+    "category": "Data, SEO and Scraping",
+    "description": "AI-powered data enrichment and sales prospecting spreadsheet platform combining 50+ data providers.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, tables, rows, webhook triggers, run enrichments)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://clay.com/developers",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 61,
+    "name": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Leading code hosting, version control, CI/CD (Actions), and developer collaboration platform.",
+    "auth_methods": [
+      "PAT, OAuth2"
+    ],
+    "primary_auth": "PAT, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & GraphQL (Massive, repos, issues, pull requests, actions, gists, users)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.github.com/en/rest",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 62,
+    "name": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Frontend cloud platform for developing, previewing, and shipping Next.js and modern web apps.",
+    "auth_methods": [
+      "Bearer Token"
+    ],
+    "primary_auth": "Bearer Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, deployments, projects, domains, env vars, edge config, logs)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://vercel.com/docs/rest-api",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 63,
+    "name": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Cloud platform for building, deploying, and scaling modern web applications and serverless backends.",
+    "auth_methods": [
+      "Personal Access Token"
+    ],
+    "primary_auth": "Personal Access Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad OpenAPI 2.0 spec, sites, deploys, builds, DNS, forms, functions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.netlify.com/api/get-started/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 64,
+    "name": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Global cloud network providing DNS, CDN, DDoS protection, edge workers, and AI inference.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, DNS, Workers, R2, D1, KV, security rules, tunnels, analytics)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.cloudflare.com/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 65,
+    "name": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Open-source Firebase alternative providing Postgres database, Auth, Storage, Edge Functions, and Realtime.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (PostgREST), GraphQL, Storage API, Management API",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://supabase.com/docs/reference/api/introduction",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 66,
+    "name": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Graph database management system optimized for storing and querying complex connected knowledge networks.",
+    "auth_methods": [
+      "Basic Auth"
+    ],
+    "primary_auth": "Basic Auth",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (HTTP Query API) & Binary Bolt protocol (Comprehensive Cypher execution)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://neo4j.com/docs/http-api/current/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 67,
+    "name": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Cloud data warehousing, data lake, and analytics computing platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Snowflake SQL API v2, submit SQL statements, poll status, retrieve result sets)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+    "pass1_notes": "Assumed simple API keys; Snowflake SQL API strictly mandates Key-Pair JWT.",
+    "is_correct": false
+  },
+  {
+    "id": 68,
+    "name": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Fully managed multi-cloud document database service with vector search and data services.",
+    "auth_methods": [
+      "API Key (Bearer)"
+    ],
+    "primary_auth": "API Key (Bearer)",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Atlas Admin API v2, Atlas Data API for CRUD operations, GraphQL)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.mongodb.com/docs/atlas/api/",
+    "pass1_notes": "Missed the HTTP Digest Auth requirement on Atlas Admin API.",
+    "is_correct": false
+  },
+  {
+    "id": 69,
+    "name": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Cloud monitoring, application performance monitoring (APM), log management, and security platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive v1 & v2 APIs, metrics, logs, traces, dashboards, monitors, incidents)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.datadoghq.com/api/latest/",
+    "pass1_notes": "Omitted the required secondary Application Key.",
+    "is_correct": false
+  },
+  {
+    "id": 70,
+    "name": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "description": "Application performance monitoring and error tracking platform for developers.",
+    "auth_methods": [
+      "Auth Token (Bearer)"
+    ],
+    "primary_auth": "Auth Token (Bearer)",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, issues, projects, releases, events, alerts, teams)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.sentry.io/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 71,
+    "name": "Notion",
+    "category": "Productivity and Project Management",
+    "description": "Connected workspace for notes, docs, databases, project management, and AI knowledge bases.",
+    "auth_methods": [
+      "Internal Token, OAuth2"
+    ],
+    "primary_auth": "Internal Token, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, databases, pages, blocks, users, search, comments)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.notion.com/reference/intro",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 72,
+    "name": "Airtable",
+    "category": "Productivity and Project Management",
+    "description": "Low-code relational database platform for building interactive apps, workflows, and trackers.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, records CRUD, schema inspection, webhooks, bases, comments)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://airtable.com/developers/web/api/introduction",
+    "pass1_notes": "Failed to note that Airtable sunset API keys in favor of scoped PATs.",
+    "is_correct": false
+  },
+  {
+    "id": 73,
+    "name": "Linear",
+    "category": "Productivity and Project Management",
+    "description": "High-performance issue tracking and product development tool built for high-velocity software teams.",
+    "auth_methods": [
+      "Personal API Key, OAuth2"
+    ],
+    "primary_auth": "Personal API Key, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "GraphQL (Comprehensive, issues, projects, cycles, roadmaps, teams, attachments)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.linear.app/docs/graphql/working-with-the-graphql-api",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 74,
+    "name": "Jira",
+    "category": "Productivity and Project Management",
+    "description": "Agile project tracking, issue tracking, and sprint management platform by Atlassian.",
+    "auth_methods": [
+      "API Token, OAuth2"
+    ],
+    "primary_auth": "API Token, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive Jira Cloud REST API v3, issues, sprints, boards, workflows, JQL search)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 75,
+    "name": "Asana",
+    "category": "Productivity and Project Management",
+    "description": "Work and project management software helping teams orchestrate tasks, workflows, and milestones.",
+    "auth_methods": [
+      "PAT, OAuth2"
+    ],
+    "primary_auth": "PAT, OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, tasks, projects, stories, workspaces, custom fields, portfolios)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developers.asana.com/reference/rest-api-reference",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 76,
+    "name": "Monday.com",
+    "category": "Productivity and Project Management",
+    "description": "Cloud Work OS for building custom workflow apps, project boards, and task automations.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "GraphQL (Comprehensive, boards, items, columns, groups, updates, tags)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.monday.com/api-reference/docs",
+    "pass1_notes": "Assumed REST API.",
+    "is_correct": false
+  },
+  {
+    "id": 77,
+    "name": "ClickUp",
+    "category": "Productivity and Project Management",
+    "description": "All-in-one productivity platform replacing tasks, docs, chat, goals, and whiteboards.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad API v2, tasks, spaces, folders, lists, checklists, time tracking)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://clickup.com/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 78,
+    "name": "Coda",
+    "category": "Productivity and Project Management",
+    "description": "All-in-one interactive collaborative doc combining words, data, and software logic.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, docs, tables, rows, columns, formulas, controls, permissions)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://coda.io/developers/apis/v1",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 79,
+    "name": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "description": "Enterprise platform for dynamic work execution, project tracking, and spreadsheet-style collaboration.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v2.0, sheets, rows, columns, reports, workspaces, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://smartsheet.redoc.ly/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 80,
+    "name": "Harvest",
+    "category": "Productivity and Project Management",
+    "description": "Time tracking, invoicing, expense logging, and project budget reporting software.",
+    "auth_methods": [
+      "PAT"
+    ],
+    "primary_auth": "PAT",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad v2 API, time entries, clients, projects, tasks, invoices, expenses)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://help.getharvest.com/api-v2/",
+    "pass1_notes": "Omitted the required Harvest-Account-ID header.",
+    "is_correct": false
+  },
+  {
+    "id": 81,
+    "name": "Stripe",
+    "category": "Finance and Fintech",
+    "description": "Global economic infrastructure for internet payments, billing, cards, and treasury.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Massive, payments, subscriptions, customers, invoices, checkout, refunds, connect)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.stripe.com/api",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 82,
+    "name": "Plaid",
+    "category": "Finance and Fintech",
+    "description": "Fintech API connecting consumer bank accounts to apps for account verification, transactions, and balances.",
+    "auth_methods": [
+      "Client ID + Secret"
+    ],
+    "primary_auth": "Client ID + Secret",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, auth, transactions, balance, identity, transfer, investments, assets)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://plaid.com/docs/api/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 83,
+    "name": "Binance",
+    "category": "Finance and Fintech",
+    "description": "Global cryptocurrency exchange supporting spot, margin, futures, and algorithmic trading.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST & WebSocket (Massive, market data, order execution, account status, streaming tickers)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://binance-docs.github.io/apidocs/spot/en/",
+    "pass1_notes": "Failed to mention cryptographic HMAC signature requirement.",
+    "is_correct": false
+  },
+  {
+    "id": 84,
+    "name": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "description": "Japanese payment gateway service (joint venture of DeNA and Mitsubishi UFJ NICOS) / NMI-powered payment router.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST / CGI Form-urlencoded (Payment processing, recurring billing, 3D Secure)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://www.paygent.co.jp/",
+    "pass1_notes": "Hallucinated self-serve access for Paygent.",
+    "is_correct": false
+  },
+  {
+    "id": 85,
+    "name": "iPayX",
+    "category": "Finance and Fintech",
+    "description": "AI-powered B2B automated billing, payments, and receivables clearinghouse platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Invoicing, payments, settlement reconciliations)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://ipayx.ai/docs",
+    "pass1_notes": "Assumed public self-serve API.",
+    "is_correct": false
+  },
+  {
+    "id": 86,
+    "name": "QuickBooks",
+    "category": "Finance and Fintech",
+    "description": "Small business accounting, bookkeeping, payroll, and invoicing software by Intuit.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "primary_auth": "OAuth 2.0",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, invoices, payments, customers, vendors, accounts, reports)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.intuit.com/app/developer/qbo/docs/develop",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 87,
+    "name": "Xero",
+    "category": "Finance and Fintech",
+    "description": "Cloud-based accounting software for small businesses, accountants, and bookkeepers.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "primary_auth": "OAuth 2.0",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, invoices, bank transactions, contacts, bills, payroll, assets)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.xero.com/documentation/api/accounting/overview",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 88,
+    "name": "Brex",
+    "category": "Finance and Fintech",
+    "description": "Corporate credit cards, spend management, travel, and business banking platform for startups.",
+    "auth_methods": [
+      "API Token"
+    ],
+    "primary_auth": "API Token",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, expenses, corporate cards, transfers, budgets, transactions, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://developer.brex.com/openapi/overview/",
+    "pass1_notes": "Marked self-serve without noting Brex's strict corporate banking qualification criteria.",
+    "is_correct": false
+  },
+  {
+    "id": 89,
+    "name": "Ramp",
+    "category": "Finance and Fintech",
+    "description": "Corporate cards, expense management, vendor bill pay, and automated accounting platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Broad, cards, transactions, receipts, reimbursements, departments, spend programs)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.ramp.com/developer/api-overview",
+    "pass1_notes": "Assumed static API keys instead of OAuth 2.0 client credentials.",
+    "is_correct": false
+  },
+  {
+    "id": 90,
+    "name": "PitchBook",
+    "category": "Finance and Fintech",
+    "description": "Financial market research database delivering private market capital, VC, PE, and M&A data.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Paid Plan Only)",
+    "api_surface": "REST (Companies, funding rounds, investors, valuations, deals, executives)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://pitchbook.com/",
+    "pass1_notes": "Underestimated gating; thought it had self-serve credit card billing.",
+    "is_correct": false
+  },
+  {
+    "id": 91,
+    "name": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "description": "Google's personalized AI research assistant grounded in user-curated notes, PDFs, and sources.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "Enterprise API / Vertex AI Extensions (No public standalone consumer REST API)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://cloud.google.com/gemini",
+    "pass1_notes": "Assumed NotebookLM had a standalone self-serve API like OpenAI or Gemini developer API.",
+    "is_correct": false
+  },
+  {
+    "id": 92,
+    "name": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "description": "AI meeting assistant that records, transcribes, summarizes, and extracts action items from conversations.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "Unofficial REST / Enterprise Webhooks (No open documented public REST API)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://help.otter.ai/",
+    "pass1_notes": "Assumed an open public developer API existed because MCP servers were cited on GitHub.",
+    "is_correct": false
+  },
+  {
+    "id": 93,
+    "name": "Fathom",
+    "category": "AI, Research and Media-native",
+    "description": "AI meeting recorder and note taker for Zoom, Google Meet, and Microsoft Teams.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, meetings, transcripts, summaries, action items, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://fathom.video/",
+    "pass1_notes": "Assumed free tier included API access.",
+    "is_correct": false
+  },
+  {
+    "id": 94,
+    "name": "Consensus",
+    "category": "AI, Research and Media-native",
+    "description": "AI-powered academic search engine delivering evidence-based answers synthesized from 200M+ research papers.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "primary_auth": "OAuth2",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Search, academic claims synthesis, paper metadata, citations)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://consensus.app/",
+    "pass1_notes": "Took hint 'OAuth requested' as meaning OAuth was already live and self-serve.",
+    "is_correct": false
+  },
+  {
+    "id": 95,
+    "name": "Reducto",
+    "category": "AI, Research and Media-native",
+    "description": "API-first document parsing engine that turns complex PDFs, tables, and figures into clean vision-augmented markdown.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (High Utility, /parse, /extract, /async, /job status, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://docs.reducto.ai/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 96,
+    "name": "Devin",
+    "category": "AI, Research and Media-native",
+    "description": "Autonomous AI software engineer by Cognition AI that plans, writes, tests, and deploys complex code.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Gated (Enterprise/Partner Sales)",
+    "api_surface": "REST & Official MCP (Create sessions, send messages, inspect execution logs, retrieve snapshots)",
+    "buildability_verdict": "Feasible with Caveats",
+    "evidence_url": "https://docs.devin.ai/integrations/mcp",
+    "pass1_notes": "Assumed Devin remained on strict waitlist/sales-gate as in early 2024.",
+    "is_correct": false
+  },
+  {
+    "id": 97,
+    "name": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "description": "Generative video and creative AI platform for cinematic character animation and camera control.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "CLI & REST (Video generation, camera prompts, job queue polling)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://higgsfield.ai/",
+    "pass1_notes": "Assumed free trial compute was available for API generations.",
+    "is_correct": false
+  },
+  {
+    "id": 98,
+    "name": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "description": "Open-source command-line interface for converting Mermaid diagram definitions into PNG, SVG, and PDF images.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "CLI / Library (Command line flags: -i input.mmd -o output.svg; no SaaS HTTP endpoint)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://github.com/mermaid-js/mermaid-cli",
+    "pass1_notes": "Treated as a cloud API service.",
+    "is_correct": false
+  },
+  {
+    "id": 99,
+    "name": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "description": "Specialized developer API service for fetching transcripts, captions, and timed text from any public YouTube video.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Focused/High Utility: /transcript, /subtitles, /languages, /metadata)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://transcriptapi.com/",
+    "pass1_notes": "Accurate.",
+    "is_correct": true
+  },
+  {
+    "id": 100,
+    "name": "Grain",
+    "category": "AI, Research and Media-native",
+    "description": "AI meeting recorder, clip creator, and conversation intelligence platform for sales and customer success teams.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "primary_auth": "API Key",
+    "self_serve_status": "Self-Serve (Free Tier/Trial)",
+    "api_surface": "REST (Moderate, recordings, highlights, transcripts, summaries, webhooks)",
+    "buildability_verdict": "Ready Today",
+    "evidence_url": "https://grain.com/",
+    "pass1_notes": "Assumed free tier included API access.",
+    "is_correct": false
+  }
+]
