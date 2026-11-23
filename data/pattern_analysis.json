@@ -4,12 +4,23 @@
     "total_categories": 10
   },
   "headline_metrics": {
+    "ready_for_agent_today_count": 80,
     "ready_for_agent_today_pct": 80.0,
+    "feasible_with_caveats_count": 10,
     "feasible_with_caveats_pct": 10.0,
+    "gated_partner_required_count": 9,
     "gated_partner_required_pct": 9.0,
+    "blocked_no_api_count": 1,
     "blocked_no_api_pct": 1.0,
+    "free_self_serve_count": 73,
     "free_self_serve_pct": 73.0,
-    "mcp_existing_pct": 54.0,
+    "paid_self_serve_count": 11,
+    "paid_self_serve_pct": 11.0,
+    "total_gated_non_self_serve_count": 16,
+    "total_gated_non_self_serve_pct": 16.0,
+    "mcp_existing_count": 56,
+    "mcp_existing_pct": 56.0,
+    "composio_greenfield_count": 44,
     "composio_greenfield_pct": 44.0
   },
   "auth_distribution": {
@@ -35,11 +46,8 @@
     "Blocked (No API)": 1
   },
   "mcp_distribution": {
-    "Community MCP Available": 45,
-    "No MCP (Composio Opportunity)": 44,
-    "Official & Community MCP Available": 9,
-    "Community MCP Available (reverse-engineered / web automation)": 1,
-    "Community MCP Available (Unofficial session token wrapper)": 1
+    "Existing Community / Official MCP": 56,
+    "Composio Greenfield Opportunity": 44
   },
   "category_breakdown": {
     "AI, Research and Media-native": {
@@ -135,17 +143,19 @@
   },
   "blockers_breakdown": [
     {
-      "blocker": "Enterprise Sales Gate / Contract Required",
-      "count": 8,
+      "blocker": "Enterprise Sales Wall / Institutional Contract Required",
+      "count": 10,
       "apps": [
         "DealCloud",
+        "Pylon",
         "Gladly",
+        "Salesforce Commerce Cloud",
+        "Waterfall.io",
         "Paygent Connect",
         "iPayX",
         "PitchBook",
-        "Waterfall.io",
-        "Pylon",
-        "Salesforce Commerce Cloud"
+        "Otter AI",
+        "Consensus"
       ]
     },
     {
@@ -156,22 +166,14 @@
         "Meta Ads",
         "LinkedIn Ads",
         "Amazon Selling Partner",
-        "WhatsApp Business"
-      ]
-    },
-    {
-      "blocker": "No Official Documented Public REST API (Reverse Engineered or Browser needed)",
-      "count": 3,
-      "apps": [
-        "NotebookLM",
-        "Otter AI",
-        "fanbasis"
+        "NotebookLM"
       ]
     },
     {
       "blocker": "Paid Subscription Tier Required for API Key Generation",
-      "count": 10,
+      "count": 11,
       "apps": [
+        "Front",
         "GoHighLevel",
         "Squarespace",
         "SE Ranking",
@@ -185,16 +187,10 @@
       ]
     },
     {
-      "blocker": "Multi-Header / Dual-Credential Coupling (Account-ID, App-Key, Realm-ID)",
-      "count": 7,
+      "blocker": "No Official Documented Public REST API (Browser or Internal)",
+      "count": 1,
       "apps": [
-        "Datadog",
-        "Harvest",
-        "Copper",
-        "QuickBooks",
-        "Xero",
-        "BigCommerce",
-        "Klaviyo"
+        "fanbasis"
       ]
     },
     {
@@ -204,314 +200,6 @@
         "Sherlock",
         "Mermaid CLI"
       ]
-    }
-  ],
-  "actionable_buckets": {
-    "easy_wins_count": 80,
-    "strategic_outreach_count": 10,
-    "high_friction_or_blocked_count": 10,
-    "easy_wins_sample": [
-      {
-        "id": 1,
-        "name": "Salesforce",
-        "category": "CRM and Sales",
-        "primary_auth": "OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "None (Complex permission sets & SOQL knowledge required for deep agents)"
-      },
-      {
-        "id": 2,
-        "name": "HubSpot",
-        "category": "CRM and Sales",
-        "primary_auth": "Private App Token / OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "None (API key deprecated in favor of Private App Tokens)"
-      },
-      {
-        "id": 3,
-        "name": "Pipedrive",
-        "category": "CRM and Sales",
-        "primary_auth": "API Key / OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "None (Direct personal API key in settings or OAuth2 app registration)"
-      },
-      {
-        "id": 4,
-        "name": "Attio",
-        "category": "CRM and Sales",
-        "primary_auth": "API Key (Bearer)",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "None (Clean OpenAPI spec, high developer ergonomics)"
-      },
-      {
-        "id": 5,
-        "name": "Twenty",
-        "category": "CRM and Sales",
-        "primary_auth": "API Key (Bearer)",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "None (Ideal agent playground with local Docker instance support)"
-      },
-      {
-        "id": 6,
-        "name": "Podio",
-        "category": "CRM and Sales",
-        "primary_auth": "OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "None (Legacy rate limits and aging developer portal)"
-      },
-      {
-        "id": 7,
-        "name": "Zoho CRM",
-        "category": "CRM and Sales",
-        "primary_auth": "OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "Multi-region data centers (.com, .eu, .in) require regional domain handling in agent tool calls"
-      },
-      {
-        "id": 8,
-        "name": "Close",
-        "category": "CRM and Sales",
-        "primary_auth": "API Key",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "None (Extremely developer friendly with HTTP Basic Auth passing API key as username)"
-      },
-      {
-        "id": 9,
-        "name": "Copper",
-        "category": "CRM and Sales",
-        "primary_auth": "API Key + Email Header",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "None (Requires X-PW-AccessToken and X-PW-UserEmail headers simultaneously)"
-      },
-      {
-        "id": 11,
-        "name": "Zendesk",
-        "category": "Support and Helpdesk",
-        "primary_auth": "API Token / OAuth2",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "None (Subdomain parameter required per tenant: {subdomain}.zendesk.com)"
-      }
-    ],
-    "strategic_outreach_sample": [
-      {
-        "id": 28,
-        "name": "WhatsApp Business",
-        "category": "Communications and Messaging",
-        "primary_auth": "Bearer Token",
-        "gating": "Self-Serve (Free Tier/Trial)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "Production use requires Meta Business Manager verification and pre-approved message templates for business-initiated chats"
-      },
-      {
-        "id": 31,
-        "name": "Google Ads",
-        "category": "Marketing, Ads, Email and Social",
-        "primary_auth": "OAuth2 + Developer Token",
-        "gating": "Gated (Admin/Approval Required)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "Dual requirement: OAuth2 credentials PLUS approved Google Ads Developer Token with strict use-case policy audits"
-      },
-      {
-        "id": 32,
-        "name": "Meta Ads",
-        "category": "Marketing, Ads, Email and Social",
-        "primary_auth": "System User Token (Bearer)",
-        "gating": "Gated (Admin/Approval Required)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Meta App Review and business verification required for ads_management and ads_read permissions in production"
-      },
-      {
-        "id": 33,
-        "name": "LinkedIn Ads",
-        "category": "Marketing, Ads, Email and Social",
-        "primary_auth": "OAuth2",
-        "gating": "Gated (Admin/Approval Required)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Mandatory LinkedIn Marketing Developer Platform access request form approval"
-      },
-      {
-        "id": 49,
-        "name": "Amazon Selling Partner",
-        "category": "Ecommerce",
-        "primary_auth": "OAuth2 + AWS SigV4",
-        "gating": "Gated (Admin/Approval Required)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Stringent Amazon Developer Profile application approval, Data Protection Policy (DPP) compliance, and complex AWS SigV4 request signing"
-      },
-      {
-        "id": 53,
-        "name": "Ahrefs",
-        "category": "Data, SEO and Scraping",
-        "primary_auth": "Bearer Token",
-        "gating": "Self-Serve (Paid Plan Only)",
-        "mcp_status": "Community MCP Available",
-        "blocker": "Very high financial paywall ($500+/month API add-on) and strict consumption unit budgeting"
-      },
-      {
-        "id": 88,
-        "name": "Brex",
-        "category": "Finance and Fintech",
-        "primary_auth": "User API Token / OAuth2",
-        "gating": "Self-Serve (Paid Plan Only)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Requires an active Brex corporate account (which requires US incorporated business entity and funding thresholds)"
-      },
-      {
-        "id": 89,
-        "name": "Ramp",
-        "category": "Finance and Fintech",
-        "primary_auth": "OAuth 2.0",
-        "gating": "Self-Serve (Paid Plan Only)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Requires active Ramp business entity account; multi-tenant apps require Developer Partner approval"
-      },
-      {
-        "id": 91,
-        "name": "NotebookLM",
-        "category": "AI, Research and Media-native",
-        "primary_auth": "Google Cloud OAuth2 / Enterprise API",
-        "gating": "Gated (Admin/Approval Required)",
-        "mcp_status": "Community MCP Available (reverse-engineered / web automation)",
-        "blocker": "Consumer version lacks an official public open REST API; agents must use Google Cloud enterprise connectors or browser automation"
-      },
-      {
-        "id": 92,
-        "name": "Otter AI",
-        "category": "AI, Research and Media-native",
-        "primary_auth": "Session Token (Unofficial) / Enterprise Webhook",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "Community MCP Available (Unofficial session token wrapper)",
-        "blocker": "Lack of an official, documented public developer REST API; existing MCP servers rely on reverse-engineered user session cookies"
-      }
-    ],
-    "high_friction_sample": [
-      {
-        "id": 10,
-        "name": "DealCloud",
-        "category": "CRM and Sales",
-        "primary_auth": "OAuth2 Client Credentials",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Institutional sales contract required; API credentials must be provisioned by DealCloud account manager"
-      },
-      {
-        "id": 15,
-        "name": "Pylon",
-        "category": "Support and Helpdesk",
-        "primary_auth": "API Key (Bearer)",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Product requires demo request / sales gate to establish customer tenant before API keys can be issued"
-      },
-      {
-        "id": 20,
-        "name": "Gladly",
-        "category": "Support and Helpdesk",
-        "primary_auth": "Basic Auth",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Sales gate; enterprise customer contract required to access Gladly tenant instance and API keys"
-      },
-      {
-        "id": 44,
-        "name": "Salesforce Commerce Cloud",
-        "category": "Ecommerce",
-        "primary_auth": "OAuth2 JWT",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Access to Commerce Cloud Account Manager requires an active client realm or Salesforce partner agreement"
-      },
-      {
-        "id": 50,
-        "name": "fanbasis",
-        "category": "Ecommerce",
-        "primary_auth": "None (No Public API)",
-        "gating": "No Public API",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "No documented public REST or GraphQL API exists; integrations require browser automation or unofficial reverse engineering"
-      },
-      {
-        "id": 59,
-        "name": "Waterfall.io",
-        "category": "Data, SEO and Scraping",
-        "primary_auth": "API Key",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Gated behind sales demo and customized minimum contract commitments"
-      },
-      {
-        "id": 84,
-        "name": "Paygent Connect",
-        "category": "Finance and Fintech",
-        "primary_auth": "Merchant ID + Hash / Client Cert",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Corporate sales contract, Japanese business entity registration, and IP whitelisting required to access gateway endpoints"
-      },
-      {
-        "id": 85,
-        "name": "iPayX",
-        "category": "Finance and Fintech",
-        "primary_auth": "API Key",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Requires commercial onboarding and compliance clearance for merchant underwriting"
-      },
-      {
-        "id": 90,
-        "name": "PitchBook",
-        "category": "Finance and Fintech",
-        "primary_auth": "API Key / OAuth2",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "Extreme financial sales paywall ($25k+/yr institutional contract) and mandatory data licensing agreements"
-      },
-      {
-        "id": 94,
-        "name": "Consensus",
-        "category": "AI, Research and Media-native",
-        "primary_auth": "API Key",
-        "gating": "Gated (Enterprise/Partner Sales)",
-        "mcp_status": "No MCP (Composio Opportunity)",
-        "blocker": "API is in private beta requiring sales approval; OAuth2 requested by community but not yet public self-serve"
-      }
-    ]
-  },
-  "key_takeaways": [
-    {
-      "title": "The Dual-Track Auth Divergence",
-      "finding": "53% of developer/infra, scraping, and AI apps rely on frictionless Bearer API Keys with instantaneous time-to-first-call (<2 mins). In contrast, 31% of enterprise SaaS, CRM, and messaging platforms enforce OAuth 2.0 with complex granular scopes and token rotation.",
-      "implication": "Composio's managed authentication layer delivers maximum value on OAuth2 apps where token refreshing and consent redirects create the highest agent developer friction."
-    },
-    {
-      "title": "The Gating Spectrum: Free On-Ramps vs Sales Fortresses",
-      "finding": "69% of the apps offer an immediate self-serve path (free tier, trial, or paid checkout). However, 18% are enterprise-gated behind sales calls, institutional contracts, or corporate underwriting (DealCloud, Gladly, Paygent Connect, PitchBook, Pylon, Waterfall).",
-      "implication": "Building agent toolkits for enterprise apps requires either direct enterprise partner co-marketing or customer-supplied credentials (BYOC)."
-    },
-    {
-      "title": "Platform Approval Gates: The Ad & Social Fortress",
-      "finding": "Big Tech advertising and communication APIs (Google Ads, Meta Ads, LinkedIn Ads, Amazon SP-API, WhatsApp Business) provide self-serve sandbox accounts, but gate production traffic behind mandatory App Review, Business Verification, and Data Protection Policy audits.",
-      "implication": "Composio should maintain pre-certified Multi-Tenant App Credentials so agents can execute actions without each user undergoing a 3-week app review."
-    },
-    {
-      "title": "The MCP Greenfield Opportunity: 48% Open Market",
-      "finding": "Only 52% of audited apps have an existing community or official Model Context Protocol (MCP) server. 48% of apps represent completely virgin territory for Composio.",
-      "implication": "High-value categories like Support (Front, Help Scout, Gorgias), Ecommerce (BigCommerce, Ecwid, Gumroad), and Project Management (Smartsheet, Harvest) have zero official MCP competition."
-    },
-    {
-      "title": "The AI App Paradox: High Demand, Low API Maturity",
-      "finding": "Consumer AI applications (NotebookLM, Otter AI) have massive viral demand for agent toolkits, but possess zero official public REST APIs, forcing developers into fragile web-session scraping or enterprise GCP routing.",
-      "implication": "Composio can differentiate by combining browser automation / hybrid headless sessions for apps lacking public APIs until official endpoints emerge."
     }
   ]
 }

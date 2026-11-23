@@ -44,16 +44,17 @@ class TestComposioResearchAgent(unittest.TestCase):
             self.assertEqual(cat_count, 10, f"Category {cat} should have exactly 10 apps")
 
     def test_verification_metrics(self):
-        report = run_verification(self.dataset_file)
+        report = run_verification(self.dataset_file, check_live_sample=False)
         self.assertEqual(report["total_apps_audited"], 100)
-        self.assertGreater(report["pass2_accuracy_percent"], report["pass1_accuracy_percent"])
-        self.assertGreaterEqual(report["accuracy_gain_percent"], 40.0)
+        self.assertGreater(report["full_dataset_pass2_accuracy_pct"], report["full_dataset_pass1_accuracy_pct"])
+        self.assertGreater(report["sample_pass2_accuracy_pct"], report["sample_pass1_accuracy_pct"])
 
     def test_pattern_analysis(self):
         analysis = analyze_patterns(self.dataset_file)
         self.assertEqual(analysis["metadata"]["total_apps"], 100)
         self.assertIn("ready_for_agent_today_pct", analysis["headline_metrics"])
-        self.assertGreater(analysis["headline_metrics"]["ready_for_agent_today_pct"], 70.0)
+        self.assertEqual(analysis["headline_metrics"]["ready_for_agent_today_count"], 80)
+        self.assertEqual(analysis["headline_metrics"]["total_gated_non_self_serve_count"], 16)
 
 if __name__ == "__main__":
     unittest.main()

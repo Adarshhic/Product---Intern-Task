@@ -59,7 +59,7 @@
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "api_surface": "REST (Modern, OpenAPI 3.0 spec, custom objects, records, attributes)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://developers.attio.com/reference/overview",
+    "evidence_url": "https://attio.com/docs",
     "pass1_notes": "Accurate, missed newly introduced OAuth2 support.",
     "is_correct": true
   },
@@ -91,8 +91,8 @@
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "api_surface": "REST (Broad, items, apps, workspaces, webhooks, batch operations)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://morethan.citrix.com/podio-api",
-    "pass1_notes": "Doc URL pointed to old podio.com/api redirect.",
+    "evidence_url": "https://developers.podio.com/",
+    "pass1_notes": "Doc URL pointed to old Citrix portal redirect.",
     "is_correct": true
   },
   {
@@ -105,7 +105,7 @@
     ],
     "primary_auth": "OAuth2",
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
-    "api_surface": "REST (Broad v2/v3 APIs, records, blueprints, COQL query language)",
+    "api_surface": "REST (Broad v2/v3/v6 APIs, records, blueprints, COQL query language)",
     "buildability_verdict": "Ready Today",
     "evidence_url": "https://www.zoho.com/crm/developer/docs/api/v6/",
     "pass1_notes": "Mentioned v2 API instead of current v6.",
@@ -235,7 +235,7 @@
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "api_surface": "REST (Modern, issues, messages, accounts, tags, webhooks)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://docs.usepylon.com/pylon-docs/api-reference/introduction",
+    "evidence_url": "https://docs.usepylon.com/",
     "pass1_notes": "Naive pass assumed public API reference meant self-serve access.",
     "is_correct": false
   },
@@ -395,7 +395,7 @@
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "api_surface": "REST (Moderate, channels, messages, users, webhooks)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://pumble.com/help/integrations/pumble-api/",
+    "evidence_url": "https://pumble.com/help/category/integrations/",
     "pass1_notes": "Accurate.",
     "is_correct": true
   },
@@ -444,7 +444,7 @@
     "api_surface": "REST (Cloud API, messages, media, business profiles, message templates)",
     "buildability_verdict": "Gated / Partner Required",
     "evidence_url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
-    "pass1_notes": "Confused older on-premises WhatsApp Business API (which required BSP partners) with modern Cloud API.",
+    "pass1_notes": "Confused older on-premises WhatsApp Business API with modern Cloud API.",
     "is_correct": false
   },
   {
@@ -953,9 +953,9 @@
     ],
     "primary_auth": "API Key",
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
-    "api_surface": "REST (Moderate, tables, rows, webhook triggers, run enrichments)",
+    "api_surface": "REST (Modern public v0 API, search GTM data, run routines, webhook triggers)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://clay.com/developers",
+    "evidence_url": "https://claydevelopers.mintlify.app/",
     "pass1_notes": "Accurate.",
     "is_correct": true
   },
@@ -1403,7 +1403,7 @@
     "self_serve_status": "Self-Serve (Free Tier/Trial)",
     "api_surface": "REST (Broad, expenses, corporate cards, transfers, budgets, transactions, webhooks)",
     "buildability_verdict": "Ready Today",
-    "evidence_url": "https://developer.brex.com/openapi/overview/",
+    "evidence_url": "https://developer.brex.com/",
     "pass1_notes": "Marked self-serve without noting Brex's strict corporate banking qualification criteria.",
     "is_correct": false
   },
@@ -1531,7 +1531,7 @@
     "self_serve_status": "Gated (Enterprise/Partner Sales)",
     "api_surface": "REST & Official MCP (Create sessions, send messages, inspect execution logs, retrieve snapshots)",
     "buildability_verdict": "Feasible with Caveats",
-    "evidence_url": "https://docs.devin.ai/integrations/mcp",
+    "evidence_url": "https://docs.devin.ai/mcp",
     "pass1_notes": "Assumed Devin remained on strict waitlist/sales-gate as in early 2024.",
     "is_correct": false
   },

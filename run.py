@@ -1,17 +1,16 @@
 """
 Unified CLI Entrypoint for Composio Research Agent
 Usage:
-    python run.py --all            # Run end-to-end extraction, verification, analysis, and build HTML
+    python run.py --all            # Run end-to-end verification, live HTTP audit, and pattern clustering
     python run.py --verify         # Run verification loop and display accuracy delta
-    python run.py --analyze        # Run pattern clustering and output insights
-    python run.py --sample 10      # Run agent on a sample of 10 apps
+    python run.py --analyze        # Run statistical pattern clustering
+    python run.py --sample 10      # Run agent on a sample of N apps with live HTTP probes
 """
 
 import argparse
 import sys
 from pathlib import Path
 
-# Ensure src is on path
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
@@ -24,46 +23,47 @@ def main():
     parser.add_argument("--all", action="store_true", help="Execute complete pipeline end-to-end")
     parser.add_argument("--verify", action="store_true", help="Run verification loops and accuracy audit")
     parser.add_argument("--analyze", action="store_true", help="Run statistical pattern clustering")
-    parser.add_argument("--sample", type=int, default=None, help="Run on a sample of N apps")
+    parser.add_argument("--sample", type=int, default=None, help="Run live agent tool execution on sample of N apps")
     args = parser.parse_args()
 
     data_dir = BASE_DIR / "data"
     agent = ComposioAppResearchAgent(data_dir=data_dir)
 
-    print("=" * 60)
-    print("   COMPOSIO APP RESEARCH AGENT: 100-APP TOOLKIT AUDIT   ")
-    print("=" * 60)
-
-    if args.verify or args.all:
-        print("\n[+] Running Stage 2: Automated Verification Loops...")
-        rep = run_verification(data_dir / "apps_research_dataset.json")
-        print(f"[OK] Pass 1 Accuracy: {rep['pass1_accuracy_percent']}% -> Pass 2 Accuracy: {rep['pass2_accuracy_percent']}%")
-        print(f"[OK] Accuracy Gain: +{rep['accuracy_gain_percent']}% across {rep['total_apps_audited']} audited apps.")
-
-    if args.analyze or args.all:
-        print("\n[+] Running Stage 3: Pattern Clustering & Macro Analysis...")
-        pat = analyze_patterns(data_dir / "apps_research_dataset.json")
-        print(f"[OK] Ready Today: {pat['headline_metrics']['ready_for_agent_today_pct']}%")
-        print(f"[OK] Free Self-Serve: {pat['headline_metrics']['free_self_serve_pct']}%")
-        print(f"[OK] Composio MCP Opportunity: {pat['headline_metrics']['composio_greenfield_pct']}%")
+    print("=" * 65)
+    print("   COMPOSIO APP RESEARCH AGENT: 100-APP TOOLKIT & AUDIT PIPELINE   ")
+    print("=" * 65)
 
     if args.sample:
-        print(f"\n[+] Running Agent Extraction on Sample of {args.sample} apps...")
-        results = agent.run_pass1(sample_size=args.sample)
+        print(f"\n[+] Executing Live Agent Tool Probes on {args.sample} apps...")
+        results = agent.run_live_audit_on_sample(sample_size=args.sample)
         for r in results:
-            print(f" - #{r['id']} {r['name']}: {r['buildability_verdict']} | Auth: {r['primary_auth']} | Gating: {r['self_serve_status']}")
+            bot_tag = " (Bot Shield)" if r.is_bot_blocked else ""
+            status = f"HTTP {r.http_status}" if r.http_status else "Error"
+            print(f" - #{r.id} {r.name:15} | {r.buildability_verdict:22} | {status}{bot_tag} | Auth: {r.primary_auth}")
+
+    if args.verify or args.all:
+        print("\n[+] Running Stage 2: Automated Verification Loops & Live Link Checks...")
+        rep = run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
+        print(f"[OK] Hand-Checked Sample ({rep['sample_size']} apps):")
+        print(f"     Pass 1 Naive:        {rep['sample_pass1_accuracy_pct']}%")
+        print(f"     Pass 2 Automated:    {rep['sample_pass2_accuracy_pct']}%")
+        print(f"     Human Consensus:     {rep['sample_human_consensus_accuracy_pct']}%")
+        print(f"[OK] Full Dataset (100 apps): Pass 1 {rep['full_dataset_pass1_accuracy_pct']}% -> Pass 2 {rep['full_dataset_pass2_accuracy_pct']}%")
+
+    if args.analyze or args.all:
+        print("\n[+] Running Stage 3: Statistical Pattern Clustering...")
+        pat = analyze_patterns(dataset_path=data_dir / "apps_research_dataset.json")
+        m = pat["headline_metrics"]
+        print(f"[OK] Ready Today:       {m['ready_for_agent_today_count']}/100 ({m['ready_for_agent_today_pct']}%)")
+        print(f"[OK] Free Self-Serve:   {m['free_self_serve_count']}/100 ({m['free_self_serve_pct']}%)")
+        print(f"[OK] Total Gated/Walls: {m['total_gated_non_self_serve_count']}/100 ({m['total_gated_non_self_serve_pct']}%)")
+        print(f"[OK] MCP Greenfield:    {m['composio_greenfield_count']}/100 ({m['composio_greenfield_pct']}%)")
 
     if not (args.all or args.verify or args.analyze or args.sample):
-        # Default behavior: run all
         print("\nNo flags specified. Running full pipeline (--all)...")
-        run_verification(data_dir / "apps_research_dataset.json")
-        analyze_patterns(data_dir / "apps_research_dataset.json")
+        run_verification(dataset_path=data_dir / "apps_research_dataset.json", check_live_sample=True)
+        analyze_patterns(dataset_path=data_dir / "apps_research_dataset.json")
         print("\nPipeline execution finished successfully.")
-        print("Generated files:")
-        print(f"  - Dataset (JSON): {data_dir / 'apps_research_dataset.json'}")
-        print(f"  - Dataset (CSV):  {data_dir / 'apps_research_dataset.csv'}")
-        print(f"  - Verification:  {data_dir / 'verification_report.json'}")
-        print(f"  - Patterns:      {data_dir / 'pattern_analysis.json'}")
 
 if __name__ == "__main__":
     main()

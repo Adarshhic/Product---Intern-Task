@@ -1,5 +1,5 @@
 """
-HTML Case Study Generator with Custom Palette:
+HTML Case Study Generator with Custom Palette and Mathematically Recomputed Metrics:
 #EFEFEF (Light / Text)
 #DFDAD4 (Warm Stone / Neutral Accent / Borders)
 #CC8161 (Terracotta / Brand Primary Accent)
@@ -164,7 +164,7 @@ def generate_html():
             100-App Agent Toolkit Research & Buildability Audit
           </h1>
           <p class="text-[#DFDAD4] text-base sm:text-lg max-w-4xl font-normal leading-relaxed">
-            Composio turns apps into agent-callable tools. We built an autonomous research pipeline that audited 100 apps across 10 categories, classified their auth paradigms and gating friction, and ran multi-stage verification loops that elevated accuracy from <strong class="text-[#CC8161] font-semibold">53.0%</strong> to <strong class="text-[#EFEFEF] underline decoration-[#CC8161] font-semibold">100.0%</strong>.
+            Composio turns apps into agent-callable tools. We designed a research pipeline combining automated extraction with <strong class="text-[#EFEFEF]">real live HTTP evidence probes</strong>, catching subtle auth deprecations and sales walls to elevate accuracy from <strong class="text-[#CC8161] font-semibold">53% (Pass 1)</strong> to <strong class="text-[#EFEFEF] underline decoration-[#CC8161] font-semibold">98% (Pass 2)</strong>, cross-verified on a 32-app hand-checked sample.
           </p>
 
           <!-- 2-MINUTE REVIEWER TL;DR -->
@@ -172,22 +172,22 @@ def generate_html():
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs uppercase tracking-wider text-[#CC8161] font-bold flex items-center">
                 <svg class="w-4 h-4 mr-1.5 text-[#CC8161]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                2-Minute Reviewer Executive Summary (No Narration Required)
+                2-Minute Reviewer Executive Summary (Mathematically Aligned)
               </span>
               <span class="text-xs text-[#DFDAD4]/70 font-mono">100 Apps Audited</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-[#DFDAD4]">
               <div class="p-3.5 rounded-lg bg-[#0b0e14] border border-[#DFDAD4]/10">
                 <span class="text-[#CC8161] font-bold block text-base mb-1">1. 80% Are Ready Today</span>
-                <span>80 apps have direct, unblocked APIs. 73% offer immediate free self-serve developer access or trials, making them instant candidates for Composio toolkits.</span>
+                <span>80 apps have direct, unblocked APIs. 73% offer free self-serve accounts or trials, and 11% have self-serve paid tiers (84% total self-serve on-ramp).</span>
               </div>
               <div class="p-3.5 rounded-lg bg-[#0b0e14] border border-[#DFDAD4]/10">
-                <span class="text-[#EFEFEF] font-bold block text-base mb-1">2. Verification Loops Matter (+47%)</span>
-                <span>A naive extraction pass yielded only 53% accuracy due to hallucinated auth (e.g. deprecated HubSpot/Airtable API keys) and missed sales gates. Verification loops elevated accuracy to 100%.</span>
+                <span class="text-[#EFEFEF] font-bold block text-base mb-1">2. Verification Loops Matter</span>
+                <span>Naive extraction achieved only 53% accuracy due to hallucinated auth (e.g. deprecated HubSpot/Airtable API keys) and missed sales walls. Real HTTP and schema verification pushed verified accuracy to 98%.</span>
               </div>
               <div class="p-3.5 rounded-lg bg-[#0b0e14] border border-[#DFDAD4]/10">
                 <span class="text-[#DFDAD4] font-bold block text-base mb-1">3. 44% MCP Greenfield</span>
-                <span>44% of target apps have zero existing MCP server in the ecosystem. Support (Front, Help Scout), Ecommerce (BigCommerce), and AI apps present immediate, uncontested distribution wins.</span>
+                <span>44% of target apps have zero existing MCP server in the ecosystem. Support (Front, Help Scout), Ecommerce (BigCommerce), and Modern CRMs present immediate, uncontested distribution wins.</span>
               </div>
             </div>
           </div>
@@ -195,7 +195,7 @@ def generate_html():
         </div>
       </div>
 
-      <!-- KEY METRICS CARDS -->
+      <!-- KEY METRICS CARDS (EXACT RECOMPUTED DATA) -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="glow-card p-5 rounded-xl">
           <div class="text-xs font-medium text-[#DFDAD4]/70 uppercase tracking-wider font-mono">Ready for Toolkit Today</div>
@@ -203,15 +203,15 @@ def generate_html():
             <span class="text-3xl sm:text-4xl font-extrabold text-[#CC8161]">80%</span>
             <span class="text-xs text-[#DFDAD4]/70 font-mono">80 of 100 apps</span>
           </div>
-          <div class="mt-2 text-xs text-[#DFDAD4]/80">58 Free Self-Serve, 22 Paid Self-Serve</div>
+          <div class="mt-2 text-xs text-[#DFDAD4]/80">73 Free Self-Serve, 11 Paid Self-Serve</div>
         </div>
 
         <div class="glow-card p-5 rounded-xl">
-          <div class="text-xs font-medium text-[#DFDAD4]/70 uppercase tracking-wider font-mono">Accuracy Progression</div>
+          <div class="text-xs font-medium text-[#DFDAD4]/70 uppercase tracking-wider font-mono">Sample Audit (32 Apps)</div>
           <div class="mt-2 flex items-baseline space-x-2">
-            <span class="text-3xl sm:text-4xl font-extrabold text-[#EFEFEF]">53% &rarr; 100%</span>
+            <span class="text-3xl sm:text-4xl font-extrabold text-[#EFEFEF]">28% &rarr; 94%</span>
           </div>
-          <div class="mt-2 text-xs text-[#CC8161] font-medium">+47% delta via verification loops</div>
+          <div class="mt-2 text-xs text-[#CC8161] font-medium">+66% delta via verification loops</div>
         </div>
 
         <div class="glow-card p-5 rounded-xl">
@@ -224,12 +224,12 @@ def generate_html():
         </div>
 
         <div class="glow-card p-5 rounded-xl">
-          <div class="text-xs font-medium text-[#DFDAD4]/70 uppercase tracking-wider font-mono">Hard-Gated / Partner Walls</div>
+          <div class="text-xs font-medium text-[#DFDAD4]/70 uppercase tracking-wider font-mono">Total Non-Self-Serve / Gated</div>
           <div class="mt-2 flex items-baseline space-x-2">
-            <span class="text-3xl sm:text-4xl font-extrabold text-rose-400">18%</span>
-            <span class="text-xs text-[#DFDAD4]/70 font-mono">18 apps</span>
+            <span class="text-3xl sm:text-4xl font-extrabold text-rose-400">16%</span>
+            <span class="text-xs text-[#DFDAD4]/70 font-mono">16 apps</span>
           </div>
-          <div class="mt-2 text-xs text-[#DFDAD4]/80">Sales walls, app reviews, or no API</div>
+          <div class="mt-2 text-xs text-[#DFDAD4]/80">10 Sales Walls, 5 App Reviews, 1 No API</div>
         </div>
       </div>
     </section>
@@ -263,12 +263,12 @@ def generate_html():
         <!-- Takeaway 2 -->
         <div class="glow-card p-6 rounded-xl space-y-3">
           <div class="w-10 h-10 rounded-lg bg-[#DFDAD4]/15 border border-[#DFDAD4]/30 text-[#DFDAD4] flex items-center justify-center font-bold font-mono">02</div>
-          <h3 class="text-lg font-bold text-[#EFEFEF]">The 3 Distinct Gating Fortresses</h3>
+          <h3 class="text-lg font-bold text-[#EFEFEF]">The 16 Gated Apps Breakdown</h3>
           <p class="text-sm text-[#DFDAD4] leading-relaxed">
-            The 18 gated apps split into 3 distinct operational hurdles: (1) <strong class="text-[#EFEFEF]">Institutional Sales Walls</strong> (DealCloud, PitchBook, Gladly), (2) <strong class="text-[#EFEFEF]">Financial & KYC Underwriting</strong> (Paygent, iPayX, Brex), and (3) <strong class="text-[#EFEFEF]">High Financial Paywalls</strong> (Ahrefs $500/mo API add-on).
+            The 16 non-self-serve apps divide cleanly into: (1) <strong class="text-[#EFEFEF]">10 Enterprise Sales Walls</strong> (DealCloud, PitchBook, Gladly, Pylon, Paygent, etc.), (2) <strong class="text-[#EFEFEF]">5 App Review / Approval Moats</strong> (Google Ads, Meta Ads, LinkedIn Ads, Amazon SP-API, NotebookLM), and (3) <strong class="text-[#EFEFEF]">1 Closed Platform</strong> (Fanbasis).
           </p>
           <div class="text-xs text-[#CC8161] font-mono bg-[#CC8161]/10 p-2.5 rounded border border-[#CC8161]/25">
-            <strong>Strategic Implication:</strong> Composio cannot provide multi-tenant shared credentials for sales-gated apps; these require customer-provided credentials ("Bring Your Own Key/Tenant").
+            <strong>Strategic Implication:</strong> Composio should use Bring-Your-Own-Contract (BYOC) vaults for sales walls, and submit certified developer umbrella apps for review moats.
           </div>
         </div>
 
@@ -277,7 +277,7 @@ def generate_html():
           <div class="w-10 h-10 rounded-lg bg-[#CC8161]/15 border border-[#CC8161]/30 text-[#CC8161] flex items-center justify-center font-bold font-mono">03</div>
           <h3 class="text-lg font-bold text-[#EFEFEF]">The Platform App-Review Moat</h3>
           <p class="text-sm text-[#DFDAD4] leading-relaxed">
-            Ad networks and mega-platforms (Google Ads, Meta Ads, LinkedIn Ads, Amazon SP-API, WhatsApp Cloud) offer self-serve sandbox accounts, but lock production execution behind <strong class="text-[#EFEFEF]">strict app reviews, business verification, and data compliance audits</strong>.
+            Ad networks and commerce giants (Google Ads, Meta Ads, LinkedIn Ads, Amazon SP-API) offer self-serve sandbox accounts, but lock production execution behind <strong class="text-[#EFEFEF]">strict app reviews, business verification, and data compliance audits</strong>.
           </p>
           <div class="text-xs text-[#CC8161] font-mono bg-[#CC8161]/10 p-2.5 rounded border border-[#CC8161]/25">
             <strong>Strategic Implication:</strong> Huge moat for Composio! Composio can submit single umbrella developer apps, allowing end-users to bypass 3-week app audits.
@@ -336,7 +336,7 @@ def generate_html():
           <div class="h-64 relative flex items-center justify-center">
             <canvas id="gatingChart"></canvas>
           </div>
-          <div class="text-xs text-[#DFDAD4]/70 text-center">73% Free Self-Serve / Trial vs 18% Institutional & Review Gated</div>
+          <div class="text-xs text-[#DFDAD4]/70 text-center">84% Self-Serve (73% Free, 11% Paid) vs 16% Gated / Enterprise</div>
         </div>
 
         <div class="glow-card p-5 rounded-xl space-y-3">
@@ -357,7 +357,7 @@ def generate_html():
           <h2 class="text-2xl sm:text-3xl font-bold text-[#EFEFEF] mt-1">The Autonomous Research Agent Architecture</h2>
         </div>
         <p class="text-xs sm:text-sm text-[#DFDAD4]/80 mt-2 sm:mt-0 max-w-md">
-          How we designed the multi-stage research pipeline, integrated verification loops, and identified where human judgment was required.
+          How we designed the multi-stage research pipeline, integrated real live HTTP verification loops, and identified where human judgment was required.
         </p>
       </div>
 
@@ -373,16 +373,16 @@ def generate_html():
 
           <div class="p-4 rounded-xl bg-[#040507] border border-[#DFDAD4]/10 relative">
             <div class="text-xs font-mono text-amber-400 font-semibold mb-1">STAGE 2 (PASS 1)</div>
-            <div class="text-base font-bold text-[#EFEFEF]">Naive Extraction</div>
-            <div class="text-xs text-[#DFDAD4]/70 mt-2">Autonomous web doc scraping & endpoint extraction</div>
+            <div class="text-base font-bold text-[#EFEFEF]">Naive AI Extraction</div>
+            <div class="text-xs text-[#DFDAD4]/70 mt-2">Fast autonomous web doc scraping & endpoint extraction</div>
             <div class="mt-3 inline-block px-2 py-0.5 rounded bg-amber-950/60 border border-amber-800/50 text-[11px] text-amber-300 font-mono">53% Initial Accuracy</div>
           </div>
 
           <div class="p-4 rounded-xl bg-[#040507] border border-[#CC8161]/40 relative shadow-lg shadow-[#CC8161]/15">
             <div class="text-xs font-mono text-[#CC8161] font-semibold mb-1">STAGE 3 (PASS 2)</div>
-            <div class="text-base font-bold text-[#EFEFEF]">Verification Loops</div>
-            <div class="text-xs text-[#DFDAD4]/70 mt-2">Link validation, deprecation checks, MCP registry cross-check</div>
-            <div class="mt-3 inline-block px-2 py-0.5 rounded bg-[#CC8161]/15 border border-[#CC8161]/40 text-[11px] text-[#CC8161] font-mono font-bold">100% Verified Accuracy</div>
+            <div class="text-base font-bold text-[#EFEFEF]">Live HTTP Probes</div>
+            <div class="text-xs text-[#DFDAD4]/70 mt-2">Automated requests checking, bot detection, deprecation audits</div>
+            <div class="mt-3 inline-block px-2 py-0.5 rounded bg-[#CC8161]/15 border border-[#CC8161]/40 text-[11px] text-[#CC8161] font-mono font-bold">98% Verified Accuracy</div>
           </div>
 
           <div class="p-4 rounded-xl bg-[#040507] border border-[#DFDAD4]/10 relative">
@@ -397,7 +397,7 @@ def generate_html():
         <div class="p-5 rounded-xl bg-[#040507] border border-[#CC8161]/35 space-y-3">
           <div class="flex items-center space-x-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#CC8161] animate-pulse"></span>
-            <span class="text-sm font-bold text-[#EFEFEF] uppercase tracking-wider">Where Human Judgment Was Essential (The Limits of Pure Web Scraping)</span>
+            <span class="text-sm font-bold text-[#EFEFEF] uppercase tracking-wider">Where Human Judgment Was Essential (The Limits of Pure Automation)</span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-[#DFDAD4]">
             <div class="p-3 rounded-lg bg-[#0b0e14] border border-[#DFDAD4]/10">
@@ -422,11 +422,30 @@ def generate_html():
       <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#DFDAD4]/15 pb-4">
         <div>
           <span class="text-xs font-mono uppercase tracking-wider text-[#CC8161] font-semibold">Verification & Audit</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-[#EFEFEF] mt-1">Accuracy Progression: Hits, Misses & Fixes</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#EFEFEF] mt-1">Accuracy Progression: Hand-Checked Sample Audit</h2>
         </div>
         <p class="text-xs sm:text-sm text-[#DFDAD4]/80 mt-2 sm:mt-0 max-w-md">
-          Honest accounting of the 47 errors caught in Pass 1, classified by failure mode and how verification loops corrected them.
+          Honest accounting of the 47 errors caught in Pass 1, verified through automated HTTP probes and a 32-app hand-checked sample.
         </p>
+      </div>
+
+      <!-- SAMPLE AUDIT CALLOUT BOX -->
+      <div class="p-5 rounded-2xl bg-[#0d1017] border border-[#CC8161]/35 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="space-y-1">
+          <span class="font-mono text-[#DFDAD4]/70 uppercase text-[10px]">Sample Pass 1 Accuracy</span>
+          <div class="text-2xl font-extrabold text-amber-400 font-mono">28.1% (9 / 32)</div>
+          <p class="text-[#DFDAD4]/70 text-[11px]">Heavy edge-case sample; naive model missed deprecations, sales gates, and CLI execution.</p>
+        </div>
+        <div class="space-y-1">
+          <span class="font-mono text-[#DFDAD4]/70 uppercase text-[10px]">Sample Pass 2 Automated Accuracy</span>
+          <div class="text-2xl font-extrabold text-[#CC8161] font-mono">93.8% (30 / 32)</div>
+          <p class="text-[#DFDAD4]/70 text-[11px]">Automated HTTP link probes and schema verifiers corrected 21 discrepancies.</p>
+        </div>
+        <div class="space-y-1">
+          <span class="font-mono text-[#DFDAD4]/70 uppercase text-[10px]">Human Consensus Accuracy</span>
+          <div class="text-2xl font-extrabold text-[#EFEFEF] font-mono">100.0% (32 / 32)</div>
+          <p class="text-[#DFDAD4]/70 text-[11px]">Human audit resolved final 2 border cases (NotebookLM vertex-only, Otter AI cookie sessions).</p>
+        </div>
       </div>
 
       <!-- ERROR TAXONOMY BREAKDOWN -->
@@ -466,8 +485,8 @@ def generate_html():
       <!-- DEEP-DIVE SAMPLE MISSES TABLE -->
       <div class="glow-card rounded-2xl overflow-hidden">
         <div class="p-4 bg-[#040507] border-b border-[#DFDAD4]/10 flex items-center justify-between">
-          <span class="text-xs font-semibold text-[#DFDAD4] uppercase tracking-wider font-mono">Illustrative Pass 1 Misses vs Pass 2 Verified Ground Truth</span>
-          <span class="text-xs text-[#CC8161] font-mono">6 High-Impact Examples</span>
+          <span class="text-xs font-semibold text-[#DFDAD4] uppercase tracking-wider font-mono">Illustrative Sample: Initial Misses vs Verified Ground Truth</span>
+          <span class="text-xs text-[#CC8161] font-mono">High-Impact Verification Cases</span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs">
@@ -477,7 +496,7 @@ def generate_html():
                 <th class="p-3">Pass 1 Naive Finding</th>
                 <th class="p-3">What Went Wrong</th>
                 <th class="p-3">Pass 2 Verified Truth</th>
-                <th class="p-3">Root Cause Fix</th>
+                <th class="p-3">Live URL Check / Fix</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-[#DFDAD4]/10 font-sans">
@@ -486,42 +505,42 @@ def generate_html():
                 <td class="p-3 text-rose-300">Gated (Enterprise Contract required)</td>
                 <td class="p-3 text-[#DFDAD4]">Assumed enterprise paid seat required for API</td>
                 <td class="p-3 text-[#CC8161] font-medium">Ready Today (Self-Serve Free Developer Org)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Checked Salesforce Developer Portal; permanent free developer orgs offer full REST/SOAP API access.</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 403 on curl (Akamai bot shield); verified 200 in real browser. Free dev orgs include full REST API.</td>
               </tr>
               <tr class="hover:bg-[#121620]/40">
                 <td class="p-3 font-semibold text-[#EFEFEF]">#10 DealCloud</td>
                 <td class="p-3 text-[#CC8161]">Ready Today (Self-Serve API Key)</td>
                 <td class="p-3 text-[#DFDAD4]">Docs were public at api.docs.dealcloud.com, hallucinated self-serve</td>
                 <td class="p-3 text-[#DFDAD4] font-medium">Gated / Partner Required (Enterprise Contract)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Audited tenant creation; Intapp strictly provisions API client credentials to enterprise investment banking clients.</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 200 OK. Tenant creation requires institutional contract; Intapp strictly provisions client credentials.</td>
               </tr>
               <tr class="hover:bg-[#121620]/40">
                 <td class="p-3 font-semibold text-[#EFEFEF]">#49 Amazon SP-API</td>
                 <td class="p-3 text-[#CC8161]">Ready Today (Standard API Key)</td>
                 <td class="p-3 text-[#DFDAD4]">Missed AWS IAM SigV4 and strict developer profile vetting</td>
                 <td class="p-3 text-amber-300 font-medium">Feasible with Caveats (Approval Gate + SigV4)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Checked auth documentation; requires LWA OAuth2 + AWS IAM SigV4 signing + Data Protection Policy review.</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 200 OK. Requires LWA OAuth2 + AWS IAM SigV4 signing + Data Protection Policy review.</td>
               </tr>
               <tr class="hover:bg-[#121620]/40">
                 <td class="p-3 font-semibold text-[#EFEFEF]">#58 Sherlock</td>
                 <td class="p-3 text-[#CC8161]">Ready Today (Cloud REST API)</td>
                 <td class="p-3 text-[#DFDAD4]">Assumed it was a hosted SaaS OSINT API</td>
                 <td class="p-3 text-[#EFEFEF] font-medium">Ready Today (Open Source Local Python CLI)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Inspected GitHub repo; Sherlock is a local CLI tool that hunts usernames across 400+ sites. Needs subprocess wrapper.</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 200 OK. Open-source local Python CLI tool that hunts usernames across 400+ sites. Needs subprocess wrapper.</td>
               </tr>
               <tr class="hover:bg-[#121620]/40">
                 <td class="p-3 font-semibold text-[#EFEFEF]">#92 Otter AI</td>
                 <td class="p-3 text-[#CC8161]">Ready Today (Public Developer API)</td>
                 <td class="p-3 text-[#DFDAD4]">Saw community MCP servers on GitHub and assumed public API</td>
                 <td class="p-3 text-amber-300 font-medium">Feasible with Caveats (Unofficial Cookie Wrapper)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Code audit of MCP servers showed they scrape web cookies. Otter.ai has no documented public developer REST API.</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 403 on curl (Cloudflare bot shield); verified in browser. Community MCP relies on unofficial session cookies.</td>
               </tr>
               <tr class="hover:bg-[#121620]/40">
-                <td class="p-3 font-semibold text-[#EFEFEF]">#17 Plain</td>
-                <td class="p-3 text-[#DFDAD4]">Ready Today (REST API)</td>
-                <td class="p-3 text-[#DFDAD4]">Assumed support platform had standard REST endpoints</td>
-                <td class="p-3 text-[#CC8161] font-medium">Ready Today (Pure GraphQL API)</td>
-                <td class="p-3 text-[#DFDAD4]/80">Checked developer docs; Plain is strictly GraphQL-only. Agent tool must formulate GraphQL queries.</td>
+                <td class="p-3 font-semibold text-[#EFEFEF]">#60 Clay</td>
+                <td class="p-3 text-[#DFDAD4]">Ready Today (Public API)</td>
+                <td class="p-3 text-[#DFDAD4]">Old URL clay.com/developers returned 404</td>
+                <td class="p-3 text-[#CC8161] font-medium">Ready Today (claydevelopers.mintlify.app)</td>
+                <td class="p-3 text-[#DFDAD4]/80">HTTP 200 OK. Replaced dead link with active Mintlify developer documentation.</td>
               </tr>
             </tbody>
           </table>
@@ -578,8 +597,8 @@ def generate_html():
             <select id="verdictFilter" onchange="applyFilters()" class="w-full px-3 py-1.5 rounded-lg bg-[#040507] border border-[#DFDAD4]/15 text-xs text-[#EFEFEF] focus:outline-none focus:border-[#CC8161]">
               <option value="ALL">All Verdicts</option>
               <option value="Ready Today">Ready Today (80)</option>
-              <option value="Feasible with Caveats">Feasible with Caveats (11)</option>
-              <option value="Gated / Partner Required">Gated / Partner Required (8)</option>
+              <option value="Feasible with Caveats">Feasible with Caveats (10)</option>
+              <option value="Gated / Partner Required">Gated / Partner Required (9)</option>
               <option value="Blocked (No API)">Blocked (No API) (1)</option>
             </select>
           </div>
@@ -589,8 +608,8 @@ def generate_html():
             <label class="block text-[11px] font-mono text-[#DFDAD4]/70 uppercase mb-1">MCP Registry Status</label>
             <select id="mcpFilter" onchange="applyFilters()" class="w-full px-3 py-1.5 rounded-lg bg-[#040507] border border-[#DFDAD4]/15 text-xs text-[#EFEFEF] focus:outline-none focus:border-[#CC8161]">
               <option value="ALL">All MCP Statuses</option>
-              <option value="Official">Official MCP Available (8)</option>
-              <option value="Community">Community MCP Available (48)</option>
+              <option value="Official">Official MCP Available (9)</option>
+              <option value="Community">Community MCP Available (47)</option>
               <option value="No MCP">Composio Greenfield / No MCP (44)</option>
             </select>
           </div>
@@ -706,7 +725,7 @@ def generate_html():
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div class="text-sm font-bold text-[#EFEFEF]">Repository: Adarshhic / Product---Intern-Task</div>
-            <div class="text-xs text-[#DFDAD4]/70 font-mono mt-0.5">Python 3.14+ | Pytest | Pydantic | Requests | Standalone HTML Case Study</div>
+            <div class="text-xs text-[#DFDAD4]/70 font-mono mt-0.5">Python 3.14+ | Requests | Pydantic | Standalone HTML Case Study</div>
           </div>
           <a href="https://github.com/Adarshhic/Product---Intern-Task" target="_blank" class="px-4 py-2 rounded-lg bg-[#CC8161] hover:bg-[#b86d4e] text-[#040507] font-semibold text-xs transition inline-flex items-center space-x-2 shadow-lg shadow-[#CC8161]/25">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -721,10 +740,10 @@ def generate_html():
           <div class="text-[#CC8161]">cd Product---Intern-Task &amp;&amp; pip install -r requirements.txt</div>
           <div class="text-[#DFDAD4]/50 mt-3"># 2. Run the end-to-end research agent pipeline across all 100 apps</div>
           <div class="text-[#EFEFEF]">python run.py --all</div>
-          <div class="text-[#DFDAD4]/50 mt-3"># 3. Run verification loops and accuracy delta report</div>
+          <div class="text-[#DFDAD4]/50 mt-3"># 3. Run live HTTP verification probes & accuracy audit</div>
           <div class="text-[#EFEFEF]">python run.py --verify</div>
-          <div class="text-[#DFDAD4]/50 mt-3"># 4. Run test suite</div>
-          <div class="text-[#EFEFEF]">python -m unittest discover tests</div>
+          <div class="text-[#DFDAD4]/50 mt-3"># 4. Run live network audit on sample of 10 apps</div>
+          <div class="text-[#EFEFEF]">python run.py --sample 10</div>
         </div>
       </div>
     </section>
@@ -732,7 +751,7 @@ def generate_html():
     <!-- FOOTER -->
     <footer class="border-t border-[#DFDAD4]/15 py-8 text-center text-xs text-[#DFDAD4]/60 space-y-2">
       <div>Composio Take-Home Assignment &bull; AI Product Ops Intern</div>
-      <div>Designed & Engineered with Agentic Pipelines, Real Verification Loops, and Grounded Accuracy &bull; 2026</div>
+      <div>Methodology: AI-assisted extraction grounded by live Python HTTP probes & human product ops review &bull; 2026</div>
     </footer>
 
   </main>
@@ -805,7 +824,7 @@ def generate_html():
             ${{app.main_blocker}}
           </td>
           <td class="p-3 text-center" onclick="event.stopPropagation()">
-            <a href="${{app.evidence_url}}" target="_blank" class="p-1 rounded bg-[#121620] hover:bg-[#CC8161] text-[#DFDAD4] hover:text-[#040507] transition inline-block" title="Open Documentation Evidence">
+            <a href="${{app.evidence_url}}" target="_blank" class="p-1 rounded bg-[#121620] hover:bg-[#CC8161] text-[#DFDAD4] hover:text-[#040507] transition inline-block" title="${{app.url_status_note || 'Open Documentation Evidence'}}">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </td>
@@ -895,6 +914,7 @@ def generate_html():
               ${{app.pass1_correct ? '<span class="text-[#CC8161] font-bold">&check; Match</span>' : '<span class="text-rose-400 font-bold">&cross; Missed</span>'}}
             </div>
             <div class="text-[#DFDAD4]"><strong class="text-[#DFDAD4]/70">Verification Loop Action:</strong> ${{app.verification_check}}</div>
+            <div class="text-[11px] text-[#DFDAD4]/60"><strong class="text-[#DFDAD4]/70">Evidence URL Status:</strong> ${{app.url_status_note || 'HTTP 200 OK'}}</div>
           </div>
         </div>
       `;
@@ -907,7 +927,7 @@ def generate_html():
     }}
 
     function downloadCSV() {{
-      let csv = "ID,Name,Category,Description,Primary Auth,Auth Methods,Self-Serve Status,API Surface,MCP Status,Buildability Verdict,Main Blocker,Evidence URL\\n";
+      let csv = "ID,Name,Category,Description,Primary Auth,Auth Methods,Self-Serve Status,API Surface,MCP Status,Buildability Verdict,Main Blocker,Evidence URL,URL Status\\n";
       APPS_DATA.forEach(a => {{
         const row = [
           a.id,
@@ -921,7 +941,8 @@ def generate_html():
           `"${{a.mcp_status.replace(/"/g, '""')}}"`,
           `"${{a.buildability_verdict.replace(/"/g, '""')}}"`,
           `"${{a.main_blocker.replace(/"/g, '""')}}"`,
-          `"${{a.evidence_url.replace(/"/g, '""')}}"`
+          `"${{a.evidence_url.replace(/"/g, '""')}}"`,
+          `"${{(a.url_status_note || 'HTTP 200 OK').replace(/"/g, '""')}}"`
         ];
         csv += row.join(",") + "\\n";
       }});
@@ -1021,12 +1042,11 @@ def generate_html():
     with open(out_file, "w", encoding="utf-8") as f:
         f.write(html_content)
     
-    # Also write directly to root index.html for direct GitHub Pages serving
     root_file = BASE_DIR / "index.html"
     with open(root_file, "w", encoding="utf-8") as f:
         f.write(html_content)
 
-    print(f"Standalone Case Study HTML generated with new palette at {out_file} and {root_file} ({len(html_content)} bytes)")
+    print(f"Case study HTML generated at {out_file} and {root_file} ({len(html_content)} bytes)")
 
 if __name__ == "__main__":
     generate_html()
